@@ -10,7 +10,6 @@
 		EB0713CC1AC3291B002B9645 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB0713CB1AC3291B002B9645 /* Images.xcassets */; };
 		EB0713E71AC32CE1002B9645 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = EB0713E91AC32CE1002B9645 /* test.png */; };
 		EB0713F81AC3325E002B9645 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0713F71AC3325E002B9645 /* MainMenuViewController.m */; };
-		EB0713FB1AC332B1002B9645 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0713FA1AC332B1002B9645 /* SettingsViewController.m */; };
 		EB0713FE1AC33321002B9645 /* BoardViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0713FD1AC33321002B9645 /* BoardViewerViewController.m */; };
 		EB0714011AC33336002B9645 /* BoardEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0714001AC33336002B9645 /* BoardEditorViewController.m */; };
 		EB0714051AC3350C002B9645 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = EB0714041AC3350C002B9645 /* profile.png */; };
@@ -44,8 +43,6 @@
 		EB0713F11AC330E1002B9645 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/audio0.m4a; sourceTree = "<group>"; };
 		EB0713F61AC3325E002B9645 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		EB0713F71AC3325E002B9645 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
-		EB0713F91AC332B1002B9645 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		EB0713FA1AC332B1002B9645 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		EB0713FC1AC33321002B9645 /* BoardViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardViewerViewController.h; sourceTree = "<group>"; };
 		EB0713FD1AC33321002B9645 /* BoardViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardViewerViewController.m; sourceTree = "<group>"; };
 		EB0713FF1AC33336002B9645 /* BoardEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardEditorViewController.h; sourceTree = "<group>"; };
@@ -112,8 +109,6 @@
 				EB53673C1AC1E4290000B7F3 /* GetStartedViewController.m */,
 				EB0713F61AC3325E002B9645 /* MainMenuViewController.h */,
 				EB0713F71AC3325E002B9645 /* MainMenuViewController.m */,
-				EB0713F91AC332B1002B9645 /* SettingsViewController.h */,
-				EB0713FA1AC332B1002B9645 /* SettingsViewController.m */,
 				EB0713FC1AC33321002B9645 /* BoardViewerViewController.h */,
 				EB0713FD1AC33321002B9645 /* BoardViewerViewController.m */,
 				EB0713FF1AC33336002B9645 /* BoardEditorViewController.h */,
@@ -292,7 +287,6 @@
 				EB0713F81AC3325E002B9645 /* MainMenuViewController.m in Sources */,
 				EB53673D1AC1E4290000B7F3 /* GetStartedViewController.m in Sources */,
 				EB0714011AC33336002B9645 /* BoardEditorViewController.m in Sources */,
-				EB0713FB1AC332B1002B9645 /* SettingsViewController.m in Sources */,
 				EB0713FE1AC33321002B9645 /* BoardViewerViewController.m in Sources */,
 				EB53673A1AC1E4290000B7F3 /* AppDelegate.m in Sources */,
 				EB5367371AC1E4290000B7F3 /* main.m in Sources */,

@@ -119,25 +119,6 @@
             </objects>
             <point key="canvasLocation" x="250.5" y="448.5"/>
         </scene>
-        <!--Settings View Controller-->
-        <scene sceneID="hxg-Vr-ItT">
-            <objects>
-                <viewController id="gGS-tB-FbC" customClass="SettingsViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="BTz-d1-TWd"/>
-                        <viewControllerLayoutGuide type="bottom" id="Hk0-Jw-fVj"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="FGb-4h-Yyw">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" systemItem="downloads" id="5uN-ef-650"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zrN-2b-CMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="250.5" y="1152"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ond-23-mDo">
             <objects>
@@ -151,7 +132,6 @@
                     <connections>
                         <segue destination="AlZ-Q2-0Qd" kind="relationship" relationship="viewControllers" id="Dj7-Ln-5EU"/>
                         <segue destination="K8g-bB-jGD" kind="relationship" relationship="viewControllers" id="aTW-Tj-ncx"/>
-                        <segue destination="gGS-tB-FbC" kind="relationship" relationship="viewControllers" id="6gY-1p-CRo"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PoX-Gu-lTV" userLabel="First Responder" sceneMemberID="firstResponder"/>
