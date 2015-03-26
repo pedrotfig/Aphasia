@@ -21,6 +21,7 @@
 		EB5367401AC1E4290000B7F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB53673E1AC1E4290000B7F3 /* Main.storyboard */; };
 		EB5367451AC1E4290000B7F3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5367431AC1E4290000B7F3 /* LaunchScreen.xib */; };
 		EB5367511AC1E4290000B7F3 /* AphasiaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5367501AC1E4290000B7F3 /* AphasiaTests.m */; };
+		EBC0DC961AC47D4000B924E3 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBC0DC951AC47D4000B924E3 /* ImageCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		EB53674A1AC1E4290000B7F3 /* AphasiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AphasiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB53674F1AC1E4290000B7F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB5367501AC1E4290000B7F3 /* AphasiaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AphasiaTests.m; sourceTree = "<group>"; };
+		EBC0DC951AC47D4000B924E3 /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				EB5367381AC1E4290000B7F3 /* AppDelegate.h */,
 				EB5367391AC1E4290000B7F3 /* AppDelegate.m */,
 				EB53673E1AC1E4290000B7F3 /* Main.storyboard */,
+				EBC0DC951AC47D4000B924E3 /* ImageCell.xib */,
 				EB5367431AC1E4290000B7F3 /* LaunchScreen.xib */,
 				EB5367341AC1E4290000B7F3 /* Supporting Files */,
 			);
@@ -264,6 +267,7 @@
 			files = (
 				EB5367401AC1E4290000B7F3 /* Main.storyboard in Resources */,
 				EB0713E71AC32CE1002B9645 /* test.png in Resources */,
+				EBC0DC961AC47D4000B924E3 /* ImageCell.xib in Resources */,
 				EB0713CC1AC3291B002B9645 /* Images.xcassets in Resources */,
 				EB45BBB61AC321B3005CE9BE /* Localizable.strings in Resources */,
 				EB0714051AC3350C002B9645 /* profile.png in Resources */,
