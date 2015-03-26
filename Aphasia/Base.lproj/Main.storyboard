@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -263,37 +264,104 @@
                                     <outlet property="delegate" destination="eFp-6h-9gY" id="A05-fk-3bu"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0J-zb-dKf" userLabel="Left Arrow">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" backgroundImage="left_arrow.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kx-Jg-bai" userLabel="Right Arrow">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" backgroundImage="right_arrow.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="z3c-K3-COo" firstAttribute="leading" secondItem="M0J-zb-dKf" secondAttribute="trailing" constant="8" symbolic="YES" id="3n9-XN-CLG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="z3c-K3-COo" secondAttribute="trailing" constant="102" id="4hV-y8-Mp9"/>
+                            <constraint firstItem="M0J-zb-dKf" firstAttribute="top" secondItem="8kx-Jg-bai" secondAttribute="top" id="8fN-za-jlp">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="z3c-K3-COo" firstAttribute="centerY" secondItem="M0J-zb-dKf" secondAttribute="centerY" constant="24.5" id="99h-V3-3Uo">
+                                <variation key="heightClass=regular-widthClass=regular" constant="19.5"/>
+                            </constraint>
+                            <constraint firstItem="8kx-Jg-bai" firstAttribute="bottom" secondItem="M0J-zb-dKf" secondAttribute="bottom" id="A2z-vj-A2e">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="4pl-qh-so4" firstAttribute="top" secondItem="M0J-zb-dKf" secondAttribute="bottom" constant="324" id="A3m-YV-4tV">
+                                <variation key="heightClass=regular-widthClass=regular" constant="242"/>
+                            </constraint>
                             <constraint firstItem="z3c-K3-COo" firstAttribute="top" secondItem="wnP-zf-9ZK" secondAttribute="bottom" constant="190" id="DmX-ZZ-Qba"/>
+                            <constraint firstItem="8kx-Jg-bai" firstAttribute="leading" secondItem="z3c-K3-COo" secondAttribute="trailing" constant="8" symbolic="YES" id="Lca-eM-XHW">
+                                <variation key="heightClass=regular-widthClass=regular" constant="7"/>
+                            </constraint>
+                            <constraint firstItem="M0J-zb-dKf" firstAttribute="baseline" secondItem="8kx-Jg-bai" secondAttribute="baseline" id="UX2-S7-nuP">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="8kx-Jg-bai" secondAttribute="trailing" constant="-17" id="aVL-rl-R3H">
+                                <variation key="heightClass=regular-widthClass=regular" constant="-16"/>
+                            </constraint>
                             <constraint firstAttribute="centerX" secondItem="z3c-K3-COo" secondAttribute="centerX" constant="-0.5" id="hjn-yZ-fO8"/>
+                            <constraint firstItem="M0J-zb-dKf" firstAttribute="leading" secondItem="jie-4x-cOW" secondAttribute="leading" id="ozQ-B9-Hja"/>
                             <constraint firstItem="z3c-K3-COo" firstAttribute="leading" secondItem="jie-4x-cOW" secondAttribute="leadingMargin" constant="103" id="s8H-4U-EtO"/>
                             <constraint firstItem="4pl-qh-so4" firstAttribute="top" secondItem="z3c-K3-COo" secondAttribute="bottom" constant="8" id="sIE-F6-dG3"/>
+                            <constraint firstItem="M0J-zb-dKf" firstAttribute="top" secondItem="wnP-zf-9ZK" secondAttribute="bottom" constant="303" id="uZ9-Ie-hKE">
+                                <variation key="heightClass=regular-widthClass=regular" constant="385"/>
+                            </constraint>
+                            <constraint firstItem="M0J-zb-dKf" firstAttribute="firstBaseline" secondItem="8kx-Jg-bai" secondAttribute="firstBaseline" id="xJf-nB-UB1">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="z3c-K3-COo"/>
+                                <exclude reference="M0J-zb-dKf"/>
+                                <exclude reference="8kx-Jg-bai"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="sIE-F6-dG3"/>
+                                <exclude reference="3n9-XN-CLG"/>
                                 <exclude reference="4hV-y8-Mp9"/>
+                                <exclude reference="99h-V3-3Uo"/>
                                 <exclude reference="DmX-ZZ-Qba"/>
                                 <exclude reference="hjn-yZ-fO8"/>
                                 <exclude reference="s8H-4U-EtO"/>
+                                <exclude reference="8fN-za-jlp"/>
+                                <exclude reference="UX2-S7-nuP"/>
+                                <exclude reference="ozQ-B9-Hja"/>
+                                <exclude reference="uZ9-Ie-hKE"/>
+                                <exclude reference="xJf-nB-UB1"/>
+                                <exclude reference="A2z-vj-A2e"/>
+                                <exclude reference="Lca-eM-XHW"/>
+                                <exclude reference="aVL-rl-R3H"/>
+                                <exclude reference="A3m-YV-4tV"/>
+                                <exclude reference="sIE-F6-dG3"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="subviews">
                                 <include reference="z3c-K3-COo"/>
+                                <include reference="M0J-zb-dKf"/>
+                                <include reference="8kx-Jg-bai"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="sIE-F6-dG3"/>
+                                <include reference="3n9-XN-CLG"/>
                                 <include reference="4hV-y8-Mp9"/>
+                                <include reference="99h-V3-3Uo"/>
                                 <include reference="DmX-ZZ-Qba"/>
                                 <include reference="hjn-yZ-fO8"/>
                                 <include reference="s8H-4U-EtO"/>
+                                <include reference="8fN-za-jlp"/>
+                                <include reference="UX2-S7-nuP"/>
+                                <include reference="ozQ-B9-Hja"/>
+                                <include reference="uZ9-Ie-hKE"/>
+                                <include reference="xJf-nB-UB1"/>
+                                <include reference="A2z-vj-A2e"/>
+                                <include reference="Lca-eM-XHW"/>
+                                <include reference="aVL-rl-R3H"/>
+                                <include reference="A3m-YV-4tV"/>
+                                <include reference="sIE-F6-dG3"/>
                             </mask>
                         </variation>
                     </view>
@@ -303,11 +371,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4K6-l9-eMp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="257.25" y="-927.75"/>
+            <point key="canvasLocation" x="296.25" y="-927.75"/>
         </scene>
     </scenes>
     <resources>
+        <image name="left_arrow.png" width="640" height="487"/>
         <image name="profile.png" width="500" height="500"/>
+        <image name="right_arrow.png" width="640" height="487"/>
         <image name="test.png" width="256" height="256"/>
     </resources>
 </document>
