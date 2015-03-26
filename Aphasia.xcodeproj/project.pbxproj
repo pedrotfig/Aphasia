@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EEAF0191AC4943D00923593 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1EEAF0181AC4943D00923593 /* Settings.bundle */; };
 		EB0713CC1AC3291B002B9645 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB0713CB1AC3291B002B9645 /* Images.xcassets */; };
 		EB0713E71AC32CE1002B9645 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = EB0713E91AC32CE1002B9645 /* test.png */; };
 		EB0713F81AC3325E002B9645 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0713F71AC3325E002B9645 /* MainMenuViewController.m */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1EEAF0181AC4943D00923593 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		EB0713CB1AC3291B002B9645 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		EB0713E81AC32CE1002B9645 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/test.png; sourceTree = "<group>"; };
 		EB0713EA1AC32CE2002B9645 /* pt */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pt; path = pt.lproj/test.png; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 		EB5367281AC1E4290000B7F3 = {
 			isa = PBXGroup;
 			children = (
+				1EEAF0181AC4943D00923593 /* Settings.bundle */,
 				EB0713F51AC33215002B9645 /* ViewControllers */,
 				EB0713EC1AC3308F002B9645 /* Audio */,
 				EB0713E41AC32CBE002B9645 /* Images */,
@@ -260,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EEAF0191AC4943D00923593 /* Settings.bundle in Resources */,
 				EB5367401AC1E4290000B7F3 /* Main.storyboard in Resources */,
 				EB0713E71AC32CE1002B9645 /* test.png in Resources */,
 				EBC0DC961AC47D4000B924E3 /* ImageCell.xib in Resources */,
