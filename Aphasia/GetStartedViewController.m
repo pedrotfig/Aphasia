@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 B-B-BOOM!. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "GetStartedViewController.h"
 
-@interface ViewController ()
+@interface GetStartedViewController ()
 
 @end
 
-@implementation ViewController
+@implementation GetStartedViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

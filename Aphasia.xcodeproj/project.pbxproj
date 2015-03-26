@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB0713CC1AC3291B002B9645 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB0713CB1AC3291B002B9645 /* Images.xcassets */; };
+		EB0713E71AC32CE1002B9645 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = EB0713E91AC32CE1002B9645 /* test.png */; };
+		EB0713F81AC3325E002B9645 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0713F71AC3325E002B9645 /* MainMenuViewController.m */; };
+		EB0713FB1AC332B1002B9645 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0713FA1AC332B1002B9645 /* SettingsViewController.m */; };
+		EB0713FE1AC33321002B9645 /* BoardViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0713FD1AC33321002B9645 /* BoardViewerViewController.m */; };
+		EB0714011AC33336002B9645 /* BoardEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0714001AC33336002B9645 /* BoardEditorViewController.m */; };
+		EB0714051AC3350C002B9645 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = EB0714041AC3350C002B9645 /* profile.png */; };
+		EB45BBB61AC321B3005CE9BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB45BBB81AC321B3005CE9BE /* Localizable.strings */; };
 		EB5367371AC1E4290000B7F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5367361AC1E4290000B7F3 /* main.m */; };
 		EB53673A1AC1E4290000B7F3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5367391AC1E4290000B7F3 /* AppDelegate.m */; };
-		EB53673D1AC1E4290000B7F3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB53673C1AC1E4290000B7F3 /* ViewController.m */; };
+		EB53673D1AC1E4290000B7F3 /* GetStartedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB53673C1AC1E4290000B7F3 /* GetStartedViewController.m */; };
 		EB5367401AC1E4290000B7F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB53673E1AC1E4290000B7F3 /* Main.storyboard */; };
-		EB5367421AC1E4290000B7F3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB5367411AC1E4290000B7F3 /* Images.xcassets */; };
 		EB5367451AC1E4290000B7F3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5367431AC1E4290000B7F3 /* LaunchScreen.xib */; };
 		EB5367511AC1E4290000B7F3 /* AphasiaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5367501AC1E4290000B7F3 /* AphasiaTests.m */; };
 /* End PBXBuildFile section */
@@ -27,15 +34,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB0713CB1AC3291B002B9645 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
+		EB0713E81AC32CE1002B9645 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/test.png; sourceTree = "<group>"; };
+		EB0713EA1AC32CE2002B9645 /* pt */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pt; path = pt.lproj/test.png; sourceTree = "<group>"; };
+		EB0713EB1AC32CE3002B9645 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/test.png; sourceTree = "<group>"; };
+		EB0713EE1AC330DF002B9645 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/audio0.m4a; sourceTree = "<group>"; };
+		EB0713F01AC330E0002B9645 /* pt */ = {isa = PBXFileReference; lastKnownFileType = file; name = pt; path = pt.lproj/audio0.m4a; sourceTree = "<group>"; };
+		EB0713F11AC330E1002B9645 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/audio0.m4a; sourceTree = "<group>"; };
+		EB0713F61AC3325E002B9645 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		EB0713F71AC3325E002B9645 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		EB0713F91AC332B1002B9645 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		EB0713FA1AC332B1002B9645 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		EB0713FC1AC33321002B9645 /* BoardViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardViewerViewController.h; sourceTree = "<group>"; };
+		EB0713FD1AC33321002B9645 /* BoardViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardViewerViewController.m; sourceTree = "<group>"; };
+		EB0713FF1AC33336002B9645 /* BoardEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardEditorViewController.h; sourceTree = "<group>"; };
+		EB0714001AC33336002B9645 /* BoardEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardEditorViewController.m; sourceTree = "<group>"; };
+		EB0714041AC3350C002B9645 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		EB45BBB21AC31F95005CE9BE /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Main.strings; sourceTree = "<group>"; };
+		EB45BBB31AC31F95005CE9BE /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		EB45BBB71AC321B3005CE9BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EB45BBB91AC321C8005CE9BE /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EB5367311AC1E4290000B7F3 /* Aphasia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aphasia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB5367351AC1E4290000B7F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB5367361AC1E4290000B7F3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EB5367381AC1E4290000B7F3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EB5367391AC1E4290000B7F3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EB53673B1AC1E4290000B7F3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EB53673C1AC1E4290000B7F3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EB53673B1AC1E4290000B7F3 /* GetStartedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GetStartedViewController.h; path = Aphasia/GetStartedViewController.h; sourceTree = "<group>"; };
+		EB53673C1AC1E4290000B7F3 /* GetStartedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GetStartedViewController.m; path = Aphasia/GetStartedViewController.m; sourceTree = "<group>"; };
 		EB53673F1AC1E4290000B7F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EB5367411AC1E4290000B7F3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EB5367441AC1E4290000B7F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EB53674A1AC1E4290000B7F3 /* AphasiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AphasiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB53674F1AC1E4290000B7F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,9 +86,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB0713E41AC32CBE002B9645 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				EB0714041AC3350C002B9645 /* profile.png */,
+				EB0713E91AC32CE1002B9645 /* test.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		EB0713EC1AC3308F002B9645 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				EB0713EF1AC330DF002B9645 /* audio0.m4a */,
+			);
+			name = Audio;
+			sourceTree = "<group>";
+		};
+		EB0713F51AC33215002B9645 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EB53673B1AC1E4290000B7F3 /* GetStartedViewController.h */,
+				EB53673C1AC1E4290000B7F3 /* GetStartedViewController.m */,
+				EB0713F61AC3325E002B9645 /* MainMenuViewController.h */,
+				EB0713F71AC3325E002B9645 /* MainMenuViewController.m */,
+				EB0713F91AC332B1002B9645 /* SettingsViewController.h */,
+				EB0713FA1AC332B1002B9645 /* SettingsViewController.m */,
+				EB0713FC1AC33321002B9645 /* BoardViewerViewController.h */,
+				EB0713FD1AC33321002B9645 /* BoardViewerViewController.m */,
+				EB0713FF1AC33336002B9645 /* BoardEditorViewController.h */,
+				EB0714001AC33336002B9645 /* BoardEditorViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		EB5367281AC1E4290000B7F3 = {
 			isa = PBXGroup;
 			children = (
+				EB0713F51AC33215002B9645 /* ViewControllers */,
+				EB0713EC1AC3308F002B9645 /* Audio */,
+				EB0713E41AC32CBE002B9645 /* Images */,
 				EB5367331AC1E4290000B7F3 /* Aphasia */,
 				EB53674D1AC1E4290000B7F3 /* AphasiaTests */,
 				EB5367321AC1E4290000B7F3 /* Products */,
@@ -81,12 +144,10 @@
 		EB5367331AC1E4290000B7F3 /* Aphasia */ = {
 			isa = PBXGroup;
 			children = (
+				EB0713CB1AC3291B002B9645 /* Images.xcassets */,
 				EB5367381AC1E4290000B7F3 /* AppDelegate.h */,
 				EB5367391AC1E4290000B7F3 /* AppDelegate.m */,
-				EB53673B1AC1E4290000B7F3 /* ViewController.h */,
-				EB53673C1AC1E4290000B7F3 /* ViewController.m */,
 				EB53673E1AC1E4290000B7F3 /* Main.storyboard */,
-				EB5367411AC1E4290000B7F3 /* Images.xcassets */,
 				EB5367431AC1E4290000B7F3 /* LaunchScreen.xib */,
 				EB5367341AC1E4290000B7F3 /* Supporting Files */,
 			);
@@ -96,6 +157,7 @@
 		EB5367341AC1E4290000B7F3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EB45BBB81AC321B3005CE9BE /* Localizable.strings */,
 				EB5367351AC1E4290000B7F3 /* Info.plist */,
 				EB5367361AC1E4290000B7F3 /* main.m */,
 			);
@@ -182,6 +244,7 @@
 			knownRegions = (
 				en,
 				Base,
+				pt,
 			);
 			mainGroup = EB5367281AC1E4290000B7F3;
 			productRefGroup = EB5367321AC1E4290000B7F3 /* Products */;
@@ -200,8 +263,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB5367401AC1E4290000B7F3 /* Main.storyboard in Resources */,
+				EB0713E71AC32CE1002B9645 /* test.png in Resources */,
+				EB0713CC1AC3291B002B9645 /* Images.xcassets in Resources */,
+				EB45BBB61AC321B3005CE9BE /* Localizable.strings in Resources */,
+				EB0714051AC3350C002B9645 /* profile.png in Resources */,
 				EB5367451AC1E4290000B7F3 /* LaunchScreen.xib in Resources */,
-				EB5367421AC1E4290000B7F3 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +285,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB53673D1AC1E4290000B7F3 /* ViewController.m in Sources */,
+				EB0713F81AC3325E002B9645 /* MainMenuViewController.m in Sources */,
+				EB53673D1AC1E4290000B7F3 /* GetStartedViewController.m in Sources */,
+				EB0714011AC33336002B9645 /* BoardEditorViewController.m in Sources */,
+				EB0713FB1AC332B1002B9645 /* SettingsViewController.m in Sources */,
+				EB0713FE1AC33321002B9645 /* BoardViewerViewController.m in Sources */,
 				EB53673A1AC1E4290000B7F3 /* AppDelegate.m in Sources */,
 				EB5367371AC1E4290000B7F3 /* main.m in Sources */,
 			);
@@ -244,10 +314,41 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		EB0713E91AC32CE1002B9645 /* test.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB0713E81AC32CE1002B9645 /* Base */,
+				EB0713EA1AC32CE2002B9645 /* pt */,
+				EB0713EB1AC32CE3002B9645 /* en */,
+			);
+			name = test.png;
+			sourceTree = "<group>";
+		};
+		EB0713EF1AC330DF002B9645 /* audio0.m4a */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB0713EE1AC330DF002B9645 /* Base */,
+				EB0713F01AC330E0002B9645 /* pt */,
+				EB0713F11AC330E1002B9645 /* en */,
+			);
+			name = audio0.m4a;
+			sourceTree = "<group>";
+		};
+		EB45BBB81AC321B3005CE9BE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB45BBB71AC321B3005CE9BE /* en */,
+				EB45BBB91AC321C8005CE9BE /* pt */,
+			);
+			name = Localizable.strings;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		EB53673E1AC1E4290000B7F3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				EB53673F1AC1E4290000B7F3 /* Base */,
+				EB45BBB21AC31F95005CE9BE /* pt */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -256,6 +357,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				EB5367441AC1E4290000B7F3 /* Base */,
+				EB45BBB31AC31F95005CE9BE /* pt */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -348,6 +450,7 @@
 				INFOPLIST_FILE = Aphasia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -358,6 +461,7 @@
 				INFOPLIST_FILE = Aphasia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -414,6 +518,7 @@
 				EB5367561AC1E4290000B7F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB5367571AC1E4290000B7F3 /* Build configuration list for PBXNativeTarget "AphasiaTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +527,7 @@
 				EB5367591AC1E4290000B7F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
