@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E2B6FD21AC5E20200CE62A4 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2B6FD11AC5E20200CE62A4 /* CategoriesViewController.m */; };
+		1E2B6FD51AC5E21500CE62A4 /* BoardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2B6FD41AC5E21500CE62A4 /* BoardDetailViewController.m */; };
+		1E2B6FD81AC5E22D00CE62A4 /* SwipeableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2B6FD71AC5E22D00CE62A4 /* SwipeableCell.m */; };
 		1EEAF0191AC4943D00923593 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1EEAF0181AC4943D00923593 /* Settings.bundle */; };
 		EB0713CC1AC3291B002B9645 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB0713CB1AC3291B002B9645 /* Images.xcassets */; };
 		EB0713E71AC32CE1002B9645 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = EB0713E91AC32CE1002B9645 /* test.png */; };
 		EB0713F81AC3325E002B9645 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0713F71AC3325E002B9645 /* MainMenuViewController.m */; };
-		EB0713FE1AC33321002B9645 /* BoardViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0713FD1AC33321002B9645 /* BoardViewerViewController.m */; };
-		EB0714011AC33336002B9645 /* BoardEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0714001AC33336002B9645 /* BoardEditorViewController.m */; };
 		EB0714051AC3350C002B9645 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = EB0714041AC3350C002B9645 /* profile.png */; };
 		EB37D9CB1AC49B48004F6C7A /* right_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = EB37D9CA1AC49B48004F6C7A /* right_arrow.png */; };
 		EB37D9CD1AC49DB7004F6C7A /* left_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = EB37D9CC1AC49DB7004F6C7A /* left_arrow.png */; };
@@ -24,6 +25,7 @@
 		EB5367401AC1E4290000B7F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB53673E1AC1E4290000B7F3 /* Main.storyboard */; };
 		EB5367451AC1E4290000B7F3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5367431AC1E4290000B7F3 /* LaunchScreen.xib */; };
 		EB5367511AC1E4290000B7F3 /* AphasiaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5367501AC1E4290000B7F3 /* AphasiaTests.m */; };
+		EBB11D1F1AC5F9E70030B387 /* BoardViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB11D1E1AC5F9E70030B387 /* BoardViewerViewController.m */; };
 		EBC0DC961AC47D4000B924E3 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBC0DC951AC47D4000B924E3 /* ImageCell.xib */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E2B6FD01AC5E20200CE62A4 /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
+		1E2B6FD11AC5E20200CE62A4 /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
+		1E2B6FD31AC5E21500CE62A4 /* BoardDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardDetailViewController.h; sourceTree = "<group>"; };
+		1E2B6FD41AC5E21500CE62A4 /* BoardDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardDetailViewController.m; sourceTree = "<group>"; };
+		1E2B6FD61AC5E22D00CE62A4 /* SwipeableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeableCell.h; sourceTree = "<group>"; };
+		1E2B6FD71AC5E22D00CE62A4 /* SwipeableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeableCell.m; sourceTree = "<group>"; };
 		1EEAF0181AC4943D00923593 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		EB0713CB1AC3291B002B9645 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		EB0713E81AC32CE1002B9645 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/test.png; sourceTree = "<group>"; };
@@ -48,10 +56,6 @@
 		EB0713F11AC330E1002B9645 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/audio0.m4a; sourceTree = "<group>"; };
 		EB0713F61AC3325E002B9645 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		EB0713F71AC3325E002B9645 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
-		EB0713FC1AC33321002B9645 /* BoardViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardViewerViewController.h; sourceTree = "<group>"; };
-		EB0713FD1AC33321002B9645 /* BoardViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardViewerViewController.m; sourceTree = "<group>"; };
-		EB0713FF1AC33336002B9645 /* BoardEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardEditorViewController.h; sourceTree = "<group>"; };
-		EB0714001AC33336002B9645 /* BoardEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardEditorViewController.m; sourceTree = "<group>"; };
 		EB0714041AC3350C002B9645 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 		EB37D9CA1AC49B48004F6C7A /* right_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_arrow.png; sourceTree = "<group>"; };
 		EB37D9CC1AC49DB7004F6C7A /* left_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_arrow.png; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 		EB53674A1AC1E4290000B7F3 /* AphasiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AphasiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB53674F1AC1E4290000B7F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB5367501AC1E4290000B7F3 /* AphasiaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AphasiaTests.m; sourceTree = "<group>"; };
+		EBB11D1D1AC5F9E70030B387 /* BoardViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardViewerViewController.h; sourceTree = "<group>"; };
+		EBB11D1E1AC5F9E70030B387 /* BoardViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardViewerViewController.m; sourceTree = "<group>"; };
 		EBC0DC951AC47D4000B924E3 /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +100,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E2B6FCF1AC5E18F00CE62A4 /* BoardEditor */ = {
+			isa = PBXGroup;
+			children = (
+				1E2B6FD01AC5E20200CE62A4 /* CategoriesViewController.h */,
+				1E2B6FD11AC5E20200CE62A4 /* CategoriesViewController.m */,
+				1E2B6FD31AC5E21500CE62A4 /* BoardDetailViewController.h */,
+				1E2B6FD41AC5E21500CE62A4 /* BoardDetailViewController.m */,
+				1E2B6FD61AC5E22D00CE62A4 /* SwipeableCell.h */,
+				1E2B6FD71AC5E22D00CE62A4 /* SwipeableCell.m */,
+			);
+			name = BoardEditor;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		EB0713E41AC32CBE002B9645 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,14 +138,12 @@
 		EB0713F51AC33215002B9645 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				EBB11D1D1AC5F9E70030B387 /* BoardViewerViewController.h */,
+				EBB11D1E1AC5F9E70030B387 /* BoardViewerViewController.m */,
 				EB53673B1AC1E4290000B7F3 /* GetStartedViewController.h */,
 				EB53673C1AC1E4290000B7F3 /* GetStartedViewController.m */,
 				EB0713F61AC3325E002B9645 /* MainMenuViewController.h */,
 				EB0713F71AC3325E002B9645 /* MainMenuViewController.m */,
-				EB0713FC1AC33321002B9645 /* BoardViewerViewController.h */,
-				EB0713FD1AC33321002B9645 /* BoardViewerViewController.m */,
-				EB0713FF1AC33336002B9645 /* BoardEditorViewController.h */,
-				EB0714001AC33336002B9645 /* BoardEditorViewController.m */,
 			);
 			name = ViewControllers;
 			path = ..;
@@ -163,6 +181,7 @@
 		EB5367331AC1E4290000B7F3 /* Aphasia */ = {
 			isa = PBXGroup;
 			children = (
+				1E2B6FCF1AC5E18F00CE62A4 /* BoardEditor */,
 				EB398FF81AC596DC0099BD07 /* Model */,
 				EB0713F51AC33215002B9645 /* ViewControllers */,
 				EB0713EC1AC3308F002B9645 /* Audio */,
@@ -316,10 +335,12 @@
 				EB398FFB1AC597380099BD07 /* ImagesCollection.m in Sources */,
 				EB0713F81AC3325E002B9645 /* MainMenuViewController.m in Sources */,
 				EB53673D1AC1E4290000B7F3 /* GetStartedViewController.m in Sources */,
-				EB0714011AC33336002B9645 /* BoardEditorViewController.m in Sources */,
-				EB0713FE1AC33321002B9645 /* BoardViewerViewController.m in Sources */,
+				1E2B6FD21AC5E20200CE62A4 /* CategoriesViewController.m in Sources */,
 				EB53673A1AC1E4290000B7F3 /* AppDelegate.m in Sources */,
 				EB5367371AC1E4290000B7F3 /* main.m in Sources */,
+				EBB11D1F1AC5F9E70030B387 /* BoardViewerViewController.m in Sources */,
+				1E2B6FD51AC5E21500CE62A4 /* BoardDetailViewController.m in Sources */,
+				1E2B6FD81AC5E22D00CE62A4 /* SwipeableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
