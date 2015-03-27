@@ -13,9 +13,11 @@
 
 
 @interface CategoriesViewController () <CategorieCellDelegate> {
-    NSMutableArray *_objects;
+
 }
 @property (nonatomic, strong) NSMutableArray *cellsCurrentlyEditing;
+@property (nonatomic, strong) NSMutableArray *objects;
+
 @end
 
 @implementation CategoriesViewController
@@ -25,7 +27,7 @@
     [super viewDidLoad];
     
     //1
-    _objects = [NSMutableArray array];
+    self.objects = [NSMutableArray array];
     self.cellsCurrentlyEditing = [NSMutableArray array];
     
     
@@ -33,7 +35,7 @@
     NSInteger numberOfItems = 30;
     for (NSInteger i = 1; i <= numberOfItems; i++) {
         NSString *item = [NSString stringWithFormat:@"Longer Title Item #%d", i];
-        [_objects addObject:item];
+        [self.objects addObject:item];
     }
 }
 
@@ -46,7 +48,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return self.objects.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -68,14 +70,14 @@
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
-    return NO;
+    return true;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         //1
-        [_objects removeObjectAtIndex:indexPath.row];
+        [self.objects removeObjectAtIndex:indexPath.row];
         
         //2
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -90,7 +92,7 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
+        NSDate *object = self.objects[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
     }
 }
