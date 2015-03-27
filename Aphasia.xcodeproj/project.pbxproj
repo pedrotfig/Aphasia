@@ -17,7 +17,6 @@
 		EB37D9CB1AC49B48004F6C7A /* right_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = EB37D9CA1AC49B48004F6C7A /* right_arrow.png */; };
 		EB37D9CD1AC49DB7004F6C7A /* left_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = EB37D9CC1AC49DB7004F6C7A /* left_arrow.png */; };
 		EB398FFB1AC597380099BD07 /* ImagesCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = EB398FFA1AC597380099BD07 /* ImagesCollection.m */; };
-		EB3990001AC5BE440099BD07 /* KRLCollectionViewGridLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EB398FFF1AC5BE440099BD07 /* KRLCollectionViewGridLayout.m */; };
 		EB45BBB61AC321B3005CE9BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB45BBB81AC321B3005CE9BE /* Localizable.strings */; };
 		EB5367371AC1E4290000B7F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5367361AC1E4290000B7F3 /* main.m */; };
 		EB53673A1AC1E4290000B7F3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5367391AC1E4290000B7F3 /* AppDelegate.m */; };
@@ -58,8 +57,6 @@
 		EB37D9CC1AC49DB7004F6C7A /* left_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_arrow.png; sourceTree = "<group>"; };
 		EB398FF91AC597380099BD07 /* ImagesCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesCollection.h; sourceTree = "<group>"; };
 		EB398FFA1AC597380099BD07 /* ImagesCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesCollection.m; sourceTree = "<group>"; };
-		EB398FFE1AC5BE440099BD07 /* KRLCollectionViewGridLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRLCollectionViewGridLayout.h; sourceTree = "<group>"; };
-		EB398FFF1AC5BE440099BD07 /* KRLCollectionViewGridLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRLCollectionViewGridLayout.m; sourceTree = "<group>"; };
 		EB45BBB21AC31F95005CE9BE /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Main.strings; sourceTree = "<group>"; };
 		EB45BBB31AC31F95005CE9BE /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		EB45BBB71AC321B3005CE9BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -137,8 +134,6 @@
 		EB398FF81AC596DC0099BD07 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EB398FFE1AC5BE440099BD07 /* KRLCollectionViewGridLayout.h */,
-				EB398FFF1AC5BE440099BD07 /* KRLCollectionViewGridLayout.m */,
 				EB398FF91AC597380099BD07 /* ImagesCollection.h */,
 				EB398FFA1AC597380099BD07 /* ImagesCollection.m */,
 			);
@@ -322,7 +317,6 @@
 				EB0713F81AC3325E002B9645 /* MainMenuViewController.m in Sources */,
 				EB53673D1AC1E4290000B7F3 /* GetStartedViewController.m in Sources */,
 				EB0714011AC33336002B9645 /* BoardEditorViewController.m in Sources */,
-				EB3990001AC5BE440099BD07 /* KRLCollectionViewGridLayout.m in Sources */,
 				EB0713FE1AC33321002B9645 /* BoardViewerViewController.m in Sources */,
 				EB53673A1AC1E4290000B7F3 /* AppDelegate.m in Sources */,
 				EB5367371AC1E4290000B7F3 /* main.m in Sources */,
