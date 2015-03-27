@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ImagesCollection.h"
 
 @interface BoardViewerViewController : UIViewController
 
