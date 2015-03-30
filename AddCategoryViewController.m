@@ -1,35 +1,33 @@
 //
-//  DetailsViewController.m
+//  AddCategoryViewController.m
 //  Aphasia
 //
-//  Created by Elias Ayache on 29/03/15.
+//  Created by Elias Ayache on 30/03/15.
 //  Copyright (c) 2015 B-B-BOOM!. All rights reserved.
 //
 
-#import "DetailsViewController.h"
+#import "AddCategoryViewController.h"
+#import "TableViewController.h"
 
-@interface DetailsViewController ()
+@interface AddCategoryViewController ()
 
 @end
 
-@implementation DetailsViewController
+@implementation AddCategoryViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    /*
-    _TitleLabel.text = _DetailModal[0];
-    _DescriptionLabel.text = _DetailModal[1];
-    _ImageView.image = [UIImage imageNamed:_DetailModal[2]];
-     */
-    
-    self.navigationItem.title = _DetailModal[0];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(IBAction)submit{
+    [StoredData addCategoryWithName:titleCategory.text];
+    UIViewController *backView = [self.storyboard instantiateViewControllerWithIdentifier:@"Category"];
+    [self.navigationController pushViewController:backView animated:YES];
 }
 
 /*

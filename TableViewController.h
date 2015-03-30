@@ -7,13 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StoredData.h"
 
-@interface TableViewController : UITableViewController{
-
-IBOutlet UITextField *titleCategory;
-}
-@property (nonatomic, strong) NSMutableArray *Title;
-@property (nonatomic, strong) NSMutableArray *Description;
-@property (nonatomic, strong) NSMutableArray *Images;
+@interface TableViewController : UITableViewController
 
 @end
