@@ -22,6 +22,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *rightArrow;
 @property (weak, nonatomic) IBOutlet UIButton *leftArrow;
 
+@property (strong, nonatomic) NSArray *caregoriesForTesting;
+@property (strong, nonatomic) NSArray *imagesForTesting;
+
 @end
 
 @implementation BoardViewerViewController
@@ -29,6 +32,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [self useImagesForTesting];
+    
     // Initializing imagesCollection
     self.imagesCollection = [[ImagesCollection alloc] initWithImages:[[NSArray alloc] init] andImagesPerPage:IMAGES_PER_PAGE];
     self.currentPage = 0;
@@ -100,7 +106,6 @@
 }
 
 - (IBAction)onRightArrowClicked:(id)sender {
-    NSLog(@"Right Arrow Clicked");
     if (self.currentPage+1 < [self.pages count]) {
         self.currentPage++;
         [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:self.currentPage] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
@@ -109,7 +114,6 @@
 
 
 - (IBAction)onLeftArrowClick:(id)sender {
-    NSLog(@"Left Arrow Clicked");
     if (self.currentPage > 0) {
         self.currentPage--;
         [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:self.currentPage] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
@@ -118,6 +122,55 @@
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
+
+- (void)useImagesForTesting {
+    self.caregoriesForTesting = @[
+                                  @"1,2,3",
+                                  @"3,4",
+                                  @"1",
+                                  @"4",
+                                  @"None",
+                                  ];
+    self.imagesForTesting = @[
+                              @"image0#0",
+                              @"image1#0",
+                              @"image2#0",
+                              @"image3#1",
+                              @"image4#1",
+                              @"image5#2",
+                              @"image6#3",
+                              @"image7#4",
+                              ];
+    
+    
+    NSString *imageName;
+    NSUInteger imageCategory;
+    NSArray *accessibleCategories;
+    
+    NSArray *parsedString;
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.numberStyle = NSNumberFormatterDecimalStyle;
+    
+    for (id imageInfo in self.imagesForTesting) {
+        parsedString = [imageInfo componentsSeparatedByString:@"#"];
+        imageName = parsedString[0];
+        imageCategory = [[formatter numberFromString:parsedString[1]] unsignedIntegerValue];
+        
+        /*
+        accessibleCategories = [self.caregoriesForTesting[imageCategory] componentsSeparatedByString:@","];
+        
+        for (NSString *img in self.imagesForTesting) {
+            for (id category in accessibleCategories) {
+                if ([[formatter numberFromString:[img componentsSeparatedByString:@"#"][1]] unsignedIntegerValue] == [[formatter numberFromString:category] unsignedIntegerValue]) {
+                    
+                }
+            }
+        }
+        */
+    }
+}
+
+
 
 
 @end

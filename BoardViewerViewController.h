@@ -11,4 +11,7 @@
 
 @interface BoardViewerViewController : UIViewController
 
+@property (readonly, strong, nonatomic) NSArray *caregoriesForTesting;
+@property (readonly, strong, nonatomic) NSArray *imagesForTesting;
+
 @end
