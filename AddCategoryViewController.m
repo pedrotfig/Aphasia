@@ -24,12 +24,6 @@
     // Dispose of any resources that can be recreated.
 }
 
--(IBAction)submit{
-    [StoredData addCategoryWithName:titleCategory.text];
-    UIViewController *backView = [self.storyboard instantiateViewControllerWithIdentifier:@"Category"];
-    [self.navigationController pushViewController:backView animated:YES];
-}
-
 /*
 #pragma mark - Navigation
 
@@ -39,5 +33,12 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+/*  
+    TODO: store new category on scene transition
+    To store new category, use the command:
+ 
+    [StoredData addCategoryWithName:titleCategory.text];
+ */
 
 @end
