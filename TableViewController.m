@@ -54,14 +54,14 @@
     return cell;
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+ -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([[segue identifier]isEqualToString:@"ShowDetails"]){
         DetailsViewController *detailviewcontroller = [segue destinationViewController];
         
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
         
-        int row = [myIndexPath row];
-        detailviewcontroller.DetailModal = @[((AphasiaCategory *)([StoredData listOfCategories][row])).categoryName,((AphasiaCategory *)([StoredData listOfCategories][row])).imageName];
+        //int row = [myIndexPath row];
+        //detailviewcontroller.DetailModal = @[((AphasiaCategory *)([StoredData listOfCategories][row])).categoryName,((AphasiaCategory *)([StoredData listOfCategories][row])).imageName];
     }
 }
 

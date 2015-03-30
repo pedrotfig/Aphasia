@@ -23,11 +23,7 @@
     
     self.detailImages = [[NSMutableArray alloc] initWithObjects:@"profile.png", @"profile.png", @"profile.png", @"profile.png", @"profile.png",@"profile.png", @"profile.png", @"profile.png",@"profile.png", @"profile.png",nil];
     
-    /*
-    _TitleLabel.text = _DetailModal[0];
-    _DescriptionLabel.text = _DetailModal[1];
-    _ImageView.image = [UIImage imageNamed:_DetailModal[2]];
-     */
+    self.collectionView.backgroundColor = [UIColor whiteColor];
     
 }
 
