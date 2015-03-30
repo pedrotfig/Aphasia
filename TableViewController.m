@@ -19,16 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    self.Title = [[NSMutableArray alloc] initWithObjects:@"category_a", @"category_b", @"category_c", @"category_d", @"category_e", nil];
-    self.Description = [[NSMutableArray alloc] initWithObjects:@"a", @"b", @"c", @"d", @"e", nil];
-    self.Images = [[NSMutableArray alloc] initWithObjects:@"category_emotion.png", @"category_emotion.png", @"category_emotion.png", @"category_emotion.png", @"category_emotion.png", nil];
-    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addItem:)];
     
 }
@@ -47,7 +37,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [self.Title count];
+    return [[StoredData listOfCategories] count];
 }
 
 
@@ -56,24 +46,22 @@
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-
-    cell.TitleLabel.text = [self.Title objectAtIndex:indexPath.row];
-    cell.DescriptionLabel.text = [self.Description objectAtIndex:indexPath.row];
-
-    int rowImage = [indexPath row];
-    cell.ThumbImage.image = [UIImage imageNamed:self.Images[rowImage]];
-
+    
+    int row = [indexPath row];
+    cell.TitleLabel.text = ((AphasiaCategory *)([StoredData listOfCategories][row])).categoryName;
+    cell.ThumbImage.image = [UIImage imageNamed:((AphasiaCategory *)([StoredData listOfCategories][row])).imageName];
+     
     return cell;
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+ -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([[segue identifier]isEqualToString:@"ShowDetails"]){
         DetailsViewController *detailviewcontroller = [segue destinationViewController];
         
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
         
-        int row = [myIndexPath row];
-        detailviewcontroller.detailImages = @[self.Title[row],self.Description[row],self.Images[row]];
+        //int row = [myIndexPath row];
+        //detailviewcontroller.DetailModal = @[((AphasiaCategory *)([StoredData listOfCategories][row])).categoryName,((AphasiaCategory *)([StoredData listOfCategories][row])).imageName];
     }
 }
 
@@ -90,9 +78,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [self.Title removeObjectAtIndex:indexPath.row];
-        [self.Description removeObjectAtIndex:indexPath.row];
-        [self.Images removeObjectAtIndex:indexPath.row];
+        [StoredData removeCategoryWithIndex:indexPath.row];
 
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
 
@@ -105,15 +91,7 @@
     UIViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"newCategory"];
     [self.navigationController pushViewController:newView animated:YES];
 }
-/*
--(void)addItems{
-    [self.Title addObject:titleCategory.text];
-    [self.Description addObject:titleCategory.text];
-    [self.Images addObject:@"category_emotion"];
-    
-    [self.tableView reloadData];
-}
-*/
+
 /*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {

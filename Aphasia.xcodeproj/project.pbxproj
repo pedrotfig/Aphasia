@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DB189E11AC9BCE500D8EE69 /* AddCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB189E01AC9BCE500D8EE69 /* AddCategoryViewController.m */; };
+		1DB189E41AC9D30400D8EE69 /* StoredData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB189E31AC9D30400D8EE69 /* StoredData.m */; };
+		1DB189E71AC9D54700D8EE69 /* AphasiaCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB189E61AC9D54700D8EE69 /* AphasiaCategory.m */; };
 		1EEAF0191AC4943D00923593 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1EEAF0181AC4943D00923593 /* Settings.bundle */; };
 		7A556E2D1AC8DDB2001BB7C4 /* category_emotion.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A556E2C1AC8DDB2001BB7C4 /* category_emotion.png */; };
 		7A556E311AC8F7A9001BB7C4 /* icon_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A556E301AC8F7A9001BB7C4 /* icon_home.png */; };
@@ -44,6 +47,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DB189DF1AC9BCE500D8EE69 /* AddCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCategoryViewController.h; sourceTree = "<group>"; };
+		1DB189E01AC9BCE500D8EE69 /* AddCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCategoryViewController.m; sourceTree = "<group>"; };
+		1DB189E21AC9D30400D8EE69 /* StoredData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoredData.h; sourceTree = "<group>"; };
+		1DB189E31AC9D30400D8EE69 /* StoredData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoredData.m; sourceTree = "<group>"; };
+		1DB189E51AC9D54700D8EE69 /* AphasiaCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AphasiaCategory.h; sourceTree = "<group>"; };
+		1DB189E61AC9D54700D8EE69 /* AphasiaCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AphasiaCategory.m; sourceTree = "<group>"; };
 		1EEAF0181AC4943D00923593 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		7A556E2C1AC8DDB2001BB7C4 /* category_emotion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = category_emotion.png; sourceTree = "<group>"; };
 		7A556E301AC8F7A9001BB7C4 /* icon_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_home.png; sourceTree = "<group>"; };
@@ -118,6 +127,8 @@
 				7A620C891AC8B22A0038C4EA /* TableViewCell.m */,
 				7A620C971AC8BC150038C4EA /* DetailsViewController.h */,
 				7A620C981AC8BC150038C4EA /* DetailsViewController.m */,
+				1DB189DF1AC9BCE500D8EE69 /* AddCategoryViewController.h */,
+				1DB189E01AC9BCE500D8EE69 /* AddCategoryViewController.m */,
 			);
 			name = BoardEditor;
 			path = ..;
@@ -356,8 +367,10 @@
 				EB5367371AC1E4290000B7F3 /* main.m in Sources */,
 				EB6D327D1AC9877B006C918B /* ImagesDataStructureNode.m in Sources */,
 				7A620C8A1AC8B22A0038C4EA /* TableViewCell.m in Sources */,
+				1DB189E71AC9D54700D8EE69 /* AphasiaCategory.m in Sources */,
 				7A620C991AC8BC150038C4EA /* DetailsViewController.m in Sources */,
 				7A620C841AC8AF500038C4EA /* TableViewController.m in Sources */,
+				1DB189E11AC9BCE500D8EE69 /* AddCategoryViewController.m in Sources */,
 				EBB11D1F1AC5F9E70030B387 /* BoardViewerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
