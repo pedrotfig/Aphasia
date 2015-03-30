@@ -73,7 +73,7 @@
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
         
         int row = [myIndexPath row];
-        detailviewcontroller.DetailModal = @[self.Title[row],self.Description[row],self.Images[row]];
+        detailviewcontroller.detailImages = @[self.Title[row],self.Description[row],self.Images[row]];
     }
 }
 
