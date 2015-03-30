@@ -31,7 +31,7 @@
 		EB5367401AC1E4290000B7F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB53673E1AC1E4290000B7F3 /* Main.storyboard */; };
 		EB5367451AC1E4290000B7F3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5367431AC1E4290000B7F3 /* LaunchScreen.xib */; };
 		EB5367511AC1E4290000B7F3 /* AphasiaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5367501AC1E4290000B7F3 /* AphasiaTests.m */; };
-		EB6D327D1AC9877B006C918B /* ImagesDataStructureNode.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6D327C1AC9877B006C918B /* ImagesDataStructureNode.m */; };
+		EB84017B1AC9E91A00BF73EF /* ImagesDataStructureNode.m in Sources */ = {isa = PBXBuildFile; fileRef = EB84017A1AC9E91A00BF73EF /* ImagesDataStructureNode.m */; };
 		EBB11D1F1AC5F9E70030B387 /* BoardViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB11D1E1AC5F9E70030B387 /* BoardViewerViewController.m */; };
 		EBC0DC961AC47D4000B924E3 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBC0DC951AC47D4000B924E3 /* ImageCell.xib */; };
 /* End PBXBuildFile section */
@@ -93,8 +93,8 @@
 		EB53674A1AC1E4290000B7F3 /* AphasiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AphasiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB53674F1AC1E4290000B7F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB5367501AC1E4290000B7F3 /* AphasiaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AphasiaTests.m; sourceTree = "<group>"; };
-		EB6D327B1AC9877B006C918B /* ImagesDataStructureNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesDataStructureNode.h; sourceTree = "<group>"; };
-		EB6D327C1AC9877B006C918B /* ImagesDataStructureNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesDataStructureNode.m; sourceTree = "<group>"; };
+		EB8401791AC9E91A00BF73EF /* ImagesDataStructureNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesDataStructureNode.h; sourceTree = "<group>"; };
+		EB84017A1AC9E91A00BF73EF /* ImagesDataStructureNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesDataStructureNode.m; sourceTree = "<group>"; };
 		EBB11D1D1AC5F9E70030B387 /* BoardViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardViewerViewController.h; sourceTree = "<group>"; };
 		EBB11D1E1AC5F9E70030B387 /* BoardViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardViewerViewController.m; sourceTree = "<group>"; };
 		EBC0DC951AC47D4000B924E3 /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
@@ -175,10 +175,14 @@
 		EB398FF81AC596DC0099BD07 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EB8401791AC9E91A00BF73EF /* ImagesDataStructureNode.h */,
+				EB84017A1AC9E91A00BF73EF /* ImagesDataStructureNode.m */,
 				EB398FF91AC597380099BD07 /* ImagesCollection.h */,
 				EB398FFA1AC597380099BD07 /* ImagesCollection.m */,
-				EB6D327B1AC9877B006C918B /* ImagesDataStructureNode.h */,
-				EB6D327C1AC9877B006C918B /* ImagesDataStructureNode.m */,
+				1DB189E21AC9D30400D8EE69 /* StoredData.h */,
+				1DB189E31AC9D30400D8EE69 /* StoredData.m */,
+				1DB189E51AC9D54700D8EE69 /* AphasiaCategory.h */,
+				1DB189E61AC9D54700D8EE69 /* AphasiaCategory.m */,
 			);
 			name = Model;
 			path = ..;
@@ -363,9 +367,10 @@
 				EB398FFB1AC597380099BD07 /* ImagesCollection.m in Sources */,
 				EB0713F81AC3325E002B9645 /* MainMenuViewController.m in Sources */,
 				EB53673D1AC1E4290000B7F3 /* GetStartedViewController.m in Sources */,
+				EB84017B1AC9E91A00BF73EF /* ImagesDataStructureNode.m in Sources */,
 				EB53673A1AC1E4290000B7F3 /* AppDelegate.m in Sources */,
 				EB5367371AC1E4290000B7F3 /* main.m in Sources */,
-				EB6D327D1AC9877B006C918B /* ImagesDataStructureNode.m in Sources */,
+				1DB189E41AC9D30400D8EE69 /* StoredData.m in Sources */,
 				7A620C8A1AC8B22A0038C4EA /* TableViewCell.m in Sources */,
 				1DB189E71AC9D54700D8EE69 /* AphasiaCategory.m in Sources */,
 				7A620C991AC8BC150038C4EA /* DetailsViewController.m in Sources */,
