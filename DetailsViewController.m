@@ -22,7 +22,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    // Do any additional setup after loading the view
+    
+    //setup after loading the view
     
     self.navigationItem.title = self.detailModal.categoryName;
     
@@ -33,21 +34,22 @@
     
     self.collectionView.allowsMultipleSelection = YES;
     
-     self.barButton =  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(onTrashButtonTouched:)];
+    self.barButton =  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(onTrashButtonTouched:)];
     
     self.selectedElements = [[NSMutableArray alloc]init];
     
 }
 
+// method that handles add or trash icon
 - (void)setTrashEnabled:(BOOL)trashEnabled{
-
+    
     if (trashEnabled) {
         self.trashIsEnable = YES;
         self.barButton =  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(onTrashButtonTouched:)];
-
+        
     }else{
-         self.trashIsEnable = NO;
-         self.barButton =  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(onTrashButtonTouched:)];
+        self.trashIsEnable = NO;
+        self.barButton =  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(onTrashButtonTouched:)];
     }
     
 }
@@ -63,12 +65,14 @@
     return 1;
 }
 
+//get elements to show on "database"
 -(NSInteger)collectionView:(UICollectionView *)collectionView
     numberOfItemsInSection:(NSInteger)section
 {
     return [[self.detailModal listOfElements] count];
 }
 
+//set cell
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"DetailCell";
     
@@ -77,29 +81,15 @@
     UIImageView *elementCellImage = (UIImageView *)[cell viewWithTag:100];
     elementCellImage.image = [UIImage imageNamed:[self.detailModal getElementAtIndex:[indexPath row]].imageName];
     
-  /*  if ([cell isSelected]) {
-        cell.backgroundColor = [UIColor grayColor];
-    }else{
-        cell.backgroundColor = [UIColor whiteColor];
-    }*/
-    
-    
     return cell;
 }
 
+//space between cells
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
     return UIEdgeInsetsMake(7, 7, 7, 7);
 }
 
-- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
-{
-    if (self.trashIsEnable) {
-        return NO;
-    } else {
-        return YES;
-    }
-}
-
+//handle if its treating an add event or a trash event
 - (IBAction)onTrashButtonTouched:(id)sender {
     
     if(self.trashIsEnable){
@@ -122,15 +112,16 @@
         
     }else{
         NSLog(@"adicionar");
-    
+        
         //ADD
     }
 }
 
+//highlight settings
 - (BOOL)collectionView:(UICollectionView *)collectionView
 shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath
 {
-        return YES;
+    return YES;
 }
 
 - (BOOL)collectionView:(UICollectionView *)collectionView
@@ -153,29 +144,30 @@ didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
 
 #pragma mark cell manipulation
 
+//remove the elements selected from data
 -(void)removeDetailCells{
-    
     
     for(id remove in self.selectedElements){
         [self.detailModal removeElementWithIndex:[remove unsignedIntegerValue]];
         [self.collectionView reloadData];
         
     }
-  
+    
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    //has one element selected
+    //has one element selected so shows the trash as item bar
     
-        NSLog(@"select");
+    NSLog(@"select");
     
     [self setTrashEnabled:YES];
-
-        // Determine the selected items by using the indexPath
-        NSNumber *selectedElement = [NSNumber numberWithInteger:[indexPath row]];
-        // Add the selected item into the array
-        [self.selectedElements addObject:selectedElement];
+    
+    // Determine the selected items by using the indexPath
+    NSNumber *selectedElement = [NSNumber numberWithInteger:[indexPath row]];
+    
+    // Add the selected item into the array
+    [self.selectedElements addObject:selectedElement];
     
 }
 
@@ -184,6 +176,7 @@ didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
     NSNumber *deSelectedElement = [NSNumber numberWithInteger:[indexPath row]];
     [self.selectedElements removeObject:deSelectedElement];
     
+    //if there is any item selected show trash item
     if([self.selectedElements count]>0){
         [self setTrashEnabled:YES];
         
