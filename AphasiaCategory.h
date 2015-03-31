@@ -11,20 +11,23 @@
 
 @interface AphasiaCategory : NSObject
 
-@property (readonly, nonatomic) NSString *categoryName;
-@property (readonly, nonatomic) NSString *imageName;
-@property (readonly, nonatomic) NSString *audioName;
-@property (readonly, nonatomic) NSMutableArray *elements;
+@property (readonly, strong, nonatomic) NSString *categoryName;
+@property (readonly, strong, nonatomic) NSString *imageName;
+@property (readonly, strong, nonatomic) NSString *audioName;
+@property (readonly, strong, nonatomic) NSString *accessableCategories;
+@property (readonly, strong, nonatomic) NSMutableArray *elements;
+
 
 - (void)restoreToDefaultElements;
 - (void)setCategoryName:(NSString *)categoryName;
 - (void)setImageName:(NSString *)imageName;
 - (void)setAudioName:(NSString *)audioName;
-- (void)addElementWithName:(NSString *)elementName andImage:imageName andAudio:audioName;
+- (void)setAccessableCategories:(NSString *)relations;
+- (void)addElementWithName:(NSString *)elementName andImage:(NSString *)imageName andAudio:(NSString *)audioName;
 - (void)removeElementWithIndex:(NSUInteger)elementIndex;
 - (NSArray *)listOfElements;
 - (AphasiaElement *)getElementAtIndex:(NSUInteger)elementIndex;
-- (instancetype)initWithName:(NSString *)categoryName andImage:(NSString *)imageName andAudio:(id)audioName;
+- (instancetype)initWithName:(NSString *)categoryName andImage:(NSString *)imageName andAudio:(NSString *)audioName andRelations:(NSString *)accessableCategories;
 - (instancetype)init;
 
 @end
