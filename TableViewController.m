@@ -18,9 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addItem:)];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -85,11 +82,6 @@
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
-}
-
-- (void)addItem:sender{
-    UIViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"newCategory"];
-    [self.navigationController pushViewController:newView animated:YES];
 }
 
 /*

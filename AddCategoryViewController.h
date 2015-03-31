@@ -13,4 +13,7 @@
     IBOutlet UITextField *titleCategory;
 }
 
+@property (nonatomic) NSMutableArray *doneNewCategory;
+@property (weak, nonatomic) IBOutlet UIButton *addPhoto;
+
 @end
