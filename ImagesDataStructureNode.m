@@ -10,9 +10,10 @@
 
 @interface ImagesDataStructureNode ()
 
-@property (strong, nonatomic) NSString *imageName;
-@property (nonatomic) NSUInteger category;
-@property (strong, nonatomic) NSMutableArray *accessibleNodes;
+@property (readwrite, copy, nonatomic) NSString *imageName;
+@property (readwrite, strong, nonatomic) NSMutableArray *accessibleNodes;
+
+@property (readwrite, nonatomic) NSUInteger category;
 
 @end
 
@@ -23,14 +24,18 @@
 }
 
 - (void)setImageName:(NSString *)imageName {
-    self.imageName = imageName;
+    _imageName = imageName;
+}
+
+- (void)setAccessibleNodes:(NSMutableArray *)accessibleNodes {
+    _accessibleNodes = [[NSMutableArray alloc] initWithArray:accessibleNodes copyItems:YES];
 }
 
 - (instancetype)initWithImage:(NSString *)imageName {
     self = [super init];
     if (self) {
         [self setImageName:imageName];
-        self.accessibleNodes = [[NSMutableArray alloc] init];
+        [self setAccessibleNodes:[[NSMutableArray alloc] init]];
     }
     return self;
 }

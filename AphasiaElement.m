@@ -10,9 +10,9 @@
 
 @interface AphasiaElement ()
 
-@property (nonatomic) NSString *name;
-@property (nonatomic) NSString *imageName;
-@property (nonatomic) NSString *audioName;
+@property (readwrite, copy, nonatomic) NSString *name;
+@property (readwrite, copy, nonatomic) NSString *imageName;
+@property (readwrite, copy, nonatomic) NSString *audioName;
 
 @end
 

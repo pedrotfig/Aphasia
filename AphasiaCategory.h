@@ -11,9 +11,9 @@
 
 @interface AphasiaCategory : NSObject
 
-@property (readonly, strong, nonatomic) NSString *categoryName;
-@property (readonly, strong, nonatomic) NSString *imageName;
-@property (readonly, strong, nonatomic) NSString *audioName;
+@property (readonly, copy, nonatomic) NSString *categoryName;
+@property (readonly, copy, nonatomic) NSString *imageName;
+@property (readonly, copy, nonatomic) NSString *audioName;
 @property (readonly, strong, nonatomic) NSArray *accessableCategories;
 @property (readonly, strong, nonatomic) NSMutableArray *elements;
 

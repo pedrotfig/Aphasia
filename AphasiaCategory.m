@@ -10,18 +10,18 @@
 
 @interface AphasiaCategory ()
 
-@property (strong, nonatomic) NSString *categoryName;
-@property (strong, nonatomic) NSString *imageName;
-@property (strong, nonatomic) NSString *audioName;
-@property (strong, nonatomic) NSArray *accessableCategories;
-@property (strong, nonatomic) NSMutableArray *elements;
+@property (readwrite, copy, nonatomic) NSString *categoryName;
+@property (readwrite, copy, nonatomic) NSString *imageName;
+@property (readwrite, copy, nonatomic) NSString *audioName;
+@property (readwrite, strong, nonatomic) NSArray *accessableCategories;
+@property (readwrite, strong, nonatomic) NSMutableArray *elements;
 
 @end
 
 @implementation AphasiaCategory
 
 - (void)restoreToDefaultElements {
-    _elements = [[NSMutableArray alloc] init];
+    self.elements = [[NSMutableArray alloc] init];
     [self addElementWithName:@"element0" andImage:@"profile" andAudio:@"audio0"];
     [self addElementWithName:@"element1" andImage:@"profile" andAudio:@"audio0"];
     [self addElementWithName:@"element2" andImage:@"profile" andAudio:@"audio0"];
@@ -48,11 +48,11 @@
 }
 
 - (void)addElementWithName:(NSString *)elementName andImage:(NSString *)imageName andAudio:(NSString *)audioName {
-    [_elements addObject:[[AphasiaElement alloc] initWithName:elementName andImage:imageName andAudio:audioName]];
+    [self.elements addObject:[[AphasiaElement alloc] initWithName:elementName andImage:imageName andAudio:audioName]];
 }
 
 - (void) removeElementWithIndex:(NSUInteger)elementIndex {
-    [_elements removeObjectAtIndex:elementIndex];
+    [self.elements removeObjectAtIndex:elementIndex];
 }
 
 - (NSArray *)listOfElements {
