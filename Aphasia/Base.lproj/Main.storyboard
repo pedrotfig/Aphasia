@@ -317,9 +317,11 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="lRS-Jk-fnC">
                         <barButtonItem key="backBarButtonItem" title="Categories" id="o3P-8C-lEU"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="g4a-EP-gyY"/>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ag-oq-v3c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <barButtonItem title="Item" id="0rp-En-40K"/>
             </objects>
             <point key="canvasLocation" x="1789" y="492"/>
         </scene>
