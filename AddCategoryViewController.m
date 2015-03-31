@@ -29,7 +29,7 @@
 
 
 - (IBAction)doneNewCategory:(id)sender {
-    [StoredData addCategoryWithName:titleCategory.text andImage:@"category_emotion" andAudio:@"audio0"];
+    [StoredData addCategoryWithName:titleCategory.text andImage:@"category_emotion" andAudio:@"audio0" andRelations:nil];
     [self.navigationController popViewControllerAnimated:TRUE];
 }
 
