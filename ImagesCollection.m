@@ -12,13 +12,29 @@
 
 @interface ImagesCollection()
 
+@property (strong, nonatomic) NSArray *categories;
+@property (nonatomic) NSUInteger imagesPerPage;
+
 @end
 
 @implementation ImagesCollection
 
-- (NSUInteger) getNumberOfPages {
+- (void)initializeDataStructure {
+    NSString *imageName;
+    NSUInteger imageCategory;
+    NSArray *accessibleCategories;
+    
+    NSArray *parsedString;
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.numberStyle = NSNumberFormatterDecimalStyle;
+    
+    
+    
+}
+
+- (NSUInteger)getNumberOfPages {
     div_t result;
-    result = div([self.images count], self.imagesPerPage);
+    result = div([self.categories count], self.imagesPerPage);
     
     if (result.rem == 0) return result.quot;
     else return result.quot + 1;
@@ -28,32 +44,23 @@
     _imagesPerPage = imagesPerPage;
 }
 
-- (void)setImages:(NSArray *)images {
-    _images = [[NSArray alloc] initWithArray:images];
+- (void)setCategories:(NSArray *)categories {
+    _categories = [[NSArray alloc] initWithArray:categories];
 }
 
-- (instancetype)initWithImages:(NSArray *)images andImagesPerPage:(NSUInteger)imagesPerPage {
+- (instancetype)initWithCategories:(NSArray *)categories andImagesPerPage:(NSUInteger)imagesPerPage {
     self = [super init];
     if (self) {
-        [self setImages:images];
+        [self setCategories:categories];
         [self setImagesPerPage:imagesPerPage];
+        [self initializeDataStructure];
     }
     return self;
 }
 
 - (instancetype)init {
-    return [self initWithImages:[[NSArray alloc] init] andImagesPerPage:DEFAULT_IMAGES_PER_PAGE];
+    return [self initWithCategories:[[NSArray alloc] init] andImagesPerPage:DEFAULT_IMAGES_PER_PAGE];
 }
 
-#pragma mark Class Methods
-
-+ (NSUInteger)getNumberOfPagesWithNumberOfImages:(NSUInteger)totalOfImages andImagesPerPage:(NSUInteger)imagesPerPage {
-    
-    div_t result;
-    result = div(totalOfImages, imagesPerPage);
-    
-    if (result.rem == 0) return result.quot;
-    else return result.quot + 1;
-}
 
 @end

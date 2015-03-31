@@ -22,9 +22,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *rightArrow;
 @property (weak, nonatomic) IBOutlet UIButton *leftArrow;
 
-@property (strong, nonatomic) NSArray *caregoriesForTesting;
-@property (strong, nonatomic) NSArray *imagesForTesting;
-
 @end
 
 @implementation BoardViewerViewController
@@ -32,11 +29,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    [self useImagesForTesting];
-    
+        
     // Initializing imagesCollection
-    self.imagesCollection = [[ImagesCollection alloc] initWithImages:[[NSArray alloc] init] andImagesPerPage:IMAGES_PER_PAGE];
+    self.imagesCollection = [[ImagesCollection alloc] initWithCategories:[StoredData listOfCategories] andImagesPerPage:IMAGES_PER_PAGE];
     self.currentPage = 0;
     
     // Setting Collection View and Flow Layout
@@ -123,6 +118,7 @@
     }
 }
 
+/*
 - (void)useImagesForTesting {
     self.caregoriesForTesting = @[
                                   @"1,2,3",
@@ -142,34 +138,8 @@
                               @"image7#4",
                               ];
     
-    
-    NSString *imageName;
-    NSUInteger imageCategory;
-    NSArray *accessibleCategories;
-    
-    NSArray *parsedString;
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    formatter.numberStyle = NSNumberFormatterDecimalStyle;
-    
-    for (id imageInfo in self.imagesForTesting) {
-        parsedString = [imageInfo componentsSeparatedByString:@"#"];
-        imageName = parsedString[0];
-        imageCategory = [[formatter numberFromString:parsedString[1]] unsignedIntegerValue];
-        
-        /*
-        accessibleCategories = [self.caregoriesForTesting[imageCategory] componentsSeparatedByString:@","];
-        
-        for (NSString *img in self.imagesForTesting) {
-            for (id category in accessibleCategories) {
-                if ([[formatter numberFromString:[img componentsSeparatedByString:@"#"][1]] unsignedIntegerValue] == [[formatter numberFromString:category] unsignedIntegerValue]) {
-                    
-                }
-            }
-        }
-        */
-    }
 }
-
+*/
 
 
 

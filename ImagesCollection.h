@@ -7,24 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ImagesDataStructureNode.h"
 
 @interface ImagesCollection : NSObject
 
-@property (strong, readonly, nonatomic) NSArray *images;
+@property (strong, readonly, nonatomic) NSArray *categories;
 @property (readonly, nonatomic) NSUInteger imagesPerPage;
 
-- (instancetype)initWithImages:(NSArray *)images andImagesPerPage:(NSUInteger)imagesPerPage;
-
-- (instancetype)init;
-
-- (void)setImages:(NSArray *)images;
+- (void)setCategories:(NSArray *)categories;
 
 - (void)setImagesPerPage:(NSUInteger)imagesPerPage;
 
 - (NSUInteger) getNumberOfPages;
 
-#pragma mark Class Methods
+- (instancetype)initWithCategories:(NSArray *)categories andImagesPerPage:(NSUInteger)imagesPerPage;
 
-+ (NSUInteger) getNumberOfPagesWithNumberOfImages:(NSUInteger)totalOfImages andImagesPerPage:(NSUInteger)imagesPerPage;
+- (instancetype)init;
 
 @end
