@@ -29,7 +29,7 @@
     formatter.numberStyle = NSNumberFormatterDecimalStyle;
     
     
-
+    
 }
 
 - (NSUInteger)getNumberOfPages {

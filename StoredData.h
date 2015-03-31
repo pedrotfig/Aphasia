@@ -12,7 +12,7 @@
 @interface StoredData : NSObject
 
 + (void)restoreToDefaultCategories;
-+ (void)addCategoryWithName:(NSString *)categoryName andImage:(NSString *)imageName andAudio:(NSString *)audioName andRelations:(NSString *)accessableCategories;
++ (void)addCategoryWithName:(NSString *)categoryName andImage:(NSString *)imageName andAudio:(NSString *)audioName andRelations:(NSArray *)accessableCategories;
 + (void)removeCategoryWithIndex:(NSUInteger)categoryIndex;
 + (NSArray *)listOfCategories;
 + (AphasiaCategory *)getCategoryAtIndex:(NSUInteger)categoryIndex;

@@ -13,7 +13,7 @@
 @property (strong, nonatomic) NSString *categoryName;
 @property (strong, nonatomic) NSString *imageName;
 @property (strong, nonatomic) NSString *audioName;
-@property (strong, nonatomic) NSString *accessableCategories;
+@property (strong, nonatomic) NSArray *accessableCategories;
 @property (strong, nonatomic) NSMutableArray *elements;
 
 @end
@@ -43,8 +43,8 @@
     _audioName = audioName;
 }
 
-- (void)setAccessableCategories:(NSString *)relations {
-    _accessableCategories = relations;
+- (void)setAccessableCategories:(NSArray *)accessableCategories {
+    _accessableCategories = [[NSArray alloc] initWithArray:accessableCategories copyItems:YES];
 }
 
 - (void)addElementWithName:(NSString *)elementName andImage:(NSString *)imageName andAudio:(NSString *)audioName {
@@ -63,7 +63,7 @@
     return [self listOfElements][elementIndex];
 }
 
-- (instancetype)initWithName:(NSString *)categoryName andImage:(NSString *)imageName andAudio:(id)audioName andRelations:(NSString *)accessableCategories {
+- (instancetype)initWithName:(NSString *)categoryName andImage:(NSString *)imageName andAudio:(id)audioName andRelations:(NSArray *)accessableCategories {
     self = [super init];
     if (self) {
         [self setCategoryName:categoryName];
@@ -75,7 +75,7 @@
 }
 
 - (instancetype)init {
-    return [self initWithName:@"" andImage:@"" andAudio:@"" andRelations:@"0"];
+    return [self initWithName:@"" andImage:@"" andAudio:@"" andRelations:nil];
 }
 
 @end
