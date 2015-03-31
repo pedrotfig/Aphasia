@@ -15,5 +15,6 @@
 + (void)addCategoryWithName:(NSString *)categoryName;
 + (void)removeCategoryWithIndex:(NSUInteger)categoryIndex;
 + (NSArray *)listOfCategories;
++ (AphasiaCategory *)getCategoryAtIndex:(NSUInteger)categoryIndex;
 
 @end

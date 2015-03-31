@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StoredData.h"
 
 @interface DetailsViewController : UICollectionViewController
 <UICollectionViewDataSource, UICollectionViewDelegate>
 
-@property (strong,nonatomic) NSMutableArray *detailImages;
+@property (strong,nonatomic) AphasiaCategory *detailModal;
 
 @end

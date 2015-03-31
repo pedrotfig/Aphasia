@@ -47,7 +47,7 @@
     
     // Configure the cell...
     
-    int row = [indexPath row];
+    NSInteger row = [indexPath row];
     cell.TitleLabel.text = ((AphasiaCategory *)([StoredData listOfCategories][row])).categoryName;
     cell.ThumbImage.image = [UIImage imageNamed:((AphasiaCategory *)([StoredData listOfCategories][row])).imageName];
      
@@ -60,8 +60,8 @@
         
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
         
-        //int row = [myIndexPath row];
-        //detailviewcontroller.DetailModal = @[((AphasiaCategory *)([StoredData listOfCategories][row])).categoryName,((AphasiaCategory *)([StoredData listOfCategories][row])).imageName];
+        NSInteger row = [myIndexPath row];
+        detailviewcontroller.detailModal = [StoredData getCategoryAtIndex:row];
     }
 }
 

@@ -19,9 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view
     
-    self.navigationItem.title = @"Detail";
-    
-    self.detailImages = [[NSMutableArray alloc] initWithObjects:@"profile.png", @"profile.png", @"profile.png", @"profile.png", @"profile.png",@"profile.png", @"profile.png", @"profile.png",@"profile.png", @"profile.png",nil];
+    self.navigationItem.title = self.detailModal.categoryName;
     
     self.collectionView.backgroundColor = [UIColor whiteColor];
     
@@ -41,7 +39,7 @@
 -(NSInteger)collectionView:(UICollectionView *)collectionView
     numberOfItemsInSection:(NSInteger)section
 {
-    return [[self detailImages] count];
+    return [[self.detailModal listOfElements] count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -50,7 +48,7 @@
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
     UIImageView *recipeImageView = (UIImageView *)[cell viewWithTag:100];
-    recipeImageView.image = [UIImage imageNamed:[self.detailImages objectAtIndex:indexPath.row]];
+    recipeImageView.image = [UIImage imageNamed:[self.detailModal getElementAtIndex:[indexPath row]].imageName];
     
     return cell;
 }
@@ -64,7 +62,7 @@
 -(void)removeDetailCell:(int)i {
     
     [self.collectionView performBatchUpdates:^{
-        [self.detailImages removeObjectAtIndex:i];
+        //[self.detailImages removeObjectAtIndex:i];
         NSIndexPath *indexPath =[NSIndexPath indexPathForRow:i inSection:0];
         [self.collectionView deleteItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
         
