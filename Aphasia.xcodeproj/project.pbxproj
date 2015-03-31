@@ -53,14 +53,15 @@
 		1DB189E31AC9D30400D8EE69 /* StoredData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoredData.m; sourceTree = "<group>"; };
 		1DB189E51AC9D54700D8EE69 /* AphasiaCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AphasiaCategory.h; sourceTree = "<group>"; };
 		1DB189E61AC9D54700D8EE69 /* AphasiaCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AphasiaCategory.m; sourceTree = "<group>"; };
+		1ECD4B3F1ACAFB3000B41C8C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		1EEAF0181AC4943D00923593 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		7A556E2C1AC8DDB2001BB7C4 /* category_emotion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = category_emotion.png; sourceTree = "<group>"; };
 		7A556E301AC8F7A9001BB7C4 /* icon_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_home.png; sourceTree = "<group>"; };
 		7A556E321AC8F85B001BB7C4 /* icon_edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_edit.png; sourceTree = "<group>"; };
 		7A620C821AC8AF4F0038C4EA /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		7A620C831AC8AF4F0038C4EA /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
-		7A620C881AC8B22A0038C4EA /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
-		7A620C891AC8B22A0038C4EA /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		7A620C881AC8B22A0038C4EA /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewCell.h; path = ../TableViewCell.h; sourceTree = "<group>"; };
+		7A620C891AC8B22A0038C4EA /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewCell.m; path = ../TableViewCell.m; sourceTree = "<group>"; };
 		7A620C971AC8BC150038C4EA /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		7A620C981AC8BC150038C4EA /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		EB0713CB1AC3291B002B9645 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
@@ -118,20 +119,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1E2B6FCF1AC5E18F00CE62A4 /* BoardEditor */ = {
+		1ECD4B3D1ACAF7FA00B41C8C /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				7A620C821AC8AF4F0038C4EA /* TableViewController.h */,
-				7A620C831AC8AF4F0038C4EA /* TableViewController.m */,
 				7A620C881AC8B22A0038C4EA /* TableViewCell.h */,
 				7A620C891AC8B22A0038C4EA /* TableViewCell.m */,
-				7A620C971AC8BC150038C4EA /* DetailsViewController.h */,
-				7A620C981AC8BC150038C4EA /* DetailsViewController.m */,
-				1DB189DF1AC9BCE500D8EE69 /* AddCategoryViewController.h */,
-				1DB189E01AC9BCE500D8EE69 /* AddCategoryViewController.m */,
 			);
-			name = BoardEditor;
-			path = ..;
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		EB0713E41AC32CBE002B9645 /* Images */ = {
@@ -161,6 +155,12 @@
 		EB0713F51AC33215002B9645 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7A620C821AC8AF4F0038C4EA /* TableViewController.h */,
+				7A620C831AC8AF4F0038C4EA /* TableViewController.m */,
+				7A620C971AC8BC150038C4EA /* DetailsViewController.h */,
+				7A620C981AC8BC150038C4EA /* DetailsViewController.m */,
+				1DB189DF1AC9BCE500D8EE69 /* AddCategoryViewController.h */,
+				1DB189E01AC9BCE500D8EE69 /* AddCategoryViewController.m */,
 				EBB11D1D1AC5F9E70030B387 /* BoardViewerViewController.h */,
 				EBB11D1E1AC5F9E70030B387 /* BoardViewerViewController.m */,
 				EB53673B1AC1E4290000B7F3 /* GetStartedViewController.h */,
@@ -210,7 +210,7 @@
 		EB5367331AC1E4290000B7F3 /* Aphasia */ = {
 			isa = PBXGroup;
 			children = (
-				1E2B6FCF1AC5E18F00CE62A4 /* BoardEditor */,
+				1ECD4B3D1ACAF7FA00B41C8C /* Cell */,
 				EB398FF81AC596DC0099BD07 /* Model */,
 				EB0713F51AC33215002B9645 /* ViewControllers */,
 				EB0713EC1AC3308F002B9645 /* Audio */,
@@ -434,6 +434,7 @@
 			children = (
 				EB53673F1AC1E4290000B7F3 /* Base */,
 				EB45BBB21AC31F95005CE9BE /* pt */,
+				1ECD4B3F1ACAFB3000B41C8C /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
