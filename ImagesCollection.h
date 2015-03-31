@@ -11,7 +11,7 @@
 
 @interface ImagesCollection : NSObject
 
-@property (strong, readonly, nonatomic) NSArray *categories;
+@property (readonly, strong, nonatomic) NSArray *categories;
 @property (readonly, nonatomic) NSUInteger imagesPerPage;
 
 - (void)setCategories:(NSArray *)categories;

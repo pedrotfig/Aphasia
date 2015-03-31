@@ -10,12 +10,14 @@
 
 @interface ImagesDataStructureNode : NSObject
 
-@property (readonly, strong, nonatomic) NSString *imageName;
+@property (readonly, copy, nonatomic) NSString *imageName;
 @property (readonly, strong, nonatomic) NSMutableArray *accessibleNodes;
 
 - (void)addAccessibleNodeWithNode:(ImagesDataStructureNode *)node;
 
 - (void)setImageName:(NSString *)imageName;
+
+- (void)setAccessibleNodes:(NSMutableArray *)accessibleNodes;
 
 - (instancetype)initWithImage:(NSString *)imageName;
 

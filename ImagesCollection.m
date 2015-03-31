@@ -12,23 +12,19 @@
 
 @interface ImagesCollection()
 
-@property (strong, nonatomic) NSArray *categories;
-@property (nonatomic) NSUInteger imagesPerPage;
+@property (readwrite, strong, nonatomic) NSArray *categories;
+@property (readwrite, nonatomic) NSUInteger imagesPerPage;
 
 @end
 
 @implementation ImagesCollection
 
 - (void)initializeDataStructure {
-    NSString *imageName;
-    NSUInteger imageCategory;
-    NSArray *accessibleCategories;
+    ImagesDataStructureNode *root = [[ImagesDataStructureNode alloc] initWithImage:self.categories[0]];
     
-    NSArray *parsedString;
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    formatter.numberStyle = NSNumberFormatterDecimalStyle;
-    
-    
+    for (int i = 1; i < [self.categories count]; i++) {
+        
+    }
     
 }
 

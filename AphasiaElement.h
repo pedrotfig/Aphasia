@@ -10,9 +10,9 @@
 
 @interface AphasiaElement : NSObject
 
-@property (readonly, nonatomic) NSString *name;
-@property (readonly, nonatomic) NSString *imageName;
-@property (readonly, nonatomic) NSString *audioName;
+@property (readonly, copy, nonatomic) NSString *name;
+@property (readonly, copy, nonatomic) NSString *imageName;
+@property (readonly, copy, nonatomic) NSString *audioName;
 
 - (void)setName:(NSString *)name;
 - (void)setImageName:(NSString *)imageName;
