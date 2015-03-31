@@ -13,6 +13,4 @@
     IBOutlet UITextField *titleCategory;
 }
 
--(IBAction)submit;
-
 @end

@@ -38,7 +38,7 @@
     TODO: store new category on scene transition
     To store new category, use the command:
  
-    [StoredData addCategoryWithName:titleCategory.text];
+    [StoredData addCategoryWithName:titleCategory.text andImage:@"category_emotion" andAudio:@"audio0"];
  */
 
 @end

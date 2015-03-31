@@ -14,19 +14,19 @@ static NSMutableArray *categories;
  
 + (void)restoreToDefaultCategories {
     categories = [[NSMutableArray alloc] init];
-    [categories addObject:[[AphasiaCategory alloc] initWithName:@"category_a" andImage:@"category_emotion.png" andAudio:@"audioTest"]];
-    [categories addObject:[[AphasiaCategory alloc] initWithName:@"category_b" andImage:@"category_emotion.png" andAudio:@"audioTest"]];
-    [categories addObject:[[AphasiaCategory alloc] initWithName:@"category_c" andImage:@"category_emotion.png" andAudio:@"audioTest"]];
-    [categories addObject:[[AphasiaCategory alloc] initWithName:@"category_d" andImage:@"category_emotion.png" andAudio:@"audioTest"]];
-    [categories addObject:[[AphasiaCategory alloc] initWithName:@"category_e" andImage:@"category_emotion.png" andAudio:@"audioTest"]];
+    [self addCategoryWithName:@"category0" andImage:@"category_emotion" andAudio:@"audioTest"];
+    [self addCategoryWithName:@"category1" andImage:@"category_emotion" andAudio:@"audioTest"];
+    [self addCategoryWithName:@"category2" andImage:@"category_emotion" andAudio:@"audioTest"];
+    [self addCategoryWithName:@"category3" andImage:@"category_emotion" andAudio:@"audioTest"];
+    [self addCategoryWithName:@"category4" andImage:@"category_emotion" andAudio:@"audioTest"];
     
     for (id category in categories) {
         [category restoreToDefaultElements];
     }
 }
 
-+ (void)addCategoryWithName:(NSString *)categoryName {
-    [categories addObject:[[AphasiaCategory alloc] initWithName:categoryName andImage:@"category_emotion.png" andAudio:@"audio0"]];
++ (void)addCategoryWithName:(NSString *)categoryName andImage:(NSString *)imageName andAudio:(NSString *)audioName{
+    [categories addObject:[[AphasiaCategory alloc] initWithName:categoryName andImage:imageName andAudio:audioName]];
 }
 
 + (void)removeCategoryWithIndex:(NSUInteger)categoryIndex {
