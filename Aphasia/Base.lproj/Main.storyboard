@@ -260,7 +260,7 @@
                                 <connections>
                                     <outlet property="ThumbImage" destination="NRr-Y8-mVw" id="ZqO-6e-vzX"/>
                                     <outlet property="TitleLabel" destination="fld-3b-lnd" id="5Mq-4d-OLa"/>
-                                    <segue destination="xOH-H4-5Ry" kind="push" identifier="ShowDetails" id="3Cd-H2-Z0s"/>
+                                    <segue destination="xOH-H4-5Ry" kind="show" identifier="ShowDetails" id="3Cd-H2-Z0s"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
