@@ -9,13 +9,11 @@
 #import "DetailsViewController.h"
 
 @interface DetailsViewController ()
-    @property (weak, nonatomic) IBOutlet UIBarButtonItem *addBarButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *barButton;
 
-  @property (weak, nonatomic) IBOutlet UIBarButtonItem *trashBarButton;
+@property (nonatomic) BOOL trashIsEnable;
 
-    @property (nonatomic) BOOL trashEnabled;
-
-    @property (nonatomic) NSMutableArray *selectedElements;
+@property (nonatomic) NSMutableArray *selectedElements;
 
 @end
 
@@ -30,18 +28,27 @@
     
     self.collectionView.backgroundColor = [UIColor whiteColor];
     
+    [self setTrashEnabled:NO];
+    
     
     self.collectionView.allowsMultipleSelection = YES;
     
-     self.trashBarButton =  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(onTrashButtonTouched:)];
-    
-    //set bar itens
-    self.addBarButton.enabled = YES;
-    self.addBarButton.enabled = YES;
-    self.trashEnabled = NO;
-    self.trashBarButton.enabled= NO;
+     self.barButton =  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(onTrashButtonTouched:)];
     
     self.selectedElements = [[NSMutableArray alloc]init];
+    
+}
+
+- (void)setTrashEnabled:(BOOL)trashEnabled{
+
+    if (trashEnabled) {
+        self.trashIsEnable = YES;
+        self.barButton =  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(onTrashButtonTouched:)];
+
+    }else{
+         self.trashIsEnable = NO;
+         self.barButton =  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(onTrashButtonTouched:)];
+    }
     
 }
 
@@ -70,8 +77,13 @@
     UIImageView *elementCellImage = (UIImageView *)[cell viewWithTag:100];
     elementCellImage.image = [UIImage imageNamed:[self.detailModal getElementAtIndex:[indexPath row]].imageName];
     
-    //cell.backgroundView = [UIColor whiteColor];
-   // cell.selectedBackgroundView = [UIColor grayColor];
+  /*  if ([cell isSelected]) {
+        cell.backgroundColor = [UIColor grayColor];
+    }else{
+        cell.backgroundColor = [UIColor whiteColor];
+    }*/
+    
+    
     return cell;
 }
 
@@ -81,7 +93,7 @@
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
-    if (self.trashEnabled) {
+    if (self.trashIsEnable) {
         return NO;
     } else {
         return YES;
@@ -90,7 +102,7 @@
 
 - (IBAction)onTrashButtonTouched:(id)sender {
     
-    if(self.trashEnabled){
+    if(self.trashIsEnable){
         
         if ([self.selectedElements count] > 0) {
             [self removeDetailCells];
@@ -106,19 +118,38 @@
         // Remove all items from selectedRecipes array
         [self.selectedElements removeAllObjects];
         
-        //set bar itens
-        self.addBarButton.enabled = YES;
-        self.addBarButton.enabled = YES;
-        self.trashEnabled = NO;
-        self.trashBarButton.enabled= NO;
+        [self setTrashEnabled:NO];
         
     }else{
-        
-        // Change shareEnabled to YES and change the button text to DONE
-        self.trashEnabled = YES;
+        NSLog(@"adicionar");
+    
+        //ADD
     }
 }
 
+- (BOOL)collectionView:(UICollectionView *)collectionView
+shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath
+{
+        return YES;
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView
+shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath;
+{
+    return YES;
+}
+
+//quick selected
+- (void)collectionView:(UICollectionView *)colView
+didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell* cell = [colView cellForItemAtIndexPath:indexPath];
+    cell.contentView.backgroundColor = [UIColor grayColor];
+}
+- (void)collectionView:(UICollectionView *)colView
+didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell* cell = [colView cellForItemAtIndexPath:indexPath];
+    cell.contentView.backgroundColor = nil;
+}
 
 #pragma mark cell manipulation
 
@@ -127,47 +158,38 @@
     
     for(id remove in self.selectedElements){
         [self.detailModal removeElementWithIndex:[remove unsignedIntegerValue]];
+        [self.collectionView reloadData];
+        
     }
-    
+  
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     //has one element selected
-   
-    self.addBarButton.enabled = NO;
-    self.addBarButton.enabled = NO;
-    self.trashEnabled = YES;
-    self.trashBarButton.enabled= YES;
-   
-    if (self.trashEnabled) {
+    
+        NSLog(@"select");
+    
+    [self setTrashEnabled:YES];
+
         // Determine the selected items by using the indexPath
         NSNumber *selectedElement = [NSNumber numberWithInteger:[indexPath row]];
         // Add the selected item into the array
         [self.selectedElements addObject:selectedElement];
-    }
+    
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSNumber *deSelectedElement = [NSNumber numberWithInteger:[indexPath row]];
+    [self.selectedElements removeObject:deSelectedElement];
     
     if([self.selectedElements count]>0){
-        self.addBarButton.enabled = NO;
-        self.addBarButton.enabled = NO;
-        self.trashEnabled = YES;
-        self.trashBarButton.enabled= YES;
-        
-        
+        [self setTrashEnabled:YES];
         
     }else{
-        self.addBarButton.enabled = YES;
-        self.addBarButton.enabled = YES;
-        self.trashEnabled = NO;
-        self.trashBarButton.enabled= NO;
+        [self setTrashEnabled:NO];
     }
-    
-    AphasiaElement *deSelectedElement = [self.detailModal getElementAtIndex:[indexPath row]];
-    [self.selectedElements removeObject:deSelectedElement];
     
 }
 
