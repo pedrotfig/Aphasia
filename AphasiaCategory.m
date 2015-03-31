@@ -10,10 +10,11 @@
 
 @interface AphasiaCategory ()
 
-@property (nonatomic) NSString *categoryName;
-@property (nonatomic) NSString *imageName;
-@property (nonatomic) NSString *audioName;
-@property (nonatomic) NSMutableArray *elements;
+@property (strong, nonatomic) NSString *categoryName;
+@property (strong, nonatomic) NSString *imageName;
+@property (strong, nonatomic) NSString *audioName;
+@property (strong, nonatomic) NSArray *accessableCategories;
+@property (strong, nonatomic) NSMutableArray *elements;
 
 @end
 
@@ -42,7 +43,11 @@
     _audioName = audioName;
 }
 
-- (void)addElementWithName:(NSString *)elementName andImage:(id)imageName andAudio:(id)audioName {
+- (void)setAccessableCategories:(NSArray *)accessableCategories {
+    _accessableCategories = [[NSArray alloc] initWithArray:accessableCategories copyItems:YES];
+}
+
+- (void)addElementWithName:(NSString *)elementName andImage:(NSString *)imageName andAudio:(NSString *)audioName {
     [_elements addObject:[[AphasiaElement alloc] initWithName:elementName andImage:imageName andAudio:audioName]];
 }
 
@@ -58,18 +63,19 @@
     return [self listOfElements][elementIndex];
 }
 
-- (instancetype)initWithName:(NSString *)categoryName andImage:(NSString *)imageName andAudio:(id)audioName {
+- (instancetype)initWithName:(NSString *)categoryName andImage:(NSString *)imageName andAudio:(id)audioName andRelations:(NSArray *)accessableCategories {
     self = [super init];
     if (self) {
         [self setCategoryName:categoryName];
         [self setImageName:imageName];
         [self setAudioName:audioName];
+        [self setAccessableCategories:accessableCategories];
     }
     return self;
 }
 
 - (instancetype)init {
-    return [self initWithName:@"" andImage:@"" andAudio:@""];
+    return [self initWithName:@"" andImage:@"" andAudio:@"" andRelations:nil];
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ImagesCollection.h"
+#import "StoredData.h"
 
 @interface BoardViewerViewController : UIViewController
 
