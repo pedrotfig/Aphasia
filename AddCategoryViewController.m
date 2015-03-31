@@ -17,12 +17,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.addPhoto.layer.borderWidth = 5.0f;
+    self.addPhoto.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.addPhoto.layer.cornerRadius = 25.0f;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+- (IBAction)doneNewCategory:(id)sender {
+    [StoredData addCategoryWithName:titleCategory.text andImage:@"category_emotion" andAudio:@"audio0" andRelations:nil];
+    [self.navigationController popViewControllerAnimated:TRUE];
+}
+
+- (IBAction)addPhoto:(id)sender {
+    NSLog(@"addPhotoClicked");
+
+}
+
+
+
 
 /*
 #pragma mark - Navigation
