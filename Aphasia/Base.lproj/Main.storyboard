@@ -393,7 +393,6 @@
                         <outlet property="addPhotoCategory" destination="tTS-wc-zs6" id="izN-FI-30T"/>
                         <outlet property="imageView" destination="tTS-wc-zs6" id="EF4-rY-t0Q"/>
                         <outlet property="recordButton" destination="rhj-ls-Nd6" id="J4E-IB-AMQ"/>
-                        <outlet property="recorderButton" destination="rhj-ls-Nd6" id="hnD-WT-odC"/>
                         <outlet property="stopButton" destination="l3A-bQ-tBA" id="sAe-2i-dGg"/>
                         <outlet property="titleCategory" destination="pTQ-AI-MS9" id="EKh-l4-UKC"/>
                     </connections>

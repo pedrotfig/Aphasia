@@ -5,13 +5,44 @@
   Created by Pedro Figueiredo on 3/25/15.
   Copyright (c) 2015 B-B-BOOM!. All rights reserved.
 */
+
+//Categories
+
 "HELLO" = "Hello";
 "Me" = "Me";
-"Food"= "Food";
-"Drink"= "Drink";
+"Foods"= "Food";
+"Drinks"= "Drink";
 "Greetings"= "Greetings";
 "Pain"= "Pain";
 "Emergency"= "Emergency";
 "Feelings"= "Feelings";
-"Personal needs"= "Personal needs";
+"PersonalNeeds"= "Personal needs";
 "Questions"="Questions";
+"TalkToMe"= "Let's go!";
+
+//Elements
+"Water"= "Water";
+"Milk"= "Milk";
+"Soda"= "Soda";
+"Juice"= "Juice";
+"Banana"= "Banana";
+"Apple"= "Apple";
+"Bread"= "Bread";
+"Hi"= "Hi";
+"Bye"= "Bye";
+"Stomachache"= "Stomachache";
+"Headache"= "Headache";
+"Throat"= "Throat";
+"Hospital"= "Hospital";
+"Police"= "Police";
+"Sick"= "Sick";
+"Happy"= "Happy";
+"Sad"= "Sad";
+"Want"= "Want";
+"Drink"= "Drink";
+"Eat"= "Eat";
+"Bathroom"= "Bathroom";
+"BrushTeeth"= "Brush my teeths";
+"WashHands"= "Wash my hands";
+"TakeBath"= "Take a bath";
+"Time"= "What time is it?";
