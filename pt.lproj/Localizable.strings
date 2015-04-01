@@ -6,4 +6,45 @@
   Copyright (c) 2015 B-B-BOOM!. All rights reserved.
 */
 
+//Categories
 "HELLO" = "Olá";
+"Me" = "Eu";
+"Foods"= "Comida";
+"Drinks"= "Bebiba";
+"Greetings"= "Cumprimentos";
+"Pain"= "Dor";
+"Emergency"= "Emergência";
+"Feelings"= "Emoções";
+"PersonalNeeds"= "Necessidades pessoais";
+"Questions"="Perguntas";
+"TalkToMe"= "Vamos lá!";
+
+//Elements
+
+//Elements
+
+"Water"= "Água";
+"Milk"= "Leite";
+"Soda"= "Refrigerante";
+"Juice"= "Suco";
+"Banana"= "Banana";
+"Apple"= "Maçã";
+"Bread"= "Pão";
+"Hi"= "Oi";
+"Bye"= "Tchau";
+"Stomachache"= "Dor de barriga";
+"Headache"= "de cabeça";
+"Throat"= "de garganta";
+"Hospital"= "Hospital";
+"Police"= "Polícia";
+"Sick"= "Doente";
+"Happy"= "Feliz";
+"Sad"= "Triste";
+"Want"= "Quero";
+"Drink"= "Beber";
+"Eat"= "Comer";
+"Bathroom"= "Banheiro";
+"BrushTeeth"= "Escovar os dentes";
+"WashHands"= "Lavar as mãos";
+"TakeBath"= "Tomar banho";
+"Time"= "Que horas são?";

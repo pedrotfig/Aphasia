@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -43,7 +43,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test.png" translatesAutoresizingMaskIntoConstraints="NO" id="seS-WG-eaT">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile.png" translatesAutoresizingMaskIntoConstraints="NO" id="seS-WG-eaT">
                                 <rect key="frame" x="225" y="85" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="uP1-Dh-iNH">
@@ -349,7 +349,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elh-Cm-NQB">
                                 <rect key="frame" x="198" y="89" width="123" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pTQ-AI-MS9">
@@ -411,10 +411,10 @@
             </objects>
             <point key="canvasLocation" x="1049" y="1156"/>
         </scene>
-        <!--Board Viewer View Controller-->
+        <!--BoardViewerViewController-->
         <scene sceneID="QmV-JV-BNr">
             <objects>
-                <viewController id="eFp-6h-9gY" customClass="BoardViewerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BoardViewerViewController" title="BoardViewerViewController" id="eFp-6h-9gY" customClass="BoardViewerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wnP-zf-9ZK"/>
                         <viewControllerLayoutGuide type="bottom" id="4pl-qh-so4"/>
@@ -541,7 +541,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4K6-l9-eMp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="296.25" y="-927.75"/>
+            <point key="canvasLocation" x="343" y="-951"/>
         </scene>
         <!--Edit board-->
         <scene sceneID="Ut2-SD-WYy">
@@ -569,9 +569,8 @@
         <image name="left_arrow.png" width="640" height="487"/>
         <image name="profile.png" width="500" height="500"/>
         <image name="right_arrow.png" width="640" height="487"/>
-        <image name="test.png" width="640" height="960"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Dj7-Ln-5EU"/>
+        <segue reference="qlk-4W-eGz"/>
     </inferredMetricsTieBreakers>
 </document>

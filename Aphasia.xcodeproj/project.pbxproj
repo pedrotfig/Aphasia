@@ -191,6 +191,7 @@
 		1EFBDFBC1ACC6E8500746419 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/QueHorasSao.png; sourceTree = "<group>"; };
 		1EFBDFBD1ACC6E8500746419 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/QueHorasSao.png; sourceTree = "<group>"; };
 		1EFBDFBE1ACC6E8500746419 /* pt */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pt; path = pt.lproj/QueHorasSao.png; sourceTree = "<group>"; };
+		1EFBDFD71ACC737B00746419 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7A620C821AC8AF4F0038C4EA /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		7A620C831AC8AF4F0038C4EA /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		7A620C881AC8B22A0038C4EA /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewCell.h; path = ../TableViewCell.h; sourceTree = "<group>"; };
@@ -533,6 +534,7 @@
 				TargetAttributes = {
 					EB5367301AC1E4290000B7F3 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 4ZX95MT4F7;
 					};
 					EB5367491AC1E4290000B7F3 = {
 						CreatedOnToolsVersion = 6.2;
@@ -1024,6 +1026,7 @@
 			children = (
 				EB45BBB71AC321B3005CE9BE /* en */,
 				EB45BBB91AC321C8005CE9BE /* pt */,
+				1EFBDFD71ACC737B00746419 /* Base */,
 			);
 			name = Localizable.strings;
 			path = ..;
