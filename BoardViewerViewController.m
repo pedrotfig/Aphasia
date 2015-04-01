@@ -104,6 +104,10 @@ static NSArray *categoriesSelected;
     NSArray *nodes = [self.imagesCollection listOfBoardNodes];
     [cell setCorrespondingNode:nodes[nodeIndex]];
     
+    AphasiaElement *cellElement = [[cell getCorrespondingNode] getElement];
+    UIImageView *elementCellImage = (UIImageView *)[cell viewWithTag:100];
+    elementCellImage.image = [UIImage imageNamed:[cellElement getImageName]];
+    
     return cell;
     
 }
