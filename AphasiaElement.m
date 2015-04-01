@@ -31,6 +31,7 @@
 }
 
 - (NSString *)getName {
+    // USE NSLOCALIZABLE STRING
     return self.name;
 }
 
