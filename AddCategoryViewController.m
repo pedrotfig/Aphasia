@@ -99,4 +99,10 @@
  [StoredData addCategoryWithName:titleCategory.text andImage:@"category_emotion" andAudio:@"audio0"];
  */
 
+- (IBAction)recorder:(id)sender {
+}
+- (IBAction)recordTapping:(id)sender {
+}
+- (IBAction)stopTapped:(id)sender {
+}
 @end
