@@ -10,7 +10,7 @@
 
 #import "BoardViewerViewController.h"
 
-@interface BoardViewerViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface BoardViewerViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSMutableArray *pages;
@@ -139,11 +139,11 @@ didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     BoardViewerCell *cell = (BoardViewerCell *)[collectionView cellForItemAtIndexPath:indexPath];
-    categoriesSelected = [[cell correspondingNode] getAccessibleNodes];
+    categoriesSelected = [[StoredData getCategoryAtIndex:[[cell correspondingNode] getCategory]] getAccessableCategories];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     BoardViewerViewController *dest = [storyboard instantiateViewControllerWithIdentifier:@"BoardViewerViewController"];
-    [self.navigationController pushViewController:dest animated:YES];
+    [self presentViewController:dest animated:YES completion:nil];
 }
 
 - (IBAction)onRightArrowClicked:(id)sender {
