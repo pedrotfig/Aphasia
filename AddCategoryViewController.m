@@ -11,22 +11,25 @@
 
 @interface AddCategoryViewController ()
 
+@property (strong, nonatomic) UIImagePickerController *picker;
+
 @end
 
 @implementation AddCategoryViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.addPhoto.layer.borderWidth = 5.0f;
-    self.addPhoto.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.addPhoto.layer.cornerRadius = 25.0f;
-
-    [self.addPhotoCategory setImage:[UIImage imageNamed:@"addphoto"]];
-    [self.addPhotoCategory setUserInteractionEnabled:YES];
+    
+    [self.imageView setImage:[UIImage imageNamed:@"category_emotion"]];
+    [self.imageView setUserInteractionEnabled:YES];
     UITapGestureRecognizer *singleTap =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapping:)];
     [singleTap setNumberOfTapsRequired:1];
-    [self.addPhotoCategory addGestureRecognizer:singleTap];
-    [self.view addSubview:self.addPhotoCategory];    
+    [self.imageView addGestureRecognizer:singleTap];
+    [self.view addSubview:self.imageView];
+    
+    self.picker = [[UIImagePickerController alloc] init];
+    [self.picker setAllowsEditing:YES];
+    [self.picker setDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,48 +37,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-- (IBAction)doneNewCategory:(id)sender {
+- (IBAction)saveNewCategory:(id)sender {
     [StoredData addCategoryWithName:titleCategory.text andImage:@"category_emotion" andAudio:@"audio0" andRelations:nil];
     [self.navigationController popViewControllerAnimated:TRUE];
 }
 
-/*
-- (IBAction)addPhoto:(id)sender {
- UIAlertView *alert = [[UIAlertView alloc]
- initWithTitle:@"Add photo"
- message:@"Select an option"
- delegate:self
- cancelButtonTitle:@"Cancel"
- otherButtonTitles:@"Camera",@"Photo Library", nil];
- [alert show];
- }
- -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
- if (buttonIndex == 1) {
-     NSLog(@"Camera");
-     picker = [[UIImagePickerController alloc]init];
-     picker.delegate = self;
-     [picker setSourceType:UIImagePickerControllerSourceTypeCamera];
-     [self presentViewController:picker animated:YES completion:NULL];
- }
- if (buttonIndex == 2) {
-     NSLog(@"Photo Library");
- }
-
-}
- */
-
-
 -(void)singleTapping:(UIGestureRecognizer *)recognizer
 {
-    NSLog(@"imagem clicada");
-    /*
-    NSLog(@"image click");
-    picker = [[UIImagePickerController alloc]init];
-    picker.delegate = self;
-    [picker setSourceType:UIImagePickerControllerSourceTypeCamera];
-    [self presentViewController:picker animated:YES completion:NULL];
-     */
     UIAlertView *alert = [[UIAlertView alloc]
                           initWithTitle:@"Add photo"
                           message:@"Select an option"
@@ -84,49 +52,49 @@
                           otherButtonTitles:@"Camera",@"Photo Library", nil];
     [alert show];
 }
+
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
-        //NSLog(@"Camera");
-        picker = [[UIImagePickerController alloc]init];
-        picker.delegate = self;
-        [picker setSourceType:UIImagePickerControllerSourceTypeCamera];
-        [self presentViewController:picker animated:YES completion:NULL];
+        NSLog(@"Camera");
+        [self.picker setSourceType:UIImagePickerControllerSourceTypeCamera];
+        [self presentViewController:self.picker animated:YES completion:nil];
+        
     }
     if (buttonIndex == 2) {
-        //NSLog(@"Photo Library");
-        picker = [[UIImagePickerController alloc]init];
-        picker.delegate = self;
-        [picker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-        [self presentViewController:picker animated:YES completion:NULL];
+        NSLog(@"Photo Library");
+        [self.picker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+        [self presentViewController:self.picker animated:YES completion:nil];
     }
+    
     
 }
 
+
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
-    image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-    [self.addPhotoCategory setImage:image];
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    addPhotoCategory = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    [self.imageView setImage:addPhotoCategory];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-/*  
-    TODO: store new category on scene transition
-    To store new category, use the command:
+ #pragma mark - Navigation
  
-    [StoredData addCategoryWithName:titleCategory.text andImage:@"category_emotion" andAudio:@"audio0"];
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
+
+/*
+ TODO: store new category on scene transition
+ To store new category, use the command:
+ 
+ [StoredData addCategoryWithName:titleCategory.text andImage:@"category_emotion" andAudio:@"audio0"];
  */
 
 @end

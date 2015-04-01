@@ -49,7 +49,6 @@
 		7A620C841AC8AF500038C4EA /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A620C831AC8AF4F0038C4EA /* TableViewController.m */; };
 		7A620C8A1AC8B22A0038C4EA /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A620C891AC8B22A0038C4EA /* TableViewCell.m */; };
 		7A620C991AC8BC150038C4EA /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A620C981AC8BC150038C4EA /* DetailsViewController.m */; };
-		EB0713CC1AC3291B002B9645 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB0713CB1AC3291B002B9645 /* Images.xcassets */; };
 		EB0713F81AC3325E002B9645 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0713F71AC3325E002B9645 /* MainMenuViewController.m */; };
 		EB1D77651ACC32B40045E2C7 /* BoardViewerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1D77641ACC32B40045E2C7 /* BoardViewerCell.m */; };
 		EB398FFB1AC597380099BD07 /* ImagesCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = EB398FFA1AC597380099BD07 /* ImagesCollection.m */; };
@@ -194,7 +193,6 @@
 		7A620C891AC8B22A0038C4EA /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewCell.m; path = ../TableViewCell.m; sourceTree = "<group>"; };
 		7A620C971AC8BC150038C4EA /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		7A620C981AC8BC150038C4EA /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
-		EB0713CB1AC3291B002B9645 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		EB0713EE1AC330DF002B9645 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/audio0.m4a; sourceTree = "<group>"; };
 		EB0713F01AC330E0002B9645 /* pt */ = {isa = PBXFileReference; lastKnownFileType = file; name = pt; path = pt.lproj/audio0.m4a; sourceTree = "<group>"; };
 		EB0713F11AC330E1002B9645 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/audio0.m4a; sourceTree = "<group>"; };
@@ -451,9 +449,6 @@
 				1ECD4B3D1ACAF7FA00B41C8C /* Cell */,
 				EB398FF81AC596DC0099BD07 /* Model */,
 				EB0713F51AC33215002B9645 /* ViewControllers */,
-				EB0713EC1AC3308F002B9645 /* Audio */,
-				EB0713E41AC32CBE002B9645 /* Images */,
-				EB0713CB1AC3291B002B9645 /* Images.xcassets */,
 				EB5367381AC1E4290000B7F3 /* AppDelegate.h */,
 				EB5367391AC1E4290000B7F3 /* AppDelegate.m */,
 				EB53673E1AC1E4290000B7F3 /* Main.storyboard */,
@@ -467,6 +462,8 @@
 		EB5367341AC1E4290000B7F3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EB0713EC1AC3308F002B9645 /* Audio */,
+				EB0713E41AC32CBE002B9645 /* Images */,
 				EB45BBB81AC321B3005CE9BE /* Localizable.strings */,
 				EB5367351AC1E4290000B7F3 /* Info.plist */,
 				EB5367361AC1E4290000B7F3 /* main.m */,
@@ -590,7 +587,6 @@
 				1E78C7A51ACC6685004863DB /* EMERGENCIA.png in Resources */,
 				1E78C7231ACC654A004863DB /* right_arrow.png in Resources */,
 				1E78C7691ACC6617004863DB /* AGUA.png in Resources */,
-				EB0713CC1AC3291B002B9645 /* Images.xcassets in Resources */,
 				1E78C76E1ACC661E004863DB /* LEITE.png in Resources */,
 				1E78C7AA1ACC668D004863DB /* hospital.png in Resources */,
 				1E78C7DC1ACC66D5004863DB /* BANHEIRO.png in Resources */,
@@ -1134,7 +1130,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Aphasia/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1149,7 +1145,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Aphasia/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
