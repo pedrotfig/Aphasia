@@ -15,5 +15,10 @@
 }
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIButton *recordButton;
+@property (weak, nonatomic) IBOutlet UIButton *stopButton;
+
+- (IBAction)recordTapped:(id)sender;
+- (IBAction)stopTapped:(id)sender;
 
 @end
