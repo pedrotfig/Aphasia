@@ -9,13 +9,11 @@
 #import "DetailsViewController.h"
 
 @interface DetailsViewController ()
-    @property (weak, nonatomic) IBOutlet UIBarButtonItem *addBarButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *barButton;
 
-  @property (weak, nonatomic) IBOutlet UIBarButtonItem *trashBarButton;
+@property (nonatomic) BOOL trashIsEnable;
 
-    @property (nonatomic) BOOL trashEnabled;
-
-    @property (nonatomic) NSMutableArray *selectedElements;
+@property (nonatomic) NSMutableArray *selectedElements;
 
 @end
 
@@ -24,24 +22,35 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    // Do any additional setup after loading the view
+    
+    //setup after loading the view
     
     self.navigationItem.title = self.detailModal.categoryName;
     
     self.collectionView.backgroundColor = [UIColor whiteColor];
     
+    [self setTrashEnabled:NO];
+    
     
     self.collectionView.allowsMultipleSelection = YES;
     
-     self.trashBarButton =  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(onTrashButtonTouched:)];
-    
-    //set bar itens
-    self.addBarButton.enabled = YES;
-    self.addBarButton.enabled = YES;
-    self.trashEnabled = NO;
-    self.trashBarButton.enabled= NO;
+    self.barButton =  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(onTrashButtonTouched:)];
     
     self.selectedElements = [[NSMutableArray alloc]init];
+    
+}
+
+// method that handles add or trash icon
+- (void)setTrashEnabled:(BOOL)trashEnabled{
+    
+    if (trashEnabled) {
+        self.trashIsEnable = YES;
+        self.barButton =  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(onTrashButtonTouched:)];
+        
+    }else{
+        self.trashIsEnable = NO;
+        self.barButton =  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(onTrashButtonTouched:)];
+    }
     
 }
 
@@ -56,12 +65,14 @@
     return 1;
 }
 
+//get elements to show on "database"
 -(NSInteger)collectionView:(UICollectionView *)collectionView
     numberOfItemsInSection:(NSInteger)section
 {
     return [[self.detailModal listOfElements] count];
 }
 
+//set cell
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"DetailCell";
     
@@ -70,27 +81,18 @@
     UIImageView *elementCellImage = (UIImageView *)[cell viewWithTag:100];
     elementCellImage.image = [UIImage imageNamed:[self.detailModal getElementAtIndex:[indexPath row]].imageName];
     
-    //cell.backgroundView = [UIColor whiteColor];
-   // cell.selectedBackgroundView = [UIColor grayColor];
     return cell;
 }
 
+//space between cells
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
     return UIEdgeInsetsMake(7, 7, 7, 7);
 }
 
-- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
-{
-    if (self.trashEnabled) {
-        return NO;
-    } else {
-        return YES;
-    }
-}
-
+//handle if its treating an add event or a trash event
 - (IBAction)onTrashButtonTouched:(id)sender {
     
-    if(self.trashEnabled){
+    if(self.trashIsEnable){
         
         if ([self.selectedElements count] > 0) {
             [self removeDetailCells];
@@ -106,68 +108,81 @@
         // Remove all items from selectedRecipes array
         [self.selectedElements removeAllObjects];
         
-        //set bar itens
-        self.addBarButton.enabled = YES;
-        self.addBarButton.enabled = YES;
-        self.trashEnabled = NO;
-        self.trashBarButton.enabled= NO;
+        [self setTrashEnabled:NO];
         
     }else{
+        NSLog(@"adicionar");
         
-        // Change shareEnabled to YES and change the button text to DONE
-        self.trashEnabled = YES;
+        //ADD
     }
 }
 
+//highlight settings
+- (BOOL)collectionView:(UICollectionView *)collectionView
+shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView
+shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath;
+{
+    return YES;
+}
+
+//quick selected
+- (void)collectionView:(UICollectionView *)colView
+didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell* cell = [colView cellForItemAtIndexPath:indexPath];
+    cell.contentView.backgroundColor = [UIColor grayColor];
+}
+- (void)collectionView:(UICollectionView *)colView
+didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell* cell = [colView cellForItemAtIndexPath:indexPath];
+    cell.contentView.backgroundColor = nil;
+}
 
 #pragma mark cell manipulation
 
+//remove the elements selected from data
 -(void)removeDetailCells{
-    
     
     for(id remove in self.selectedElements){
         [self.detailModal removeElementWithIndex:[remove unsignedIntegerValue]];
+        [self.collectionView reloadData];
+        
     }
     
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    //has one element selected
-   
-    self.addBarButton.enabled = NO;
-    self.addBarButton.enabled = NO;
-    self.trashEnabled = YES;
-    self.trashBarButton.enabled= YES;
-   
-    if (self.trashEnabled) {
-        // Determine the selected items by using the indexPath
-        NSNumber *selectedElement = [NSNumber numberWithInteger:[indexPath row]];
-        // Add the selected item into the array
-        [self.selectedElements addObject:selectedElement];
-    }
+    //has one element selected so shows the trash as item bar
+    
+    NSLog(@"select");
+    
+    [self setTrashEnabled:YES];
+    
+    // Determine the selected items by using the indexPath
+    NSNumber *selectedElement = [NSNumber numberWithInteger:[indexPath row]];
+    
+    // Add the selected item into the array
+    [self.selectedElements addObject:selectedElement];
+    
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSNumber *deSelectedElement = [NSNumber numberWithInteger:[indexPath row]];
+    [self.selectedElements removeObject:deSelectedElement];
     
+    //if there is any item selected show trash item
     if([self.selectedElements count]>0){
-        self.addBarButton.enabled = NO;
-        self.addBarButton.enabled = NO;
-        self.trashEnabled = YES;
-        self.trashBarButton.enabled= YES;
-        
-        
+        [self setTrashEnabled:YES];
         
     }else{
-        self.addBarButton.enabled = YES;
-        self.addBarButton.enabled = YES;
-        self.trashEnabled = NO;
-        self.trashBarButton.enabled= NO;
+        [self setTrashEnabled:NO];
     }
-    
-    AphasiaElement *deSelectedElement = [self.detailModal getElementAtIndex:[indexPath row]];
-    [self.selectedElements removeObject:deSelectedElement];
     
 }
 

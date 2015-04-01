@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "StoredData.h"
 
-@interface AddCategoryViewController : UIViewController{
+@interface AddCategoryViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>{
     IBOutlet UITextField *titleCategory;
+    UIImagePickerController *picker;
+    UIImage *image;
 }
 
+@property (weak, nonatomic) IBOutlet UIImageView *addPhotoCategory;
 @property (nonatomic) NSMutableArray *doneNewCategory;
 @property (weak, nonatomic) IBOutlet UIButton *addPhoto;
 

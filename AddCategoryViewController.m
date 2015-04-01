@@ -20,6 +20,13 @@
     self.addPhoto.layer.borderWidth = 5.0f;
     self.addPhoto.layer.borderColor = [UIColor whiteColor].CGColor;
     self.addPhoto.layer.cornerRadius = 25.0f;
+
+    [self.addPhotoCategory setImage:[UIImage imageNamed:@"addphoto"]];
+    [self.addPhotoCategory setUserInteractionEnabled:YES];
+    UITapGestureRecognizer *singleTap =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapping:)];
+    [singleTap setNumberOfTapsRequired:1];
+    [self.addPhotoCategory addGestureRecognizer:singleTap];
+    [self.view addSubview:self.addPhotoCategory];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,13 +40,77 @@
     [self.navigationController popViewControllerAnimated:TRUE];
 }
 
+/*
 - (IBAction)addPhoto:(id)sender {
-    NSLog(@"addPhotoClicked");
+ UIAlertView *alert = [[UIAlertView alloc]
+ initWithTitle:@"Add photo"
+ message:@"Select an option"
+ delegate:self
+ cancelButtonTitle:@"Cancel"
+ otherButtonTitles:@"Camera",@"Photo Library", nil];
+ [alert show];
+ }
+ -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+ if (buttonIndex == 1) {
+     NSLog(@"Camera");
+     picker = [[UIImagePickerController alloc]init];
+     picker.delegate = self;
+     [picker setSourceType:UIImagePickerControllerSourceTypeCamera];
+     [self presentViewController:picker animated:YES completion:NULL];
+ }
+ if (buttonIndex == 2) {
+     NSLog(@"Photo Library");
+ }
 
 }
+ */
 
 
+-(void)singleTapping:(UIGestureRecognizer *)recognizer
+{
+    NSLog(@"imagem clicada");
+    /*
+    NSLog(@"image click");
+    picker = [[UIImagePickerController alloc]init];
+    picker.delegate = self;
+    [picker setSourceType:UIImagePickerControllerSourceTypeCamera];
+    [self presentViewController:picker animated:YES completion:NULL];
+     */
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"Add photo"
+                          message:@"Select an option"
+                          delegate:self
+                          cancelButtonTitle:@"Cancel"
+                          otherButtonTitles:@"Camera",@"Photo Library", nil];
+    [alert show];
+}
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        //NSLog(@"Camera");
+        picker = [[UIImagePickerController alloc]init];
+        picker.delegate = self;
+        [picker setSourceType:UIImagePickerControllerSourceTypeCamera];
+        [self presentViewController:picker animated:YES completion:NULL];
+    }
+    if (buttonIndex == 2) {
+        //NSLog(@"Photo Library");
+        picker = [[UIImagePickerController alloc]init];
+        picker.delegate = self;
+        [picker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+        [self presentViewController:picker animated:YES completion:NULL];
+    }
+    
+}
 
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    [self.addPhotoCategory setImage:image];
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
 
 /*
 #pragma mark - Navigation
