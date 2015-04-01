@@ -43,6 +43,7 @@
 // method that handles add or trash icon
 - (void)setTrashEnabled:(BOOL)trashEnabled{
     
+    
     if (trashEnabled) {
         self.trashIsEnable = YES;
         self.barButton =  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(onTrashButtonTouched:)];
@@ -161,6 +162,14 @@ didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
     
     NSLog(@"select");
     
+    NSLog(@"select %lu before" , (unsigned long)[self.selectedElements count]);
+    
+    UICollectionViewCell* cell = [collectionView cellForItemAtIndexPath:indexPath];
+    if(cell.selected){
+        cell.contentView.backgroundColor = [UIColor grayColor];
+    }
+    
+    
     [self setTrashEnabled:YES];
     
     // Determine the selected items by using the indexPath
@@ -169,12 +178,18 @@ didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
     // Add the selected item into the array
     [self.selectedElements addObject:selectedElement];
     
+    NSLog(@"select %lu after" , (unsigned long)[self.selectedElements count]);
+    
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"deselect %lu " , (unsigned long)[self.selectedElements count]);
+    
     NSNumber *deSelectedElement = [NSNumber numberWithInteger:[indexPath row]];
     [self.selectedElements removeObject:deSelectedElement];
+    
+    NSLog(@"deselect %lu after remove " , (unsigned long)[self.selectedElements count]);
     
     //if there is any item selected show trash item
     if([self.selectedElements count]>0){

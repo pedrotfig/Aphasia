@@ -49,10 +49,13 @@
 }
 
 - (NSString *)getCategoryName {
+    
+    // USE NSLOCALIZABLE STRING
     return self.categoryName;
 }
 
 - (NSString *)getImageName {
+    
     return self.imageName;
 }
 
