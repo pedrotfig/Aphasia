@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D2C49531ACC8ED40046E3F7 /* addphoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2C49551ACC8ED40046E3F7 /* addphoto.png */; };
 		1DB189E11AC9BCE500D8EE69 /* AddCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB189E01AC9BCE500D8EE69 /* AddCategoryViewController.m */; };
 		1DB189E41AC9D30400D8EE69 /* StoredData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB189E31AC9D30400D8EE69 /* StoredData.m */; };
 		1DB189E71AC9D54700D8EE69 /* AphasiaCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB189E61AC9D54700D8EE69 /* AphasiaCategory.m */; };
@@ -75,6 +76,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D2C49541ACC8ED40046E3F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/addphoto.png; sourceTree = "<group>"; };
+		1D2C49561ACC8ED60046E3F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/addphoto.png; sourceTree = "<group>"; };
+		1D2C49571ACC8ED70046E3F7 /* pt */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pt; path = pt.lproj/addphoto.png; sourceTree = "<group>"; };
 		1DB189DF1AC9BCE500D8EE69 /* AddCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCategoryViewController.h; sourceTree = "<group>"; };
 		1DB189E01AC9BCE500D8EE69 /* AddCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCategoryViewController.m; sourceTree = "<group>"; };
 		1DB189E21AC9D30400D8EE69 /* StoredData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoredData.h; sourceTree = "<group>"; };
@@ -348,6 +352,7 @@
 		EB0713E41AC32CBE002B9645 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1D2C49551ACC8ED40046E3F7 /* addphoto.png */,
 				1EFBDF421ACC6E2700746419 /* bebida */,
 				1EFBDF571ACC6E8500746419 /* comida */,
 				1EFBDF641ACC6E8500746419 /* cumprimentos */,
@@ -570,6 +575,7 @@
 				1EFBDF541ACC6E2700746419 /* LEITE.png in Resources */,
 				EB5367401AC1E4290000B7F3 /* Main.storyboard in Resources */,
 				1E78C70A1ACC63C1004863DB /* category_emotion.png in Resources */,
+				1D2C49531ACC8ED40046E3F7 /* addphoto.png in Resources */,
 				1EFBDFCA1ACC6E8500746419 /* DOENTE.png in Resources */,
 				1EFBDFCB1ACC6E8500746419 /* FELIZ.png in Resources */,
 				1EFBDFD21ACC6E8500746419 /* BANHEIRO.png in Resources */,
@@ -653,6 +659,16 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1D2C49551ACC8ED40046E3F7 /* addphoto.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D2C49541ACC8ED40046E3F7 /* Base */,
+				1D2C49561ACC8ED60046E3F7 /* en */,
+				1D2C49571ACC8ED70046E3F7 /* pt */,
+			);
+			name = addphoto.png;
+			sourceTree = "<group>";
+		};
 		1E78C70C1ACC63C1004863DB /* category_emotion.png */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1120,7 +1136,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Aphasia/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1135,7 +1151,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Aphasia/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
