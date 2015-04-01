@@ -72,6 +72,8 @@
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     addPhotoCategory = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    NSString *imgName = [self.imageView image].accessibilityIdentifier;
+        NSLog(@"%@",imgName);
     [self.imageView setImage:addPhotoCategory];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -97,4 +99,10 @@
  [StoredData addCategoryWithName:titleCategory.text andImage:@"category_emotion" andAudio:@"audio0"];
  */
 
+- (IBAction)recorder:(id)sender {
+}
+- (IBAction)recordTapping:(id)sender {
+}
+- (IBAction)stopTapped:(id)sender {
+}
 @end
