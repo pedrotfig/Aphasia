@@ -15,11 +15,19 @@ static NSMutableArray *categories;
 + (void)restoreToDefaultCategories {
     categories = [[NSMutableArray alloc] init];
     
-    [self addCategoryWithName:@"category0" andImage:@"category_emotion" andAudio:@"audioTest" andRelations:@[@1,@2,@3]];
-    [self addCategoryWithName:@"category1" andImage:@"category_emotion" andAudio:@"audioTest" andRelations:@[@3,@4]];
-    [self addCategoryWithName:@"category2" andImage:@"category_emotion" andAudio:@"audioTest" andRelations:@[@1]];
-    [self addCategoryWithName:@"category3" andImage:@"category_emotion" andAudio:@"audioTest" andRelations:@[@4]];
-    [self addCategoryWithName:@"category4" andImage:@"category_emotion" andAudio:@"audioTest" andRelations:nil];
+    [self addCategoryWithName:@"Me" andImage:@"EU" andAudio:@"audioTest" andRelations:@[@1,@2,@3]];
+    [self addCategoryWithName:@"Food" andImage:@"AGUA" andAudio:@"audioTest" andRelations:@[@3,@4]];
+    [self addCategoryWithName:@"Drink" andImage:@"BANANA" andAudio:@"audioTest" andRelations:@[@1]];
+    [self addCategoryWithName:@"Greetings" andImage:@"OI" andAudio:@"audioTest" andRelations:@[@4]];
+    [self addCategoryWithName:@"Pain" andImage:@"BARRIGA" andAudio:@"audioTest" andRelations:nil];
+    
+    [self addCategoryWithName:@"Emergency" andImage:@"EMERGENCIA" andAudio:@"audioTest" andRelations:nil];
+    
+    [self addCategoryWithName:@"Feelings" andImage:@"FELIZ" andAudio:@"audioTest" andRelations:nil];
+    
+    [self addCategoryWithName:@"Personal needs" andImage:@"LavarMao" andAudio:@"audioTest" andRelations:nil];
+    
+    [self addCategoryWithName:@"Questions" andImage:@"QueHorasSao" andAudio:@"audioTest" andRelations:nil];
     
     [[self listOfCategories][0] addElementWithName:@"0-0" andImage:@"profile" andAudio:@"audio0"];
     [[self listOfCategories][0] addElementWithName:@"0-1" andImage:@"profile" andAudio:@"audio0"];
