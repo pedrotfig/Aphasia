@@ -8,6 +8,8 @@
 
 #import "DetailsViewController.h"
 
+#define RGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+
 @interface DetailsViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *barButton;
 
@@ -78,6 +80,8 @@
     static NSString *identifier = @"DetailCell";
     
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    
+    cell.backgroundColor = RGB(223, 223, 223);
     
     UIImageView *elementCellImage = (UIImageView *)[cell viewWithTag:100];
     elementCellImage.image = [UIImage imageNamed:[self.detailModal getElementAtIndex:[indexPath row]].imageName];
