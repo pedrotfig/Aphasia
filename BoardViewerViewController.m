@@ -10,7 +10,7 @@
 
 #import "BoardViewerViewController.h"
 
-@interface BoardViewerViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface BoardViewerViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSMutableArray *pages;
@@ -45,9 +45,6 @@ static NSArray *categoriesSelected;
     UINib *cellNib = [UINib nibWithNibName:@"ImageCell" bundle:nil];
     [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:@"cvCell"];
     [self.collectionView setUserInteractionEnabled:YES];
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onCellClicked:)];
-    [singleTap setNumberOfTapsRequired:1];
-    [self.collectionView addGestureRecognizer:singleTap];
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     [flowLayout setItemSize:CGSizeMake(250, 250)];
@@ -66,7 +63,8 @@ static NSArray *categoriesSelected;
     NSMutableArray *cells = [[NSMutableArray alloc] init];
     int indexInPage = 0;
     for (id node in [self.imagesCollection listOfBoardNodesInCategoriesByIndexes:categoriesSelected]) {
-        [cells addObject:[NSString stringWithFormat:@"Cell %@", [[node element] getName]]];
+        [cells addObject:[NSString stringWithFormat:@"Cell %@", [[node getElement] getName]]];
+        NSLog(@"%@", [[node getElement] getName]);
         
         indexInPage++;
         if (indexInPage == self.imagesCollection.imagesPerPage) {
@@ -90,17 +88,21 @@ static NSArray *categoriesSelected;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSMutableArray *data = [self.pages objectAtIndex:indexPath.section];
+    NSMutableArray *data = [self.pages objectAtIndex:[indexPath section]];
     
-    NSString *cellData = [data objectAtIndex:indexPath.row];
+    NSString *cellData = [data objectAtIndex:[indexPath row]];
     
     static NSString *cellIdentifier = @"cvCell";
     
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    BoardViewerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     
     UILabel *titleLabel = (UILabel *)[cell viewWithTag:100];
     
     [titleLabel setText:cellData];
+    
+    NSUInteger nodeIndex = [indexPath row] + ([indexPath section]*[indexPath row]);
+    NSArray *nodes = [self.imagesCollection listOfBoardNodes];
+    [cell setCorrespondingNode:nodes[nodeIndex]];
     
     return cell;
     
@@ -110,8 +112,38 @@ static NSArray *categoriesSelected;
     return UIEdgeInsetsMake(0, 5, 0, 5);
 }
 
-- (void)onCellClicked:(UIGestureRecognizer *)recognizer {
+- (BOOL)collectionView:(UICollectionView *)collectionView
+shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView
+shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath;
+{
+    return YES;
+}
+
+//quick selected
+- (void)collectionView:(UICollectionView *)colView
+didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell *cell = [colView cellForItemAtIndexPath:indexPath];
+    cell.contentView.backgroundColor = [UIColor grayColor];
+}
+
+- (void)collectionView:(UICollectionView *)colView
+didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell *cell = [colView cellForItemAtIndexPath:indexPath];
+    cell.contentView.backgroundColor = nil;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    BoardViewerCell *cell = (BoardViewerCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    categoriesSelected = [[StoredData getCategoryAtIndex:[[cell correspondingNode] getCategory]] getAccessableCategories];
     
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    BoardViewerViewController *dest = [storyboard instantiateViewControllerWithIdentifier:@"BoardViewerViewController"];
+    [self presentViewController:dest animated:YES completion:nil];
 }
 
 - (IBAction)onRightArrowClicked:(id)sender {

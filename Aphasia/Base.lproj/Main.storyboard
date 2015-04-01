@@ -272,7 +272,7 @@
                     <navigationItem key="navigationItem" title="Categories" id="Vz5-6O-D2h">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CfH-tX-nvb">
                             <connections>
-                                <segue destination="Qlu-kj-s7m" kind="show" identifier="AddCategory" id="MBO-QW-1Ze"/>
+                                <segue destination="Qlu-kj-s7m" kind="show" id="NfL-1X-tGB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -379,19 +379,29 @@
                                     <action selector="stopTapped:" destination="Qlu-kj-s7m" eventType="touchUpInside" id="bzf-EZ-7XO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dy-Lf-z8p">
+                                <rect key="frame" x="205" y="275" width="30" height="30"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playTapped:" destination="Qlu-kj-s7m" eventType="touchUpInside" id="P1s-Ua-hBj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Z9v-ux-a0f">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Deq-71-dyM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="dYH-UU-RaQ">
                             <connections>
-                                <action selector="saveNewCategory:" destination="Qlu-kj-s7m" id="fP8-eB-qcG"/>
+                                <action selector="saveNewCategory:" destination="Qlu-kj-s7m" id="cwC-s3-6MC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addPhotoCategory" destination="tTS-wc-zs6" id="izN-FI-30T"/>
                         <outlet property="imageView" destination="tTS-wc-zs6" id="EF4-rY-t0Q"/>
+                        <outlet property="playButton" destination="3dy-Lf-z8p" id="rkb-LX-egy"/>
                         <outlet property="recordButton" destination="rhj-ls-Nd6" id="J4E-IB-AMQ"/>
                         <outlet property="stopButton" destination="l3A-bQ-tBA" id="sAe-2i-dGg"/>
                         <outlet property="titleCategory" destination="pTQ-AI-MS9" id="EKh-l4-UKC"/>
@@ -401,10 +411,10 @@
             </objects>
             <point key="canvasLocation" x="1049" y="1156"/>
         </scene>
-        <!--Board Viewer View Controller-->
+        <!--BoardViewerViewController-->
         <scene sceneID="QmV-JV-BNr">
             <objects>
-                <viewController id="eFp-6h-9gY" customClass="BoardViewerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BoardViewerViewController" title="BoardViewerViewController" id="eFp-6h-9gY" customClass="BoardViewerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wnP-zf-9ZK"/>
                         <viewControllerLayoutGuide type="bottom" id="4pl-qh-so4"/>
@@ -531,7 +541,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4K6-l9-eMp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="296.25" y="-927.75"/>
+            <point key="canvasLocation" x="343" y="-951"/>
         </scene>
         <!--Edit board-->
         <scene sceneID="Ut2-SD-WYy">
@@ -561,6 +571,6 @@
         <image name="right_arrow.png" width="640" height="487"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Dj7-Ln-5EU"/>
+        <segue reference="qlk-4W-eGz"/>
     </inferredMetricsTieBreakers>
 </document>
