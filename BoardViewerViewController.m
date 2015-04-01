@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 B-B-BOOM!. All rights reserved.
 //
 
-#define IMAGES_TOTAL 16
 #define IMAGES_PER_PAGE 6
 
 #import "BoardViewerViewController.h"
@@ -26,19 +25,29 @@
 
 @implementation BoardViewerViewController
 
+static NSArray *categoriesSelected;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-        
+    
     // Initializing imagesCollection
     self.imagesCollection = [[ImagesCollection alloc] initWithCategories:[StoredData listOfCategories] andImagesPerPage:IMAGES_PER_PAGE];
     self.currentPage = 0;
     
     // Setting Collection View and Flow Layout
+    if ([categoriesSelected count] == 0) {
+        categoriesSelected = @[@0];
+    }
+    
     [self fillPagesArray];
     
     UINib *cellNib = [UINib nibWithNibName:@"ImageCell" bundle:nil];
     [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:@"cvCell"];
+    [self.collectionView setUserInteractionEnabled:YES];
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onCellClicked:)];
+    [singleTap setNumberOfTapsRequired:1];
+    [self.collectionView addGestureRecognizer:singleTap];
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     [flowLayout setItemSize:CGSizeMake(250, 250)];
@@ -56,8 +65,9 @@
     self.pages = [[NSMutableArray alloc] init];
     NSMutableArray *cells = [[NSMutableArray alloc] init];
     int indexInPage = 0;
-    for (int i=0; i<IMAGES_TOTAL; i++) {
-        [cells addObject:[NSString stringWithFormat:@"Cell %d", i]];
+    for (id node in [self.imagesCollection listOfBoardNodesInCategoriesByIndexes:categoriesSelected]) {
+        [cells addObject:[NSString stringWithFormat:@"Cell %@", [[node element] getName]]];
+        
         indexInPage++;
         if (indexInPage == self.imagesCollection.imagesPerPage) {
             [self.pages addObject:[[NSArray alloc] initWithArray:cells copyItems:YES]];
@@ -100,6 +110,10 @@
     return UIEdgeInsetsMake(0, 5, 0, 5);
 }
 
+- (void)onCellClicked:(UIGestureRecognizer *)recognizer {
+    
+}
+
 - (IBAction)onRightArrowClicked:(id)sender {
     if (self.currentPage+1 < [self.pages count]) {
         self.currentPage++;
@@ -117,30 +131,5 @@
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
-
-/*
-- (void)useImagesForTesting {
-    self.caregoriesForTesting = @[
-                                  @"1,2,3",
-                                  @"3,4",
-                                  @"1",
-                                  @"4",
-                                  @"None",
-                                  ];
-    self.imagesForTesting = @[
-                              @"image0#0",
-                              @"image1#0",
-                              @"image2#0",
-                              @"image3#1",
-                              @"image4#1",
-                              @"image5#2",
-                              @"image6#3",
-                              @"image7#4",
-                              ];
-    
-}
-*/
-
-
 
 @end

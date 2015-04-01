@@ -11,16 +11,25 @@
 
 @interface BoardStructureNode : NSObject
 
-@property (readonly, copy, nonatomic) AphasiaElement *element;
+@property (readonly, strong, nonatomic) AphasiaElement *element;
+@property (readonly, nonatomic) NSUInteger category;
 @property (readonly, strong, nonatomic) NSMutableArray *accessibleNodes;
+
+- (AphasiaElement *)getElement;
+
+- (NSUInteger)getCategory;
+
+- (NSArray *)getAccessibleNodes;
 
 - (void)addAccessibleNodeWithNode:(BoardStructureNode *)node;
 
 - (void)setElement:(AphasiaElement *)element;
 
+- (void)setCategory:(NSUInteger)category;
+
 - (void)setAccessibleNodes:(NSMutableArray *)accessibleNodes;
 
-- (instancetype)initWithElement:(AphasiaElement *)element;
+- (instancetype)initWithElement:(AphasiaElement *)element andCategory:(NSUInteger)category;
 
 - (instancetype)init;
 

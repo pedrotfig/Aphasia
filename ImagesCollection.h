@@ -14,12 +14,19 @@
 
 @property (readonly, strong, nonatomic) NSArray *categories;
 @property (readonly, nonatomic) NSUInteger imagesPerPage;
+@property (readonly, strong, nonatomic) NSArray *boardNodes;
 
 - (void)setCategories:(NSArray *)categories;
 
 - (void)setImagesPerPage:(NSUInteger)imagesPerPage;
 
-- (NSUInteger) getNumberOfPages;
+- (void)setBoardNodes:(NSArray *)boardNodes;
+
+- (NSUInteger)getNumberOfPages;
+
+- (NSArray *)listOfBoardNodes;
+
+- (NSArray *)listOfBoardNodesInCategoriesByIndexes:(NSArray *)categoriesIndexes;
 
 - (instancetype)initWithCategories:(NSArray *)categories andImagesPerPage:(NSUInteger)imagesPerPage;
 

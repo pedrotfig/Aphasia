@@ -19,14 +19,28 @@
 
 @implementation ImagesCollection
 
-- (void)initializeDataStructure {
-    BoardStructureNode *node;
-    for (id category in self.categories) {
-        for (id element in category) {
-            node = [[BoardStructureNode alloc] initWithElement:element];
+- (void)initializeBoardNodes {
+    NSMutableArray *nodes = [[NSMutableArray alloc] init];
+    
+    // Creating the nodes
+    for (int i = 0; i < [self.categories count]; i++) {
+        for (id element in [self.categories[i] listOfElements]) {
+            [nodes addObject:[[BoardStructureNode alloc] initWithElement:element andCategory:i]];
         }
     }
     
+    // Creating the relarions between nodes
+    for (id node in nodes) {
+        for (id accessableCategory in [self.categories[[node getCategory]] getAccessableCategories]) {
+            for (id otherNode in nodes) {
+                if ([otherNode getCategory] == [accessableCategory unsignedIntegerValue]) {
+                    [node addAccessibleNodeWithNode:otherNode];
+                }
+            }
+        }
+    }
+    
+    [self setBoardNodes:nodes];
 }
 
 - (NSUInteger)getNumberOfPages {
@@ -37,6 +51,23 @@
     else return result.quot + 1;
 }
 
+- (NSArray *)listOfBoardNodes {
+    return self.boardNodes;
+}
+
+- (NSArray *)listOfBoardNodesInCategoriesByIndexes:(NSArray *)categoriesIndexes {
+    NSMutableArray *nodesInCategories = [[NSMutableArray alloc] init];
+    for (id categoryIndex in categoriesIndexes) {
+        for (id node in [self listOfBoardNodes]) {
+            if ([node getCategory] == [categoryIndex unsignedIntegerValue]) {
+                [nodesInCategories addObject:node];
+            }
+        }
+    }
+    
+    return [[NSArray alloc] initWithArray:nodesInCategories];
+}
+
 - (void)setImagesPerPage:(NSUInteger)imagesPerPage {
     _imagesPerPage = imagesPerPage;
 }
@@ -45,12 +76,16 @@
     _categories = [[NSArray alloc] initWithArray:categories];
 }
 
+- (void)setBoardNodes:(NSArray *)boardNodes {
+    _boardNodes = [[NSArray alloc] initWithArray:boardNodes];
+}
+
 - (instancetype)initWithCategories:(NSArray *)categories andImagesPerPage:(NSUInteger)imagesPerPage {
     self = [super init];
     if (self) {
         [self setCategories:categories];
         [self setImagesPerPage:imagesPerPage];
-        [self initializeDataStructure];
+        [self initializeBoardNodes];
     }
     return self;
 }

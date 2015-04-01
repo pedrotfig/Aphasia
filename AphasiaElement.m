@@ -30,6 +30,18 @@
     _audioName = audioName;
 }
 
+- (NSString *)getName {
+    return self.name;
+}
+
+- (NSString *)getImageName {
+    return self.imageName;
+}
+
+- (NSString *)getAudioName {
+    return self.audioName;
+}
+
 - (instancetype)initWithName:(id)name andImage:(id)imageName andAudio:(id)audioName {
     self = [super init];
     if (self) {

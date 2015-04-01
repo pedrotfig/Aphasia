@@ -26,7 +26,7 @@
     UITapGestureRecognizer *singleTap =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapping:)];
     [singleTap setNumberOfTapsRequired:1];
     [self.addPhotoCategory addGestureRecognizer:singleTap];
-    [self.view addSubview:self.addPhotoCategory];
+    [self.view addSubview:self.addPhotoCategory];    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -20,17 +20,6 @@
 
 @implementation AphasiaCategory
 
-- (void)restoreToDefaultElements {
-    self.elements = [[NSMutableArray alloc] init];
-    [self addElementWithName:@"element0" andImage:@"profile" andAudio:@"audio0"];
-    [self addElementWithName:@"element1" andImage:@"profile" andAudio:@"audio0"];
-    [self addElementWithName:@"element2" andImage:@"profile" andAudio:@"audio0"];
-    [self addElementWithName:@"element3" andImage:@"profile" andAudio:@"audio0"];
-    [self addElementWithName:@"element4" andImage:@"profile" andAudio:@"audio0"];
-    [self addElementWithName:@"element5" andImage:@"profile" andAudio:@"audio0"];
-    [self addElementWithName:@"element6" andImage:@"profile" andAudio:@"audio0"];
-}
-
 - (void)setCategoryName:(NSString *)categoryName {
     _categoryName = categoryName;
 }
@@ -47,12 +36,32 @@
     _accessableCategories = [[NSArray alloc] initWithArray:accessableCategories copyItems:YES];
 }
 
+- (void)setElements:(NSMutableArray *)elements {
+    _elements = elements;
+}
+
 - (void)addElementWithName:(NSString *)elementName andImage:(NSString *)imageName andAudio:(NSString *)audioName {
     [self.elements addObject:[[AphasiaElement alloc] initWithName:elementName andImage:imageName andAudio:audioName]];
 }
 
 - (void) removeElementWithIndex:(NSUInteger)elementIndex {
     [self.elements removeObjectAtIndex:elementIndex];
+}
+
+- (NSString *)getCategoryName {
+    return self.categoryName;
+}
+
+- (NSString *)getImageName {
+    return self.imageName;
+}
+
+- (NSString *)getAudioName {
+    return self.audioName;
+}
+
+- (NSArray *)getAccessableCategories {
+    return self.accessableCategories;
 }
 
 - (NSArray *)listOfElements {
@@ -70,6 +79,7 @@
         [self setImageName:imageName];
         [self setAudioName:audioName];
         [self setAccessableCategories:accessableCategories];
+        [self setElements:[[NSMutableArray alloc] init]];
     }
     return self;
 }

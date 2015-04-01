@@ -18,15 +18,22 @@
 @property (readonly, strong, nonatomic) NSMutableArray *elements;
 
 
-- (void)restoreToDefaultElements;
 - (void)setCategoryName:(NSString *)categoryName;
 - (void)setImageName:(NSString *)imageName;
 - (void)setAudioName:(NSString *)audioName;
 - (void)setAccessableCategories:(NSArray *)accessableCategories;
+- (void)setElements:(NSMutableArray *)elements;
+
 - (void)addElementWithName:(NSString *)elementName andImage:(NSString *)imageName andAudio:(NSString *)audioName;
 - (void)removeElementWithIndex:(NSUInteger)elementIndex;
+
+- (NSString *)getCategoryName;
+- (NSString *)getImageName;
+- (NSString *)getAudioName;
+- (NSArray *)getAccessableCategories;
 - (NSArray *)listOfElements;
 - (AphasiaElement *)getElementAtIndex:(NSUInteger)elementIndex;
+
 - (instancetype)initWithName:(NSString *)categoryName andImage:(NSString *)imageName andAudio:(NSString *)audioName andRelations:(NSArray *)accessableCategories;
 - (instancetype)init;
 

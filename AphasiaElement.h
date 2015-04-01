@@ -18,6 +18,10 @@
 - (void)setImageName:(NSString *)imageName;
 - (void)setAudioName:(NSString *)audioName;
 
+- (NSString *)getName;
+- (NSString *)getImageName;
+- (NSString *)getAudioName;
+
 - (instancetype)initWithName:name andImage:imageName andAudio:audioName;
 - (instancetype)init;
 
