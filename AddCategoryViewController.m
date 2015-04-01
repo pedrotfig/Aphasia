@@ -72,6 +72,8 @@
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     addPhotoCategory = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    NSString *imgName = [self.imageView image].accessibilityIdentifier;
+        NSLog(@"%@",imgName);
     [self.imageView setImage:addPhotoCategory];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
