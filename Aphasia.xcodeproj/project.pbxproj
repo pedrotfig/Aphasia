@@ -12,19 +12,12 @@
 		1DB189E71AC9D54700D8EE69 /* AphasiaCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB189E61AC9D54700D8EE69 /* AphasiaCategory.m */; };
 		1ECD4B421ACB021400B41C8C /* AphasiaElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECD4B411ACB021400B41C8C /* AphasiaElement.m */; };
 		1EEAF0191AC4943D00923593 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1EEAF0181AC4943D00923593 /* Settings.bundle */; };
-		7A556E2D1AC8DDB2001BB7C4 /* category_emotion.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A556E2C1AC8DDB2001BB7C4 /* category_emotion.png */; };
-		7A556E311AC8F7A9001BB7C4 /* icon_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A556E301AC8F7A9001BB7C4 /* icon_home.png */; };
-		7A556E331AC8F85B001BB7C4 /* icon_edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A556E321AC8F85B001BB7C4 /* icon_edit.png */; };
 		7A620C841AC8AF500038C4EA /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A620C831AC8AF4F0038C4EA /* TableViewController.m */; };
 		7A620C8A1AC8B22A0038C4EA /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A620C891AC8B22A0038C4EA /* TableViewCell.m */; };
 		7A620C991AC8BC150038C4EA /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A620C981AC8BC150038C4EA /* DetailsViewController.m */; };
 		EB0713CC1AC3291B002B9645 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB0713CB1AC3291B002B9645 /* Images.xcassets */; };
-		EB0713E71AC32CE1002B9645 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = EB0713E91AC32CE1002B9645 /* test.png */; };
 		EB0713F81AC3325E002B9645 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0713F71AC3325E002B9645 /* MainMenuViewController.m */; };
-		EB0714051AC3350C002B9645 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = EB0714041AC3350C002B9645 /* profile.png */; };
 		EB1D77651ACC32B40045E2C7 /* BoardViewerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1D77641ACC32B40045E2C7 /* BoardViewerCell.m */; };
-		EB37D9CB1AC49B48004F6C7A /* right_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = EB37D9CA1AC49B48004F6C7A /* right_arrow.png */; };
-		EB37D9CD1AC49DB7004F6C7A /* left_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = EB37D9CC1AC49DB7004F6C7A /* left_arrow.png */; };
 		EB398FFB1AC597380099BD07 /* ImagesCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = EB398FFA1AC597380099BD07 /* ImagesCollection.m */; };
 		EB45BBB61AC321B3005CE9BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB45BBB81AC321B3005CE9BE /* Localizable.strings */; };
 		EB5367371AC1E4290000B7F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5367361AC1E4290000B7F3 /* main.m */; };
@@ -59,9 +52,6 @@
 		1ECD4B401ACB021400B41C8C /* AphasiaElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AphasiaElement.h; sourceTree = "<group>"; };
 		1ECD4B411ACB021400B41C8C /* AphasiaElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AphasiaElement.m; sourceTree = "<group>"; };
 		1EEAF0181AC4943D00923593 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		7A556E2C1AC8DDB2001BB7C4 /* category_emotion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = category_emotion.png; sourceTree = "<group>"; };
-		7A556E301AC8F7A9001BB7C4 /* icon_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_home.png; sourceTree = "<group>"; };
-		7A556E321AC8F85B001BB7C4 /* icon_edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_edit.png; sourceTree = "<group>"; };
 		7A620C821AC8AF4F0038C4EA /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		7A620C831AC8AF4F0038C4EA /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		7A620C881AC8B22A0038C4EA /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewCell.h; path = ../TableViewCell.h; sourceTree = "<group>"; };
@@ -69,19 +59,13 @@
 		7A620C971AC8BC150038C4EA /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		7A620C981AC8BC150038C4EA /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		EB0713CB1AC3291B002B9645 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
-		EB0713E81AC32CE1002B9645 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/test.png; sourceTree = "<group>"; };
-		EB0713EA1AC32CE2002B9645 /* pt */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pt; path = pt.lproj/test.png; sourceTree = "<group>"; };
-		EB0713EB1AC32CE3002B9645 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/test.png; sourceTree = "<group>"; };
 		EB0713EE1AC330DF002B9645 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/audio0.m4a; sourceTree = "<group>"; };
 		EB0713F01AC330E0002B9645 /* pt */ = {isa = PBXFileReference; lastKnownFileType = file; name = pt; path = pt.lproj/audio0.m4a; sourceTree = "<group>"; };
 		EB0713F11AC330E1002B9645 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/audio0.m4a; sourceTree = "<group>"; };
 		EB0713F61AC3325E002B9645 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		EB0713F71AC3325E002B9645 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
-		EB0714041AC3350C002B9645 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 		EB1D77631ACC32B40045E2C7 /* BoardViewerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardViewerCell.h; sourceTree = "<group>"; };
 		EB1D77641ACC32B40045E2C7 /* BoardViewerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardViewerCell.m; sourceTree = "<group>"; };
-		EB37D9CA1AC49B48004F6C7A /* right_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_arrow.png; sourceTree = "<group>"; };
-		EB37D9CC1AC49DB7004F6C7A /* left_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_arrow.png; sourceTree = "<group>"; };
 		EB398FF91AC597380099BD07 /* ImagesCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesCollection.h; sourceTree = "<group>"; };
 		EB398FFA1AC597380099BD07 /* ImagesCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesCollection.m; sourceTree = "<group>"; };
 		EB45BBB21AC31F95005CE9BE /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Main.strings; sourceTree = "<group>"; };
@@ -139,13 +123,6 @@
 		EB0713E41AC32CBE002B9645 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				7A556E321AC8F85B001BB7C4 /* icon_edit.png */,
-				7A556E301AC8F7A9001BB7C4 /* icon_home.png */,
-				7A556E2C1AC8DDB2001BB7C4 /* category_emotion.png */,
-				EB37D9CC1AC49DB7004F6C7A /* left_arrow.png */,
-				EB37D9CA1AC49B48004F6C7A /* right_arrow.png */,
-				EB0714041AC3350C002B9645 /* profile.png */,
-				EB0713E91AC32CE1002B9645 /* test.png */,
 			);
 			name = Images;
 			path = ..;
@@ -347,16 +324,9 @@
 			files = (
 				1EEAF0191AC4943D00923593 /* Settings.bundle in Resources */,
 				EB5367401AC1E4290000B7F3 /* Main.storyboard in Resources */,
-				EB0713E71AC32CE1002B9645 /* test.png in Resources */,
-				7A556E2D1AC8DDB2001BB7C4 /* category_emotion.png in Resources */,
 				EBC0DC961AC47D4000B924E3 /* ImageCell.xib in Resources */,
-				EB37D9CB1AC49B48004F6C7A /* right_arrow.png in Resources */,
 				EB0713CC1AC3291B002B9645 /* Images.xcassets in Resources */,
 				EB45BBB61AC321B3005CE9BE /* Localizable.strings in Resources */,
-				EB0714051AC3350C002B9645 /* profile.png in Resources */,
-				7A556E311AC8F7A9001BB7C4 /* icon_home.png in Resources */,
-				7A556E331AC8F85B001BB7C4 /* icon_edit.png in Resources */,
-				EB37D9CD1AC49DB7004F6C7A /* left_arrow.png in Resources */,
 				EB5367451AC1E4290000B7F3 /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,16 +382,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EB0713E91AC32CE1002B9645 /* test.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EB0713E81AC32CE1002B9645 /* Base */,
-				EB0713EA1AC32CE2002B9645 /* pt */,
-				EB0713EB1AC32CE3002B9645 /* en */,
-			);
-			name = test.png;
-			sourceTree = "<group>";
-		};
 		EB0713EF1AC330DF002B9645 /* audio0.m4a */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -549,7 +509,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Aphasia/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -564,7 +524,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Aphasia/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

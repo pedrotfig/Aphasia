@@ -11,12 +11,9 @@
 
 @interface AddCategoryViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>{
     IBOutlet UITextField *titleCategory;
-    UIImagePickerController *picker;
-    UIImage *image;
+    UIImage *addPhotoCategory;
 }
 
-@property (weak, nonatomic) IBOutlet UIImageView *addPhotoCategory;
-@property (nonatomic) NSMutableArray *doneNewCategory;
-@property (weak, nonatomic) IBOutlet UIButton *addPhoto;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
