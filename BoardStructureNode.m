@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 B-B-BOOM!. All rights reserved.
 //
 
-#import "ImagesDataStructureNode.h"
+#import "BoardStructureNode.h"
 
-@interface ImagesDataStructureNode ()
+@interface BoardStructureNode ()
 
 @property (readwrite, copy, nonatomic) NSString *imageName;
 @property (readwrite, strong, nonatomic) NSMutableArray *accessibleNodes;
@@ -17,31 +17,31 @@
 
 @end
 
-@implementation ImagesDataStructureNode
+@implementation BoardStructureNode
 
-- (void)addAccessibleNodeWithNode:(ImagesDataStructureNode *)node {
+- (void)addAccessibleNodeWithNode:(BoardStructureNode *)node {
     [self.accessibleNodes addObject:node];
 }
 
-- (void)setImageName:(NSString *)imageName {
-    _imageName = imageName;
+- (void)setElement:(AphasiaElement *)element {
+    _element = element;
 }
 
 - (void)setAccessibleNodes:(NSMutableArray *)accessibleNodes {
     _accessibleNodes = [[NSMutableArray alloc] initWithArray:accessibleNodes copyItems:YES];
 }
 
-- (instancetype)initWithImage:(NSString *)imageName {
+- (instancetype)initWithElement:(AphasiaElement *)element {
     self = [super init];
     if (self) {
-        [self setImageName:imageName];
+        [self setElement:element];
         [self setAccessibleNodes:[[NSMutableArray alloc] init]];
     }
     return self;
 }
 
 - (instancetype)init {
-    return [self initWithImage:@""];
+    return [self initWithElement:nil];
 }
 
 @end

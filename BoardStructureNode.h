@@ -7,19 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "StoredData.h"
 
-@interface ImagesDataStructureNode : NSObject
+@interface BoardStructureNode : NSObject
 
-@property (readonly, copy, nonatomic) NSString *imageName;
+@property (readonly, copy, nonatomic) AphasiaElement *element;
 @property (readonly, strong, nonatomic) NSMutableArray *accessibleNodes;
 
-- (void)addAccessibleNodeWithNode:(ImagesDataStructureNode *)node;
+- (void)addAccessibleNodeWithNode:(BoardStructureNode *)node;
 
-- (void)setImageName:(NSString *)imageName;
+- (void)setElement:(AphasiaElement *)element;
 
 - (void)setAccessibleNodes:(NSMutableArray *)accessibleNodes;
 
-- (instancetype)initWithImage:(NSString *)imageName;
+- (instancetype)initWithElement:(AphasiaElement *)element;
 
 - (instancetype)init;
 

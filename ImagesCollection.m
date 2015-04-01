@@ -20,10 +20,11 @@
 @implementation ImagesCollection
 
 - (void)initializeDataStructure {
-    ImagesDataStructureNode *root = [[ImagesDataStructureNode alloc] initWithImage:self.categories[0]];
-    
-    for (int i = 1; i < [self.categories count]; i++) {
-        
+    BoardStructureNode *node;
+    for (id category in self.categories) {
+        for (id element in category) {
+            node = [[BoardStructureNode alloc] initWithElement:element];
+        }
     }
     
 }

@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ImagesDataStructureNode.h"
+#import "BoardStructureNode.h"
+#import "StoredData.h"
 
 @interface ImagesCollection : NSObject
 
