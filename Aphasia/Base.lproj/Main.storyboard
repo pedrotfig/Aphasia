@@ -539,7 +539,7 @@
         <image name="left_arrow.png" width="640" height="487"/>
         <image name="profile.png" width="500" height="500"/>
         <image name="right_arrow.png" width="640" height="487"/>
-        <image name="test.png" width="256" height="256"/>
+        <image name="test.png" width="640" height="960"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Dj7-Ln-5EU"/>
