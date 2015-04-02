@@ -1,0 +1,51 @@
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "0rp-En-40K"; */
+"0rp-En-40K.title" = "Item";
+
+/* Class = "UILabel"; text = "Record audio:"; ObjectID = "J2X-F8-ES7"; */
+"J2X-F8-ES7.text" = "Record audio:";
+
+/* Class = "UITabBarItem"; title = "Edit board"; ObjectID = "Tos-BV-xEA"; */
+"Tos-BV-xEA.title" = "Edit board";
+
+/* Class = "UINavigationItem"; title = "Categories"; ObjectID = "Vz5-6O-D2h"; */
+"Vz5-6O-D2h.title" = "Categories";
+
+/* Class = "UIButton"; normalTitle = "GET STARTED!"; ObjectID = "a5I-aG-Yxp"; */
+"a5I-aG-Yxp.normalTitle" = "GET STARTED!";
+
+/* Class = "UIViewController"; title = "BoardViewerViewController"; ObjectID = "eFp-6h-9gY"; */
+"eFp-6h-9gY.title" = "BoardViewerViewController";
+
+/* Class = "UILabel"; text = "Category name:"; ObjectID = "elh-Cm-NQB"; */
+"elh-Cm-NQB.text" = "Category name:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fld-3b-lnd"; */
+"fld-3b-lnd.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "g4a-EP-gyY"; */
+"g4a-EP-gyY.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "Stop"; ObjectID = "l3A-bQ-tBA"; */
+"l3A-bQ-tBA.normalTitle" = "Stop";
+
+/* Class = "UITabBarController"; title = "Tab Bar Controller"; ObjectID = "mhX-ei-Ie7"; */
+"mhX-ei-Ie7.title" = "Tab Bar Controller";
+
+/* Class = "UIBarButtonItem"; title = "Categories"; ObjectID = "o3P-8C-lEU"; */
+"o3P-8C-lEU.title" = "Categories";
+
+/* Class = "UITextView"; text = "Your name"; ObjectID = "pIM-wd-9tL"; */
+"pIM-wd-9tL.text" = "Your name";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "qOx-Wz-bvW"; */
+"qOx-Wz-bvW.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Start"; ObjectID = "rhj-ls-Nd6"; */
+"rhj-ls-Nd6.normalTitle" = "Start";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "rrx-fb-1i5"; */
+"rrx-fb-1i5.title" = "Home";
+
+/* Class = "UIButton"; normalTitle = "Play"; ObjectID = "ufD-A7-rU0"; */
+"ufD-A7-rU0.normalTitle" = "Play";

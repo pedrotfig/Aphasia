@@ -147,6 +147,9 @@
 
 //Starts recording an audio
 - (IBAction)playButtonTapped:(id)sender {
+    
+     NSLog(@"RECORDER  %@ ",recorder.url );
+    
     if (!recorder.recording){
         player = [[AVAudioPlayer alloc] initWithContentsOfURL:recorder.url error:nil];
         [player setDelegate:self];
@@ -169,7 +172,8 @@
                                               otherButtonTitles:nil];
         [alert show];
         
-        //store record
+        NSLog(@"RECORDER  %@ ",recorder.url );
+        self.audioAdded = [recorder.url absoluteString];
         
     }
 }
@@ -205,7 +209,7 @@
 
 //Store new category
 - (IBAction)saveNewCategory:(id)sender {
-    [StoredData addCategoryWithName:titleCategory.text andImage:self.imageAdded andAudio:@"audio" andRelations:nil];
+    [StoredData addCategoryWithName:titleCategory.text andImage:self.imageAdded andAudio:self.audioAdded andRelations:nil];
     [self.navigationController popViewControllerAnimated:TRUE];
 }
 
