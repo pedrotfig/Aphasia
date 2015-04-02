@@ -123,15 +123,34 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Wg-Pc-UBh">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="808" height="805"/>
+                                </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5f-Md-bae" userLabel="User Image">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5f-Md-bae" userLabel="User Image">
                                 <rect key="frame" x="188" y="215" width="224" height="224"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="224" id="DDU-oL-aAf"/>
+                                    <constraint firstAttribute="height" constant="280" id="9bo-Td-yOV"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="292" id="CQf-qt-Act"/>
+                                    <constraint firstAttribute="width" constant="224" id="DDU-oL-aAf">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="292"/>
+                                    </constraint>
                                 </constraints>
-                                <state key="normal" image="MENINO.png">
+                                <state key="normal" image="meninao.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9bo-Td-yOV"/>
+                                        <exclude reference="CQf-qt-Act"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="9bo-Td-yOV"/>
+                                        <include reference="CQf-qt-Act"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <segue destination="eFp-6h-9gY" kind="presentation" id="A6Y-iz-how"/>
                                 </connections>
@@ -139,35 +158,49 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Your name" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pIM-wd-9tL" userLabel="User Name">
                                 <rect key="frame" x="150" y="447" width="300" height="53"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="53" id="9GB-o1-NjH"/>
-                                    <constraint firstAttribute="width" constant="300" id="RqN-eA-R7g"/>
+                                    <constraint firstAttribute="height" constant="53" id="WGh-qe-Llk"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="35"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="WGh-qe-Llk"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="WGh-qe-Llk"/>
+                                    </mask>
+                                </variation>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="e5f-Md-bae" firstAttribute="centerX" secondItem="pIM-wd-9tL" secondAttribute="centerX" id="3Ct-8h-tfo"/>
+                            <constraint firstItem="e5f-Md-bae" firstAttribute="centerX" secondItem="pIM-wd-9tL" secondAttribute="centerX" id="3Ct-8h-tfo">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="eof-rF-Gcj" firstAttribute="top" secondItem="6Wg-Pc-UBh" secondAttribute="bottom" constant="-5" id="B4k-zo-4B9"/>
                             <constraint firstItem="pIM-wd-9tL" firstAttribute="top" secondItem="e5f-Md-bae" secondAttribute="bottom" constant="8" symbolic="YES" id="CjS-Qa-JYK"/>
-                            <constraint firstItem="6Wg-Pc-UBh" firstAttribute="top" secondItem="kOS-D1-rZE" secondAttribute="bottom" constant="-20" id="V4U-Ii-gs9"/>
-                            <constraint firstItem="eof-rF-Gcj" firstAttribute="top" secondItem="pIM-wd-9tL" secondAttribute="bottom" constant="251" id="gtJ-OU-4V8"/>
-                            <constraint firstItem="6Wg-Pc-UBh" firstAttribute="top" secondItem="kOS-D1-rZE" secondAttribute="bottom" constant="-20" id="jNX-tv-Q4Z"/>
-                            <constraint firstAttribute="centerX" secondItem="e5f-Md-bae" secondAttribute="centerX" id="jpF-rs-Hhk"/>
+                            <constraint firstItem="eof-rF-Gcj" firstAttribute="top" secondItem="pIM-wd-9tL" secondAttribute="bottom" constant="251" id="gtJ-OU-4V8">
+                                <variation key="heightClass=regular-widthClass=regular" constant="230"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="e5f-Md-bae" secondAttribute="centerX" id="jpF-rs-Hhk">
+                                <variation key="heightClass=regular-widthClass=regular" constant="-4.5"/>
+                            </constraint>
                             <constraint firstItem="6Wg-Pc-UBh" firstAttribute="leading" secondItem="klI-yj-qlc" secondAttribute="leading" id="kAe-4S-5Lj"/>
-                            <constraint firstItem="e5f-Md-bae" firstAttribute="top" secondItem="kOS-D1-rZE" secondAttribute="bottom" constant="195" id="pG1-dS-w8h"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6Wg-Pc-UBh" secondAttribute="trailingMargin" constant="-16" id="xhs-40-y7q"/>
+                            <constraint firstItem="pIM-wd-9tL" firstAttribute="trailing" secondItem="e5f-Md-bae" secondAttribute="trailing" id="zA7-Jh-cfx">
+                                <variation key="heightClass=regular-widthClass=regular" constant="4"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="6Wg-Pc-UBh"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="V4U-Ii-gs9"/>
-                                <exclude reference="jNX-tv-Q4Z"/>
                                 <exclude reference="kAe-4S-5Lj"/>
                                 <exclude reference="xhs-40-y7q"/>
+                                <exclude reference="zA7-Jh-cfx"/>
                                 <exclude reference="B4k-zo-4B9"/>
                             </mask>
                         </variation>
@@ -176,10 +209,9 @@
                                 <include reference="6Wg-Pc-UBh"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="V4U-Ii-gs9"/>
-                                <include reference="jNX-tv-Q4Z"/>
                                 <include reference="kAe-4S-5Lj"/>
                                 <include reference="xhs-40-y7q"/>
+                                <include reference="zA7-Jh-cfx"/>
                                 <include reference="B4k-zo-4B9"/>
                             </mask>
                         </variation>
@@ -545,16 +577,16 @@
         </scene>
     </scenes>
     <resources>
-        <image name="MENINO.png" width="800" height="800"/>
         <image name="background.png" width="1024" height="1024"/>
         <image name="icon_app.png" width="800" height="800"/>
         <image name="icon_edit.png" width="25" height="25"/>
         <image name="icon_home.png" width="25" height="25"/>
         <image name="left_arrow.png" width="640" height="487"/>
+        <image name="meninao.png" width="800" height="800"/>
         <image name="right_arrow.png" width="640" height="487"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7dz-Gq-BG5"/>
+        <segue reference="NfL-1X-tGB"/>
         <segue reference="qlk-4W-eGz"/>
     </inferredMetricsTieBreakers>
 </document>
