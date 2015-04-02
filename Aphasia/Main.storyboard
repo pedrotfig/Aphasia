@@ -365,7 +365,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="z3c-K3-COo">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" restorationIdentifier="MainCollection" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="z3c-K3-COo" userLabel="Selectable Images">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Zd8-Oc-hM0">
@@ -398,14 +398,65 @@
                                     <action selector="onRightArrowClicked:" destination="eFp-6h-9gY" eventType="touchUpInside" id="ZyG-JW-dND"/>
                                 </connections>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="UpperCollection" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HJ2-yl-hY4" userLabel="Upper Images">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EuJ-su-26a">
+                                    <size key="itemSize" width="144" height="144"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="UpperImage" id="B4G-MZ-7Cr" userLabel="Upper Image Cell" customClass="BoardViewerUpperCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="144" height="144"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TTd-Jj-xDL" userLabel="Image">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <color key="backgroundColor" red="0.28008277030000001" green="0.87355981689999995" blue="0.86930651489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                                        <rect key="frame" x="0.0" y="0.0" width="144" height="144"/>
+                                                    </variation>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="TTd-Jj-xDL"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <mask key="subviews">
+                                                <include reference="TTd-Jj-xDL"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <outlet property="image" destination="TTd-Jj-xDL" id="ZPt-l1-Kd5"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="eFp-6h-9gY" id="F53-mq-8zB"/>
+                                    <outlet property="delegate" destination="eFp-6h-9gY" id="HTH-8J-aEo"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8kx-Jg-bai" firstAttribute="centerY" secondItem="z3c-K3-COo" secondAttribute="centerY" id="0eH-3G-LvP"/>
                             <constraint firstItem="4pl-qh-so4" firstAttribute="top" secondItem="M0J-zb-dKf" secondAttribute="bottom" constant="204" id="1yG-Wn-ouw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="z3c-K3-COo" secondAttribute="trailing" constant="102" id="4hV-y8-Mp9"/>
+                            <constraint firstItem="HJ2-yl-hY4" firstAttribute="top" secondItem="wnP-zf-9ZK" secondAttribute="bottom" constant="65" id="BTL-qs-eSG"/>
                             <constraint firstItem="z3c-K3-COo" firstAttribute="top" secondItem="wnP-zf-9ZK" secondAttribute="bottom" constant="227" id="DmX-ZZ-Qba"/>
+                            <constraint firstItem="HJ2-yl-hY4" firstAttribute="leading" secondItem="M0J-zb-dKf" secondAttribute="leading" id="Dqd-QX-SBp"/>
+                            <constraint firstItem="z3c-K3-COo" firstAttribute="top" secondItem="HJ2-yl-hY4" secondAttribute="bottom" constant="18" id="EgV-Ez-7Ni"/>
                             <constraint firstItem="8kx-Jg-bai" firstAttribute="leading" secondItem="z3c-K3-COo" secondAttribute="trailing" constant="7" id="OtE-sB-iN5"/>
+                            <constraint firstAttribute="centerX" secondItem="HJ2-yl-hY4" secondAttribute="centerX" id="UwH-L1-2tp"/>
                             <constraint firstAttribute="trailing" secondItem="8kx-Jg-bai" secondAttribute="trailing" id="att-SD-qBz"/>
                             <constraint firstItem="z3c-K3-COo" firstAttribute="leading" secondItem="M0J-zb-dKf" secondAttribute="trailing" constant="8" symbolic="YES" id="gql-Rg-5CX"/>
                             <constraint firstAttribute="centerX" secondItem="z3c-K3-COo" secondAttribute="centerX" constant="-0.5" id="hjn-yZ-fO8"/>
@@ -417,17 +468,40 @@
                             <constraint firstItem="z3c-K3-COo" firstAttribute="centerY" secondItem="M0J-zb-dKf" secondAttribute="centerY" id="xbw-c9-BQz"/>
                             <constraint firstItem="M0J-zb-dKf" firstAttribute="baseline" secondItem="8kx-Jg-bai" secondAttribute="baseline" id="xjZ-Gn-Frx"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="HJ2-yl-hY4"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="BTL-qs-eSG"/>
+                                <exclude reference="Dqd-QX-SBp"/>
+                                <exclude reference="UwH-L1-2tp"/>
+                                <exclude reference="EgV-Ez-7Ni"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="HJ2-yl-hY4"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="BTL-qs-eSG"/>
+                                <include reference="Dqd-QX-SBp"/>
+                                <include reference="UwH-L1-2tp"/>
+                                <include reference="EgV-Ez-7Ni"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="z3c-K3-COo" id="zVe-AO-m6r"/>
                         <outlet property="leftArrow" destination="M0J-zb-dKf" id="1v6-ri-Fpg"/>
                         <outlet property="rightArrow" destination="8kx-Jg-bai" id="Qny-Uq-b2n"/>
+                        <outlet property="upperCollectionView" destination="HJ2-yl-hY4" id="2aK-zO-LPC"/>
                         <segue destination="AlZ-Q2-0Qd" kind="presentation" identifier="BackToMenu" id="qlk-4W-eGz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4K6-l9-eMp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="343" y="-951.00000000000011"/>
+            <point key="canvasLocation" x="342.75" y="-951"/>
         </scene>
         <!--Edit board-->
         <scene sceneID="Ut2-SD-WYy">

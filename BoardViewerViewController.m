@@ -11,6 +11,7 @@
 #define RGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
 
 #define CELL_IDENTIFIER @"BoardCell"
+#define UPPER_CELL_IDENTIFIER @"UpperImage"
 
 #import "BoardViewerViewController.h"
 
@@ -25,11 +26,16 @@
 @property (weak, nonatomic) IBOutlet UIButton *rightArrow;
 @property (weak, nonatomic) IBOutlet UIButton *leftArrow;
 
+@property (weak, nonatomic) IBOutlet UICollectionView *upperCollectionView;
+
+
 @end
 
 @implementation BoardViewerViewController
 
+static NSArray *previousCategoriesSelected;
 static NSArray *categoriesSelected;
+static NSMutableArray *upperElements;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,12 +49,20 @@ static NSArray *categoriesSelected;
     if ([categoriesSelected count] == 0) {
         categoriesSelected = @[@0];
     }
+    if ([previousCategoriesSelected count] == 0) {
+        previousCategoriesSelected = @[@0];
+    }
+    if ([upperElements count] == 0) {
+        upperElements = [[NSMutableArray alloc] init];
+    }
     
     [self fillPagesArray];
     
     UINib *cellNib = [UINib nibWithNibName:@"ImageCell" bundle:nil];
     [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:CELL_IDENTIFIER];
     [self.collectionView setUserInteractionEnabled:YES];
+    
+    [self.upperCollectionView registerClass:[BoardViewerUpperCell class] forCellWithReuseIdentifier:UPPER_CELL_IDENTIFIER];
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     [flowLayout setItemSize:CGSizeMake(250, 250)];
@@ -83,28 +97,42 @@ static NSArray *categoriesSelected;
 
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return [self.pages count];
+    if (collectionView == self.collectionView) return [self.pages count];
+    else return 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [[self.pages objectAtIndex:section] count];
+    if (collectionView == self.collectionView) return [[self.pages objectAtIndex:section] count];
+    else return [upperElements count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    BoardViewerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
-    
-    NSUInteger nodeIndex = [indexPath row] + ([indexPath section]*[indexPath row]);
-    NSArray *nodes = [self.imagesCollection listOfBoardNodes];
-    [cell setCorrespondingNode:nodes[nodeIndex]];
-    
-    cell.backgroundColor = RGB(223, 223, 223);
-    AphasiaElement *cellElement = [[cell getCorrespondingNode] getElement];
-    
-    [cell.image setImage:[UIImage imageNamed:[cellElement getImageName]]];
-    
-    return cell;
-    
+    if (collectionView == self.collectionView) {
+        
+        BoardViewerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
+        
+        NSUInteger nodeIndex = [indexPath row] + ([indexPath section]*[indexPath row]);
+        NSArray *nodes = [self.imagesCollection listOfBoardNodes];
+        [cell setCorrespondingNode:nodes[nodeIndex]];
+        
+        cell.backgroundColor = RGB(223, 223, 223);
+        AphasiaElement *cellElement = [[cell getCorrespondingNode] getElement];
+        
+        [cell.image setImage:[UIImage imageNamed:[cellElement getImageName]]];
+        
+        return cell;
+
+    }
+    else {
+        BoardViewerUpperCell *upperCell = [collectionView dequeueReusableCellWithReuseIdentifier:UPPER_CELL_IDENTIFIER forIndexPath:indexPath];
+        
+        upperCell.backgroundColor = RGB(223, 223, 223);
+        
+        [upperCell.image setImage:[UIImage imageNamed:upperElements[[indexPath row]]]];
+        
+        return upperCell;
+    }
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
@@ -120,26 +148,36 @@ shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath
 - (BOOL)collectionView:(UICollectionView *)collectionView
 shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 {
-    return YES;
+    if (collectionView == self.collectionView) return YES;
+    else return NO;
 }
 
 //quick selected
 - (void)collectionView:(UICollectionView *)colView
 didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [colView cellForItemAtIndexPath:indexPath];
-    cell.contentView.backgroundColor = [UIColor grayColor];
+    if (colView == self.collectionView) {
+        UICollectionViewCell *cell = [colView cellForItemAtIndexPath:indexPath];
+        cell.contentView.backgroundColor = [UIColor grayColor];
+    }
 }
 
 - (void)collectionView:(UICollectionView *)colView
 didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [colView cellForItemAtIndexPath:indexPath];
-    cell.contentView.backgroundColor = nil;
+    if (colView == self.collectionView) {
+        UICollectionViewCell *cell = [colView cellForItemAtIndexPath:indexPath];
+        cell.contentView.backgroundColor = nil;
+    }
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
     BoardViewerCell *cell = (BoardViewerCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    
+    previousCategoriesSelected = [[NSArray alloc] initWithArray:categoriesSelected];
     categoriesSelected = [[StoredData getCategoryAtIndex:[[cell correspondingNode] getCategory]] getAccessableCategories];
     
+    [upperElements addObject:[[[cell getCorrespondingNode] getElement] getImageName]];
+        
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     BoardViewerViewController *dest = [storyboard instantiateViewControllerWithIdentifier:@"BoardViewerViewController"];
     [self presentViewController:dest animated:YES completion:nil];
@@ -154,6 +192,8 @@ didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
 
 
 - (IBAction)onLeftArrowClick:(id)sender {
+    categoriesSelected = [[NSArray alloc] initWithArray:previousCategoriesSelected];
+    [upperElements removeLastObject];
     if (self.currentPage > 0) {
         self.currentPage--;
         [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:self.currentPage] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
