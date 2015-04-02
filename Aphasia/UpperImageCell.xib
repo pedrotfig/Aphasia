@@ -13,28 +13,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="144" height="144"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lgX-zC-EOE" userLabel="Image">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                            <rect key="frame" x="0.0" y="0.0" width="144" height="144"/>
-                        </variation>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AWL-2x-Kr9">
+                        <rect key="frame" x="0.0" y="0.0" width="144" height="144"/>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
-            <variation key="default">
-                <mask key="subviews">
-                    <exclude reference="lgX-zC-EOE"/>
-                </mask>
-            </variation>
-            <variation key="heightClass=regular-widthClass=regular">
-                <mask key="subviews">
-                    <include reference="lgX-zC-EOE"/>
-                </mask>
-            </variation>
+            <constraints>
+                <constraint firstItem="AWL-2x-Kr9" firstAttribute="top" secondItem="nPf-Ng-s49" secondAttribute="top" id="8fq-Sx-XaY"/>
+                <constraint firstAttribute="centerY" secondItem="AWL-2x-Kr9" secondAttribute="centerY" id="FHf-xy-zJa"/>
+                <constraint firstAttribute="centerX" secondItem="AWL-2x-Kr9" secondAttribute="centerX" id="kfP-V9-NEM"/>
+                <constraint firstItem="AWL-2x-Kr9" firstAttribute="leading" secondItem="nPf-Ng-s49" secondAttribute="leading" id="tgX-ix-kY1"/>
+            </constraints>
             <connections>
-                <outlet property="image" destination="lgX-zC-EOE" id="zVh-00-Xfy"/>
+                <outlet property="image" destination="AWL-2x-Kr9" id="GY3-1R-etA"/>
             </connections>
         </collectionViewCell>
     </objects>
