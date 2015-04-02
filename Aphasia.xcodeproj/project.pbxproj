@@ -68,9 +68,9 @@
 		EB5367401AC1E4290000B7F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB53673E1AC1E4290000B7F3 /* Main.storyboard */; };
 		EB5367451AC1E4290000B7F3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5367431AC1E4290000B7F3 /* LaunchScreen.xib */; };
 		EB5367511AC1E4290000B7F3 /* AphasiaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5367501AC1E4290000B7F3 /* AphasiaTests.m */; };
+		EB5E61231ACD825B0033B262 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBC0DC951AC47D4000B924E3 /* ImageCell.xib */; };
 		EB84017B1AC9E91A00BF73EF /* BoardStructureNode.m in Sources */ = {isa = PBXBuildFile; fileRef = EB84017A1AC9E91A00BF73EF /* BoardStructureNode.m */; };
 		EBB11D1F1AC5F9E70030B387 /* BoardViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB11D1E1AC5F9E70030B387 /* BoardViewerViewController.m */; };
-		EBC0DC961AC47D4000B924E3 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBC0DC951AC47D4000B924E3 /* ImageCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -588,7 +588,7 @@
 				TargetAttributes = {
 					EB5367301AC1E4290000B7F3 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 4ZX95MT4F7;
+						DevelopmentTeam = AN2448FN23;
 					};
 					EB5367491AC1E4290000B7F3 = {
 						CreatedOnToolsVersion = 6.2;
@@ -635,7 +635,6 @@
 				1E7718D51ACD5E4D004121D7 /* COMIDA.png in Resources */,
 				1E7718F81ACD5E78004121D7 /* BEBIDA.png in Resources */,
 				1D2C49531ACC8ED40046E3F7 /* addphoto.png in Resources */,
-				EBC0DC961AC47D4000B924E3 /* ImageCell.xib in Resources */,
 				1E77188A1ACD5DE8004121D7 /* LAVAR_MAOS.png in Resources */,
 				1E78C7231ACC654A004863DB /* right_arrow.png in Resources */,
 				1E7718941ACD5DF3004121D7 /* TOMAR_BANHO.png in Resources */,
@@ -656,6 +655,7 @@
 				1E7718A31ACD5E0D004121D7 /* FELIZ.png in Resources */,
 				1E7718AD1ACD5E1A004121D7 /* EMERGENCIA.png in Resources */,
 				1E77185D1ACD5D9D004121D7 /* BEBER.png in Resources */,
+				EB5E61231ACD825B0033B262 /* ImageCell.xib in Resources */,
 				7A5D54B21ACD035A0093405A /* Images.xcassets in Resources */,
 				1E7718D01ACD5E48004121D7 /* BANANA.png in Resources */,
 				1E7718A81ACD5E13004121D7 /* TRISTE.png in Resources */,

@@ -2,40 +2,34 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="MCC-VI-jOx" customClass="BoardViewerCell">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BoardCell" id="MCC-VI-jOx" customClass="BoardViewerCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cell ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueY-CS-dLW">
-                        <rect key="frame" x="138" y="148" width="44" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HY4-JA-xdx">
-                        <rect key="frame" x="8" y="8" width="304" height="304"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
-            <color key="backgroundColor" red="0.63502338059999996" green="0.87355981689999995" blue="0.42008860990000002" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.28008277031073237" green="0.87355981689999995" blue="0.86930651488205524" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="centerX" secondItem="ueY-CS-dLW" secondAttribute="centerX" constant="-0.5" id="3zZ-43-sNE"/>
-                <constraint firstAttribute="centerY" secondItem="ueY-CS-dLW" secondAttribute="centerY" constant="2" id="AJg-w1-j0p"/>
-                <constraint firstItem="HY4-JA-xdx" firstAttribute="top" secondItem="MCC-VI-jOx" secondAttribute="topMargin" id="FyW-z8-dyX"/>
-                <constraint firstItem="ueY-CS-dLW" firstAttribute="centerX" secondItem="HY4-JA-xdx" secondAttribute="centerX" id="Tr5-ZE-fRC"/>
-                <constraint firstItem="HY4-JA-xdx" firstAttribute="leading" secondItem="MCC-VI-jOx" secondAttribute="leadingMargin" id="fiV-8s-zRB"/>
-                <constraint firstItem="ueY-CS-dLW" firstAttribute="centerY" secondItem="HY4-JA-xdx" secondAttribute="centerY" constant="-1.75" id="o2o-6k-bGT"/>
+                <constraint firstItem="HY4-JA-xdx" firstAttribute="top" secondItem="MCC-VI-jOx" secondAttribute="top" id="63F-YV-T9X"/>
+                <constraint firstItem="HY4-JA-xdx" firstAttribute="leading" secondItem="MCC-VI-jOx" secondAttribute="leading" id="Lg8-pG-CzN"/>
+                <constraint firstAttribute="centerY" secondItem="HY4-JA-xdx" secondAttribute="centerY" id="idl-xy-04C"/>
+                <constraint firstAttribute="centerX" secondItem="HY4-JA-xdx" secondAttribute="centerX" id="ih2-ge-dWb"/>
             </constraints>
             <size key="customSize" width="320" height="320"/>
+            <connections>
+                <outlet property="image" destination="HY4-JA-xdx" id="NR7-QG-nJS"/>
+            </connections>
             <point key="canvasLocation" x="518" y="265"/>
         </collectionViewCell>
     </objects>

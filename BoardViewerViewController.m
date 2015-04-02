@@ -8,6 +8,10 @@
 
 #define IMAGES_PER_PAGE 6
 
+#define RGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+
+#define CELL_IDENTIFIER @"BoardCell"
+
 #import "BoardViewerViewController.h"
 
 @interface BoardViewerViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate>
@@ -43,7 +47,7 @@ static NSArray *categoriesSelected;
     [self fillPagesArray];
     
     UINib *cellNib = [UINib nibWithNibName:@"ImageCell" bundle:nil];
-    [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:@"cvCell"];
+    [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:CELL_IDENTIFIER];
     [self.collectionView setUserInteractionEnabled:YES];
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
@@ -64,7 +68,6 @@ static NSArray *categoriesSelected;
     int indexInPage = 0;
     for (id node in [self.imagesCollection listOfBoardNodesInCategoriesByIndexes:categoriesSelected]) {
         [cells addObject:[NSString stringWithFormat:@"Cell %@", [[node getElement] getName]]];
-        NSLog(@"%@", [[node getElement] getName]);
         
         indexInPage++;
         if (indexInPage == self.imagesCollection.imagesPerPage) {
@@ -88,25 +91,17 @@ static NSArray *categoriesSelected;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSMutableArray *data = [self.pages objectAtIndex:[indexPath section]];
     
-    NSString *cellData = [data objectAtIndex:[indexPath row]];
-    
-    static NSString *cellIdentifier = @"cvCell";
-    
-    BoardViewerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-    
-    UILabel *titleLabel = (UILabel *)[cell viewWithTag:100];
-    
-    [titleLabel setText:cellData];
+    BoardViewerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
     
     NSUInteger nodeIndex = [indexPath row] + ([indexPath section]*[indexPath row]);
     NSArray *nodes = [self.imagesCollection listOfBoardNodes];
     [cell setCorrespondingNode:nodes[nodeIndex]];
     
+    cell.backgroundColor = RGB(223, 223, 223);
     AphasiaElement *cellElement = [[cell getCorrespondingNode] getElement];
-    UIImageView *elementCellImage = (UIImageView *)[cell viewWithTag:100];
-    elementCellImage.image = [UIImage imageNamed:[cellElement getImageName]];
+    
+    [cell.image setImage:[UIImage imageNamed:[cellElement getImageName]]];
     
     return cell;
     
