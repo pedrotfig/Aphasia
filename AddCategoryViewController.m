@@ -36,7 +36,7 @@
     self.picker = [[UIImagePickerController alloc] init];
     [self.picker setAllowsEditing:YES];
     [self.picker setDelegate:self];
-    addPhotoCategory = [UIImage imageNamed:@"customPhoto"];
+    //addPhotoCategory = [UIImage imageNamed:@"customPhoto"];
     
     //just show the button when start is pressed
     self.stopButton.hidden = YES;

@@ -57,6 +57,7 @@
 
 - (NSArray *)listOfBoardNodesInCategoriesByIndexes:(NSArray *)categoriesIndexes {
     NSMutableArray *nodesInCategories = [[NSMutableArray alloc] init];
+    
     for (id categoryIndex in categoriesIndexes) {
         for (id node in [self listOfBoardNodes]) {
             if ([node getCategory] == [categoryIndex unsignedIntegerValue]) {
