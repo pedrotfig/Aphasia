@@ -11,7 +11,7 @@
 #define RGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
 
 #define CELL_IDENTIFIER @"BoardCell"
-#define UPPER_CELL_IDENTIFIER @"UpperImage"
+#define UPPER_CELL_IDENTIFIER @"UpperImageCell"
 
 #import "BoardViewerViewController.h"
 
@@ -27,6 +27,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *leftArrow;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *upperCollectionView;
+
+@property (strong, nonatomic) NSArray *boardNodes;
 
 
 @end
@@ -47,14 +49,22 @@ static NSMutableArray *upperElements;
     
     // Setting Collection View and Flow Layout
     if ([categoriesSelected count] == 0) {
-        categoriesSelected = @[@0];
+        categoriesSelected = [StoredData initialCategories];
     }
+    else if ([categoriesSelected[0] integerValue] == -1) {
+        categoriesSelected = @[];
+        
+    }
+    
     if ([previousCategoriesSelected count] == 0) {
-        previousCategoriesSelected = @[@0];
+        previousCategoriesSelected = [StoredData initialCategories];
     }
+    
     if ([upperElements count] == 0) {
         upperElements = [[NSMutableArray alloc] init];
     }
+    
+    self.boardNodes = [self.imagesCollection listOfBoardNodesInCategoriesByIndexes:categoriesSelected];
     
     [self fillPagesArray];
     
@@ -80,7 +90,7 @@ static NSMutableArray *upperElements;
     self.pages = [[NSMutableArray alloc] init];
     NSMutableArray *cells = [[NSMutableArray alloc] init];
     int indexInPage = 0;
-    for (id node in [self.imagesCollection listOfBoardNodesInCategoriesByIndexes:categoriesSelected]) {
+    for (id node in self.boardNodes) {
         [cells addObject:[NSString stringWithFormat:@"Cell %@", [[node getElement] getName]]];
         
         indexInPage++;
@@ -112,8 +122,8 @@ static NSMutableArray *upperElements;
         
         BoardViewerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
         
-        NSUInteger nodeIndex = [indexPath row] + ([indexPath section]*[indexPath row]);
-        NSArray *nodes = [self.imagesCollection listOfBoardNodes];
+        NSUInteger nodeIndex = [indexPath row] + (self.currentPage*IMAGES_PER_PAGE);
+        NSArray *nodes = self.boardNodes;
         [cell setCorrespondingNode:nodes[nodeIndex]];
         
         cell.backgroundColor = RGB(223, 223, 223);
@@ -176,8 +186,10 @@ didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
     previousCategoriesSelected = [[NSArray alloc] initWithArray:categoriesSelected];
     categoriesSelected = [[StoredData getCategoryAtIndex:[[cell correspondingNode] getCategory]] getAccessableCategories];
     
+    if ([categoriesSelected count] == 0) categoriesSelected = @[@(-1)];
+    
     [upperElements addObject:[[[cell getCorrespondingNode] getElement] getImageName]];
-        
+    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     BoardViewerViewController *dest = [storyboard instantiateViewControllerWithIdentifier:@"BoardViewerViewController"];
     [self presentViewController:dest animated:YES completion:nil];

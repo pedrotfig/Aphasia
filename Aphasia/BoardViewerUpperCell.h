@@ -10,6 +10,6 @@
 
 @interface BoardViewerUpperCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (strong, nonatomic) IBOutlet UIImageView *image;
 
 @end
