@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *upperCollectionView;
 
 @property (strong, nonatomic) NSArray *boardNodes;
+@property (strong, nonatomic) AVAudioPlayer *player;
 
 
 @end
@@ -191,12 +192,11 @@ didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
     
     [upperElements addObject:[[[cell getCorrespondingNode] getElement] getImageName]];
     
-    NSString *audioPath = [[NSBundle mainBundle] pathForResource:[[[cell correspondingNode] getElement] getAudioName] ofType:@"m4a"];
-    NSURL *url = [NSURL URLWithString:audioPath];
-    AVAudioPlayer *player;
-    player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-    [player setDelegate:self];
-    [player play];
+    NSString *audioPath = [NSString stringWithFormat:@"%@/%@.m4a", [[NSBundle mainBundle] resourcePath], [[[cell correspondingNode] getElement] getAudioName]];
+    NSURL *url = [NSURL fileURLWithPath:audioPath];
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    [self.player setDelegate:self];
+    [self.player play];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     BoardViewerViewController *dest = [storyboard instantiateViewControllerWithIdentifier:@"BoardViewerViewController"];
