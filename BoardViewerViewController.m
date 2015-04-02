@@ -15,7 +15,7 @@
 
 #import "BoardViewerViewController.h"
 
-@interface BoardViewerViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate>
+@interface BoardViewerViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate, AVAudioPlayerDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSMutableArray *pages;
@@ -191,6 +191,13 @@ didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
     if ([categoriesSelected count] == 0) categoriesSelected = @[@(-1)];
     
     [upperElements addObject:[[[cell getCorrespondingNode] getElement] getImageName]];
+    
+    NSString *audioPath = [[NSBundle mainBundle] pathForResource:[[[cell correspondingNode] getElement] getAudioName] ofType:@"m4a"];
+    NSURL *url = [NSURL URLWithString:audioPath];
+    AVAudioPlayer *player;
+    player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    [player setDelegate:self];
+    [player play];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     BoardViewerViewController *dest = [storyboard instantiateViewControllerWithIdentifier:@"BoardViewerViewController"];
