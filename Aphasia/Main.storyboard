@@ -219,8 +219,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="135" height="122"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hiZ-6x-7lq">
-                                            <rect key="frame" x="4" y="4" width="127" height="114"/>
+                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hiZ-6x-7lq">
+                                            <rect key="frame" x="0.0" y="0.0" width="135" height="122"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -240,7 +240,11 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="lRS-Jk-fnC">
                         <barButtonItem key="backBarButtonItem" title="Categories" id="o3P-8C-lEU"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="g4a-EP-gyY"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="g4a-EP-gyY">
+                            <connections>
+                                <segue destination="Qlu-kj-s7m" kind="show" identifier="AddElement" id="7dz-Gq-BG5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="barButton" destination="g4a-EP-gyY" id="3H5-bp-Rp9"/>
@@ -293,7 +297,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOx-Wz-bvW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOx-Wz-bvW">
                                 <rect key="frame" x="115" y="305" width="46" height="30"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -303,7 +307,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3A-bQ-tBA">
-                                <rect key="frame" x="135" y="270" width="125" height="34"/>
+                                <rect key="frame" x="140" y="272" width="125" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Stop">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -312,13 +316,28 @@
                                     <action selector="stopTapped:" destination="Qlu-kj-s7m" eventType="touchUpInside" id="Nu2-1b-PRN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufD-A7-rU0">
+                                <rect key="frame" x="259" y="274" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playButtonTapped:" destination="Qlu-kj-s7m" eventType="touchUpInside" id="sPh-Lf-435"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="qOx-Wz-bvW"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Z9v-ux-a0f">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="dYH-UU-RaQ">
                             <connections>
-                                <action selector="saveNewCategory:" destination="Qlu-kj-s7m" id="cwC-s3-6MC"/>
+                                <action selector="saveNewCategory:" destination="Qlu-kj-s7m" id="BfX-ay-MfW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -438,6 +457,7 @@
         <image name="right_arrow.png" width="640" height="487"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="7dz-Gq-BG5"/>
         <segue reference="qlk-4W-eGz"/>
     </inferredMetricsTieBreakers>
 </document>

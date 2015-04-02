@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "StoredData.h"
+#import "AddCategoryViewController.h"
 
 @interface DetailsViewController : UICollectionViewController
 <UICollectionViewDataSource, UICollectionViewDelegate>
