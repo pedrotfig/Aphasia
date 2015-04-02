@@ -41,10 +41,10 @@ static NSMutableArray *categories;
     [self addCategoryWithName:NSLocalizedString(@"Feelings", @"Message")  andImage:@"FELIZ" andAudio:@"audioTest" andRelations:nil];
     
     //Category 8
-    [self addCategoryWithName:NSLocalizedString(@"PersonalNeeds", @"Message")  andImage:@"LavarMao" andAudio:@"audioTest" andRelations:nil];
+    [self addCategoryWithName:NSLocalizedString(@"PersonalNeeds", @"Message")  andImage:@"LAVAR_MAOS" andAudio:@"audioTest" andRelations:nil];
     
     //Category 9
-    [self addCategoryWithName:NSLocalizedString(@"Questions", @"Message")  andImage:@"QueHorasSao" andAudio:@"audioTest" andRelations:nil];
+    [self addCategoryWithName:NSLocalizedString(@"Questions", @"Message")  andImage:@"HORAS" andAudio:@"audioTest" andRelations:nil];
     
     
     //Category 0 elements Inicial Board
@@ -53,10 +53,10 @@ static NSMutableArray *categories;
     
     [[self listOfCategories][0] addElementWithName:NSLocalizedString(@"Greetings", @"Message")  andImage:@"OI" andAudio:@"audio0"];
     
-    [[self listOfCategories][0] addElementWithName:NSLocalizedString(@"PersonalNeeds", @"Message")  andImage:@"LavarMao" andAudio:@"audio0"];
+    [[self listOfCategories][0] addElementWithName:NSLocalizedString(@"PersonalNeeds", @"Message")  andImage:@"LAVAR_MAOS" andAudio:@"audio0"];
     
     
-    [[self listOfCategories][0] addElementWithName:NSLocalizedString(@"Questions", @"Message")  andImage:@"QueHorasSao" andAudio:@"audio0"];
+    [[self listOfCategories][0] addElementWithName:NSLocalizedString(@"Questions", @"Message")  andImage:@"HORAS" andAudio:@"audio0"];
     
     
     [[self listOfCategories][0] addElementWithName:NSLocalizedString(@"Emergency", @"Message")  andImage:@"EMERGENCIA" andAudio:@"audio0"];
@@ -73,7 +73,7 @@ static NSMutableArray *categories;
     
     [[self listOfCategories][2] addElementWithName:NSLocalizedString(@"Banana", @"Message") andImage:@"BANANA" andAudio:@"audio0"];
     
-    [[self listOfCategories][2] addElementWithName:NSLocalizedString(@"Apple", @"Message") andImage:@"maca" andAudio:@"audio0"];
+    [[self listOfCategories][2] addElementWithName:NSLocalizedString(@"Apple", @"Message") andImage:@"MACA" andAudio:@"audio0"];
     
     [[self listOfCategories][2] addElementWithName:NSLocalizedString(@"Bread", @"Message") andImage:@"PAO" andAudio:@"audio0"];
     
@@ -96,13 +96,13 @@ static NSMutableArray *categories;
     //Category 5 pain
     [[self listOfCategories][5] addElementWithName:NSLocalizedString(@"Stomachache", @"Message") andImage:@"BARRIGA" andAudio:@"audio0"];
     
-    [[self listOfCategories][5] addElementWithName:NSLocalizedString(@"Headache", @"Message") andImage:@"CABECA2" andAudio:@"audio0"];
+    [[self listOfCategories][5] addElementWithName:NSLocalizedString(@"Headache", @"Message") andImage:@"CABECA" andAudio:@"audio0"];
     
-    [[self listOfCategories][5] addElementWithName:NSLocalizedString(@"Throat", @"Message") andImage:@"GARGANTA2" andAudio:@"audio0"];
+    [[self listOfCategories][5] addElementWithName:NSLocalizedString(@"Throat", @"Message") andImage:@"GARGANTA" andAudio:@"audio0"];
     
     //Category 6 emergency
     
-    [[self listOfCategories][6] addElementWithName:NSLocalizedString(@"Hospital", @"Message") andImage:@"hospital" andAudio:@"audio0"];
+    [[self listOfCategories][6] addElementWithName:NSLocalizedString(@"Hospital", @"Message") andImage:@"HOSPITAL" andAudio:@"audio0"];
     
     [[self listOfCategories][6] addElementWithName:NSLocalizedString(@"Police", @"Message") andImage:@"POLICIA" andAudio:@"audio0"];
     
@@ -119,16 +119,16 @@ static NSMutableArray *categories;
     
     [[self listOfCategories][8] addElementWithName:NSLocalizedString(@"Bathroom", @"Message") andImage:@"BANHEIRO" andAudio:@"audio0"];
     
-    [[self listOfCategories][8] addElementWithName:NSLocalizedString(@"BrushTeeth", @"Message") andImage:@"EscovarDentes" andAudio:@"audio0"];
+    [[self listOfCategories][8] addElementWithName:NSLocalizedString(@"BrushTeeth", @"Message") andImage:@"ESCOVAR_DENTES" andAudio:@"audio0"];
     
-    [[self listOfCategories][8] addElementWithName:NSLocalizedString(@"WashHands", @"Message") andImage:@"LavarMao" andAudio:@"audio0"];
+    [[self listOfCategories][8] addElementWithName:NSLocalizedString(@"WashHands", @"Message") andImage:@"LAVAR_MAOS" andAudio:@"audio0"];
     
-    [[self listOfCategories][8] addElementWithName:NSLocalizedString(@"TakeBath", @"Message") andImage:@"TomarBanho" andAudio:@"audio0"];
+    [[self listOfCategories][8] addElementWithName:NSLocalizedString(@"TakeBath", @"Message") andImage:@"TOMAR_BANHO" andAudio:@"audio0"];
     
     
     //Category 9 questions
     
-    [[self listOfCategories][9] addElementWithName:NSLocalizedString(@"Time", @"Message") andImage:@"QueHorasSao" andAudio:@"audio0"];
+    [[self listOfCategories][9] addElementWithName:NSLocalizedString(@"Time", @"Message") andImage:@"HORAS" andAudio:@"audio0"];
 }
 
 + (void)addCategoryWithName:(NSString *)categoryName andImage:(NSString *)imageName andAudio:(NSString *)audioName andRelations:(NSArray *)accessableCategories{
