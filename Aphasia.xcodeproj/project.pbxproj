@@ -586,11 +586,11 @@
 				TargetAttributes = {
 					EB5367301AC1E4290000B7F3 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 4ZX95MT4F7;
+						DevelopmentTeam = 4A8P94PWWG;
 					};
 					EB5367491AC1E4290000B7F3 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 4ZX95MT4F7;
+						DevelopmentTeam = 4A8P94PWWG;
 						TestTargetID = EB5367301AC1E4290000B7F3;
 					};
 				};
