@@ -74,8 +74,8 @@
 		EB5367511AC1E4290000B7F3 /* AphasiaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5367501AC1E4290000B7F3 /* AphasiaTests.m */; };
 		EB5E61231ACD825B0033B262 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBC0DC951AC47D4000B924E3 /* ImageCell.xib */; };
 		EB5E61261ACD8DBE0033B262 /* BoardViewerUpperCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5E61251ACD8DBE0033B262 /* BoardViewerUpperCell.m */; };
-		EB77CAF21ACDC32000BA8902 /* UpperImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB77CAF11ACDC32000BA8902 /* UpperImageCell.xib */; };
 		EB84017B1AC9E91A00BF73EF /* BoardStructureNode.m in Sources */ = {isa = PBXBuildFile; fileRef = EB84017A1AC9E91A00BF73EF /* BoardStructureNode.m */; };
+		EB8C8A5A1ACDCF70009EF1C6 /* UpperImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB8C8A591ACDCF70009EF1C6 /* UpperImageCell.xib */; };
 		EBB11D1F1AC5F9E70030B387 /* BoardViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB11D1E1AC5F9E70030B387 /* BoardViewerViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -275,9 +275,9 @@
 		EB5367501AC1E4290000B7F3 /* AphasiaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AphasiaTests.m; sourceTree = "<group>"; };
 		EB5E61241ACD8DBE0033B262 /* BoardViewerUpperCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardViewerUpperCell.h; sourceTree = "<group>"; };
 		EB5E61251ACD8DBE0033B262 /* BoardViewerUpperCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardViewerUpperCell.m; sourceTree = "<group>"; };
-		EB77CAF11ACDC32000BA8902 /* UpperImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpperImageCell.xib; sourceTree = "<group>"; };
 		EB8401791AC9E91A00BF73EF /* BoardStructureNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardStructureNode.h; sourceTree = "<group>"; };
 		EB84017A1AC9E91A00BF73EF /* BoardStructureNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardStructureNode.m; sourceTree = "<group>"; };
+		EB8C8A591ACDCF70009EF1C6 /* UpperImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpperImageCell.xib; sourceTree = "<group>"; };
 		EBB11D1D1AC5F9E70030B387 /* BoardViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardViewerViewController.h; sourceTree = "<group>"; };
 		EBB11D1E1AC5F9E70030B387 /* BoardViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardViewerViewController.m; sourceTree = "<group>"; };
 		EBC0DC951AC47D4000B924E3 /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
@@ -527,6 +527,7 @@
 				EB5367381AC1E4290000B7F3 /* AppDelegate.h */,
 				EB5367391AC1E4290000B7F3 /* AppDelegate.m */,
 				EBC0DC951AC47D4000B924E3 /* ImageCell.xib */,
+				EB8C8A591ACDCF70009EF1C6 /* UpperImageCell.xib */,
 				1E5A92781ACDC92C00C03558 /* Main.storyboard */,
 				EB5367431AC1E4290000B7F3 /* LaunchScreen.xib */,
 				7A5D54B11ACD035A0093405A /* Images.xcassets */,
@@ -693,13 +694,13 @@
 				1E77186C1ACD5DB9004121D7 /* MENINO.png in Resources */,
 				1E77187B1ACD5DD2004121D7 /* PERGUNTAS.png in Resources */,
 				1E5A92691ACDBA6A00C03558 /* STARTED.png in Resources */,
+				EB8C8A5A1ACDCF70009EF1C6 /* UpperImageCell.xib in Resources */,
 				EB5367451AC1E4290000B7F3 /* LaunchScreen.xib in Resources */,
 				1E7718851ACD5DE3004121D7 /* ESCOVAR_DENTES.png in Resources */,
 				1E7718761ACD5DCB004121D7 /* HORAS.png in Resources */,
 				1E77189E1ACD5E04004121D7 /* EMOCOES.png in Resources */,
 				1E7718FD1ACD5E7D004121D7 /* LEITE.png in Resources */,
 				1E7718B71ACD5E25004121D7 /* POLICIA.png in Resources */,
-				EB77CAF21ACDC32000BA8902 /* UpperImageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

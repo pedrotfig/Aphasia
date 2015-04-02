@@ -26,7 +26,7 @@
                 <constraint firstItem="AWL-2x-Kr9" firstAttribute="leading" secondItem="nPf-Ng-s49" secondAttribute="leading" id="tgX-ix-kY1"/>
             </constraints>
             <connections>
-                <outlet property="image" destination="AWL-2x-Kr9" id="GY3-1R-etA"/>
+                <outlet property="image" destination="AWL-2x-Kr9" id="RWd-rO-gNk"/>
             </connections>
         </collectionViewCell>
     </objects>
