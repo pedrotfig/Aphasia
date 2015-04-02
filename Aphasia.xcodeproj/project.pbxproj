@@ -46,6 +46,7 @@
 		1E7718FD1ACD5E7D004121D7 /* LEITE.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E7718FF1ACD5E7D004121D7 /* LEITE.png */; };
 		1E7719021ACD5E84004121D7 /* REFRIGERANTE.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E7719041ACD5E84004121D7 /* REFRIGERANTE.png */; };
 		1E7719071ACD5E8A004121D7 /* SUCO.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E7719091ACD5E8A004121D7 /* SUCO.png */; };
+		1E77190F1ACD82A5004121D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E77190E1ACD82A5004121D7 /* Main.storyboard */; };
 		1E78C70A1ACC63C1004863DB /* category_emotion.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E78C70C1ACC63C1004863DB /* category_emotion.png */; };
 		1E78C70F1ACC652A004863DB /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E78C7111ACC652A004863DB /* profile.png */; };
 		1E78C7141ACC6533004863DB /* icon_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E78C7161ACC6533004863DB /* icon_home.png */; };
@@ -65,7 +66,6 @@
 		EB5367371AC1E4290000B7F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5367361AC1E4290000B7F3 /* main.m */; };
 		EB53673A1AC1E4290000B7F3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5367391AC1E4290000B7F3 /* AppDelegate.m */; };
 		EB53673D1AC1E4290000B7F3 /* GetStartedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB53673C1AC1E4290000B7F3 /* GetStartedViewController.m */; };
-		EB5367401AC1E4290000B7F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB53673E1AC1E4290000B7F3 /* Main.storyboard */; };
 		EB5367451AC1E4290000B7F3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5367431AC1E4290000B7F3 /* LaunchScreen.xib */; };
 		EB5367511AC1E4290000B7F3 /* AphasiaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5367501AC1E4290000B7F3 /* AphasiaTests.m */; };
 		EB84017B1AC9E91A00BF73EF /* BoardStructureNode.m in Sources */ = {isa = PBXBuildFile; fileRef = EB84017A1AC9E91A00BF73EF /* BoardStructureNode.m */; };
@@ -198,6 +198,7 @@
 		1E7719081ACD5E8A004121D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/SUCO.png; sourceTree = "<group>"; };
 		1E77190A1ACD5E8C004121D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/SUCO.png; sourceTree = "<group>"; };
 		1E77190B1ACD5E8D004121D7 /* pt */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pt; path = pt.lproj/SUCO.png; sourceTree = "<group>"; };
+		1E77190E1ACD82A5004121D7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1E78C70B1ACC63C1004863DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/category_emotion.png; sourceTree = "<group>"; };
 		1E78C70D1ACC63C9004863DB /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/category_emotion.png; sourceTree = "<group>"; };
 		1E78C70E1ACC63CA004863DB /* pt */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pt; path = pt.lproj/category_emotion.png; sourceTree = "<group>"; };
@@ -216,7 +217,6 @@
 		1E78C7241ACC654A004863DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/right_arrow.png; sourceTree = "<group>"; };
 		1E78C7261ACC654B004863DB /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/right_arrow.png; sourceTree = "<group>"; };
 		1E78C7271ACC654B004863DB /* pt */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pt; path = pt.lproj/right_arrow.png; sourceTree = "<group>"; };
-		1ECD4B3F1ACAFB3000B41C8C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		1ECD4B401ACB021400B41C8C /* AphasiaElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AphasiaElement.h; sourceTree = "<group>"; };
 		1ECD4B411ACB021400B41C8C /* AphasiaElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AphasiaElement.m; sourceTree = "<group>"; };
 		1EEAF0181AC4943D00923593 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -241,7 +241,6 @@
 		EB1D77641ACC32B40045E2C7 /* BoardViewerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardViewerCell.m; sourceTree = "<group>"; };
 		EB398FF91AC597380099BD07 /* ImagesCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesCollection.h; sourceTree = "<group>"; };
 		EB398FFA1AC597380099BD07 /* ImagesCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesCollection.m; sourceTree = "<group>"; };
-		EB45BBB21AC31F95005CE9BE /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Main.strings; sourceTree = "<group>"; };
 		EB45BBB31AC31F95005CE9BE /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		EB45BBB71AC321B3005CE9BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EB45BBB91AC321C8005CE9BE /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -252,7 +251,6 @@
 		EB5367391AC1E4290000B7F3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		EB53673B1AC1E4290000B7F3 /* GetStartedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GetStartedViewController.h; path = Aphasia/GetStartedViewController.h; sourceTree = "<group>"; };
 		EB53673C1AC1E4290000B7F3 /* GetStartedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GetStartedViewController.m; path = Aphasia/GetStartedViewController.m; sourceTree = "<group>"; };
-		EB53673F1AC1E4290000B7F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB5367441AC1E4290000B7F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EB53674A1AC1E4290000B7F3 /* AphasiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AphasiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB53674F1AC1E4290000B7F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -501,8 +499,8 @@
 				EB0713F51AC33215002B9645 /* ViewControllers */,
 				EB5367381AC1E4290000B7F3 /* AppDelegate.h */,
 				EB5367391AC1E4290000B7F3 /* AppDelegate.m */,
-				EB53673E1AC1E4290000B7F3 /* Main.storyboard */,
 				EBC0DC951AC47D4000B924E3 /* ImageCell.xib */,
+				1E77190E1ACD82A5004121D7 /* Main.storyboard */,
 				EB5367431AC1E4290000B7F3 /* LaunchScreen.xib */,
 				7A5D54B11ACD035A0093405A /* Images.xcassets */,
 				EB5367341AC1E4290000B7F3 /* Supporting Files */,
@@ -629,7 +627,6 @@
 				1E7718E91ACD5E65004121D7 /* OI.png in Resources */,
 				1E7718C11ACD5E33004121D7 /* CABECA.png in Resources */,
 				1E7718BC1ACD5E2D004121D7 /* BARRIGA.png in Resources */,
-				EB5367401AC1E4290000B7F3 /* Main.storyboard in Resources */,
 				1E78C70A1ACC63C1004863DB /* category_emotion.png in Resources */,
 				1E7718EE1ACD5E6C004121D7 /* TCHAU.png in Resources */,
 				1E7718D51ACD5E4D004121D7 /* COMIDA.png in Resources */,
@@ -650,6 +647,7 @@
 				1E7718F31ACD5E73004121D7 /* AGUA.png in Resources */,
 				1E77188F1ACD5DEE004121D7 /* NECESSIDADES_PESSOAIS.png in Resources */,
 				1E7718E41ACD5E60004121D7 /* CUMPRIMENTOS.png in Resources */,
+				1E77190F1ACD82A5004121D7 /* Main.storyboard in Resources */,
 				1E7718801ACD5DDD004121D7 /* BANHEIRO.png in Resources */,
 				1E7718DA1ACD5E53004121D7 /* PAO.png in Resources */,
 				1E78C7191ACC653A004863DB /* icon_edit.png in Resources */,
@@ -1165,16 +1163,6 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		EB53673E1AC1E4290000B7F3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EB53673F1AC1E4290000B7F3 /* Base */,
-				EB45BBB21AC31F95005CE9BE /* pt */,
-				1ECD4B3F1ACAFB3000B41C8C /* en */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EB5367431AC1E4290000B7F3 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1278,7 +1266,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = Aphasia;
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 				VALID_ARCHS = "";
 				"VALID_ARCHS[sdk=*]" = armv7;
 			};
@@ -1297,7 +1285,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = Aphasia;
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 				VALID_ARCHS = "";
 				"VALID_ARCHS[sdk=*]" = armv7;
 			};
