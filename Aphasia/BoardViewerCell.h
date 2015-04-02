@@ -12,6 +12,7 @@
 @interface BoardViewerCell : UICollectionViewCell
 
 @property (readonly, strong, nonatomic) BoardStructureNode *correspondingNode;
+@property (strong, nonatomic) IBOutlet UIImageView *image;
 
 - (void)setCorrespondingNode:(BoardStructureNode *)correspondingNode;
 

@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 #import "ImagesCollection.h"
 #import "StoredData.h"
 #import "BoardViewerCell.h"
+#import "BoardViewerUpperCell.h"
 
 @interface BoardViewerViewController : UIViewController
 
