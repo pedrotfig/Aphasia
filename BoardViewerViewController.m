@@ -72,7 +72,9 @@ static NSMutableArray *upperElements;
     [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:CELL_IDENTIFIER];
     [self.collectionView setUserInteractionEnabled:YES];
     
-    [self.upperCollectionView registerClass:[BoardViewerUpperCell class] forCellWithReuseIdentifier:UPPER_CELL_IDENTIFIER];
+    UINib *upperCellNib = [UINib nibWithNibName:@"UpperImageCell" bundle:nil];
+    [self.upperCollectionView registerNib:upperCellNib forCellWithReuseIdentifier:UPPER_CELL_IDENTIFIER];
+    [self.upperCollectionView setUserInteractionEnabled:YES];
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     [flowLayout setItemSize:CGSizeMake(250, 250)];
