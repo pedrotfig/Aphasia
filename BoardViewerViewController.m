@@ -35,7 +35,7 @@
 
 @implementation BoardViewerViewController
 
-static NSArray *previousCategoriesSelected;
+static NSMutableArray *previousCategoriesSelected;
 static NSArray *categoriesSelected;
 static NSMutableArray *upperElements;
 
@@ -57,7 +57,7 @@ static NSMutableArray *upperElements;
     }
     
     if ([previousCategoriesSelected count] == 0) {
-        previousCategoriesSelected = [StoredData initialCategories];
+        previousCategoriesSelected = [NSMutableArray arrayWithArray:@[[StoredData initialCategories]]];
     }
     
     if ([upperElements count] == 0) {
@@ -185,7 +185,7 @@ didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
     
     BoardViewerCell *cell = (BoardViewerCell *)[collectionView cellForItemAtIndexPath:indexPath];
     
-    previousCategoriesSelected = [[NSArray alloc] initWithArray:categoriesSelected];
+    [previousCategoriesSelected addObject:categoriesSelected];
     categoriesSelected = [[StoredData getCategoryAtIndex:[[cell correspondingNode] getCategory]] getAccessableCategories];
     
     if ([categoriesSelected count] == 0) categoriesSelected = @[@(-1)];
@@ -213,13 +213,14 @@ didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
 
 
 - (IBAction)onLeftArrowClick:(id)sender {
-    categoriesSelected = [[NSArray alloc] initWithArray:previousCategoriesSelected];
-    [upperElements removeLastObject];
     if (self.currentPage > 0) {
         self.currentPage--;
         [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:self.currentPage] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
     }
     else {
+        categoriesSelected = [[NSArray alloc] initWithArray:[previousCategoriesSelected lastObject]];
+        [previousCategoriesSelected removeLastObject];
+        [upperElements removeLastObject];
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
