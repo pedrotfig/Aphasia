@@ -18,10 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="bpV-YP-s55">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="bpV-YP-s55">
                                 <rect key="frame" x="-5" y="0.0" width="605" height="600"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5I-aG-Yxp">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5I-aG-Yxp">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="GET STARTED!">
@@ -70,17 +70,17 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="F0I-r5-EmH"/>
-                                <exclude reference="9FZ-Hm-mko"/>
                                 <exclude reference="E6P-9q-bMp"/>
                                 <exclude reference="xwW-z0-mTz"/>
+                                <exclude reference="9FZ-Hm-mko"/>
                                 <exclude reference="Hha-hw-FRL"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="constraints">
-                                <include reference="9FZ-Hm-mko"/>
                                 <include reference="E6P-9q-bMp"/>
                                 <include reference="xwW-z0-mTz"/>
+                                <include reference="9FZ-Hm-mko"/>
                                 <include reference="Hha-hw-FRL"/>
                             </mask>
                         </variation>
