@@ -9,17 +9,14 @@
 #import "AddCategoryViewController.h"
 #import "TableViewController.h"
 
-@interface AddCategoryViewController (){
-    AVAudioRecorder *recorder;
-    AVAudioPlayer *player;
-}
+@interface AddCategoryViewController ()
 
 @property (strong, nonatomic) UIImagePickerController *picker;
+
 
 @end
 
 @implementation AddCategoryViewController
-@synthesize stopButton, recordButton, playButton;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,35 +31,49 @@
     self.picker = [[UIImagePickerController alloc] init];
     [self.picker setAllowsEditing:YES];
     [self.picker setDelegate:self];
+    addPhotoCategory = [UIImage imageNamed:@"customPhoto"];
     
+    self.stopButton.hidden = YES;
     
-    // Disable Stop/Play button when application launches
-    [stopButton setEnabled:NO];
-    [playButton setEnabled:NO];
+    NSArray *dirPaths;
+    NSString *docsDir;
     
-    // Set the audio file
-    NSArray *pathComponents = [NSArray arrayWithObjects:
-                               [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
-                               @"MyAudioMemo.m4a",
-                               nil];
-    NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
+    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    docsDir = dirPaths[0];
     
-    // Setup audio session
-    AVAudioSession *session = [AVAudioSession sharedInstance];
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+    NSString *soundFilePath = [docsDir stringByAppendingPathComponent:@"audio"];
     
-    // Define the recorder setting
-    NSMutableDictionary *recordSetting = [[NSMutableDictionary alloc] init];
+    NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
     
-    [recordSetting setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
-    [recordSetting setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
-    [recordSetting setValue:[NSNumber numberWithInt: 2] forKey:AVNumberOfChannelsKey];
+    NSDictionary *recordSettings = [NSDictionary
+                                    dictionaryWithObjectsAndKeys:
+                                    [NSNumber numberWithInt:AVAudioQualityMin],
+                                    AVEncoderAudioQualityKey,
+                                    [NSNumber numberWithInt:16],
+                                    AVEncoderBitRateKey,
+                                    [NSNumber numberWithInt: 2],
+                                    AVNumberOfChannelsKey,
+                                    [NSNumber numberWithFloat:44100.0],
+                                    AVSampleRateKey,
+                                    nil];
     
-    // Initiate and prepare the recorder
-    recorder = [[AVAudioRecorder alloc] initWithURL:outputFileURL settings:recordSetting error:nil];
-    recorder.delegate = self;
-    recorder.meteringEnabled = YES;
-    [recorder prepareToRecord];
+    NSError *error = nil;
+    
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord
+                        error:nil];
+    
+    recorder = [[AVAudioRecorder alloc]
+                      initWithURL:soundFileURL
+                      settings:recordSettings
+                      error:&error];
+    
+    if (error)
+    {
+        NSLog(@"error: %@", [error localizedDescription]);
+    } else {
+        [recorder prepareToRecord];
+    }    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,7 +82,7 @@
 }
 
 - (IBAction)saveNewCategory:(id)sender {
-    [StoredData addCategoryWithName:titleCategory.text andImage:@"category_emotion" andAudio:@"audio0" andRelations:nil];
+    [StoredData addCategoryWithName:titleCategory.text andImage:@"customPhoto" andAudio:@"audio" andRelations:nil];
     [self.navigationController popViewControllerAnimated:TRUE];
 }
 
@@ -105,8 +116,6 @@
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     addPhotoCategory = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-    NSString *imgName = [self.imageView image].accessibilityIdentifier;
-        NSLog(@"%@",imgName);
     [self.imageView setImage:addPhotoCategory];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -116,63 +125,53 @@
 }
 
 - (IBAction)recordTapped:(id)sender {
-    // Stop the audio player before recording
-    if (player.playing) {
-        [player stop];
-    }
-    
-    if (!recorder.recording) {
-        AVAudioSession *session = [AVAudioSession sharedInstance];
-        [session setActive:YES error:nil];
-        
-        // Start recording
+    if (!recorder.recording)
+    {
+        self.stopButton.hidden = NO;
+        self.recordButton.hidden = YES;
         [recorder record];
-        [recordButton setTitle:@"Pause" forState:UIControlStateNormal];
-        
-    } else {
-        
-        // Pause recording
-        [recorder pause];
-        [recordButton setTitle:@"Record" forState:UIControlStateNormal];
     }
-    
-    [stopButton setEnabled:YES];
-    [playButton setEnabled:NO];
 }
 
 - (IBAction)stopTapped:(id)sender {
-    [recorder stop];
+    self.stopButton.hidden = YES;
+    self.recordButton.hidden = NO;
     
-    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-    [audioSession setActive:NO error:nil];
-}
-
-- (IBAction)playTapped:(id)sender {
-    if (!recorder.recording){
-        player = [[AVAudioPlayer alloc] initWithContentsOfURL:recorder.url error:nil];
-        [player setDelegate:self];
-        [player play];
+    if (recorder.recording)
+    {
+        [recorder stop];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Done"
+                                                        message: @"Successfully recording"
+                                                       delegate: nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
     }
 }
 
-#pragma mark - AVAudioRecorderDelegate
-
-- (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)avrecorder successfully:(BOOL)flag{
-    [recordButton setTitle:@"Record" forState:UIControlStateNormal];
-    [stopButton setEnabled:NO];
-    [playButton setEnabled:YES];
+-(void)audioPlayerDidFinishPlaying:
+(AVAudioPlayer *)player successfully:(BOOL)flag
+{
+    self.stopButton.hidden = YES;
+    self.recordButton.hidden = NO;
 }
 
-#pragma mark - AVAudioPlayerDelegate
-
-- (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Done"
-                                                    message: @"Finish playing the recording!"
-                                                   delegate: nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
+-(void)audioPlayerDecodeErrorDidOccur:
+(AVAudioPlayer *)player
+                                error:(NSError *)error
+{
+    NSLog(@"Decode Error occurred");
 }
+
+-(void)audioRecorderDidFinishRecording:(AVAudioRecorder *)recorder successfully:(BOOL)flag
+{
+}
+
+-(void)audioRecorderEncodeErrorDidOccur:(AVAudioRecorder *)recorder error:(NSError *)error
+{
+    NSLog(@"Encode Error occurred");
+}
+
 
 /*
  #pragma mark - Navigation
