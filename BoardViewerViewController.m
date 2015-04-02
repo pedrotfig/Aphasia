@@ -21,8 +21,6 @@
 @property (strong, nonatomic) NSMutableArray *pages;
 @property (strong, nonatomic) ImagesCollection *imagesCollection;
 
-@property (nonatomic) NSUInteger currentPage;
-
 @property (weak, nonatomic) IBOutlet UIButton *rightArrow;
 @property (weak, nonatomic) IBOutlet UIButton *leftArrow;
 
@@ -35,6 +33,7 @@
 
 @implementation BoardViewerViewController
 
+static NSUInteger currentPage;
 static NSMutableArray *previousCategoriesSelected;
 static NSArray *categoriesSelected;
 static NSMutableArray *upperElements;
@@ -45,7 +44,7 @@ static NSMutableArray *upperElements;
     
     // Initializing imagesCollection
     self.imagesCollection = [[ImagesCollection alloc] initWithCategories:[StoredData listOfCategories] andImagesPerPage:IMAGES_PER_PAGE];
-    self.currentPage = 0;
+    currentPage = 0;
     
     // Setting Collection View and Flow Layout
     if ([categoriesSelected count] == 0) {
@@ -124,7 +123,7 @@ static NSMutableArray *upperElements;
         
         BoardViewerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
         
-        NSUInteger nodeIndex = [indexPath row] + (self.currentPage*IMAGES_PER_PAGE);
+        NSUInteger nodeIndex = [indexPath row] + (currentPage*IMAGES_PER_PAGE);
         NSArray *nodes = self.boardNodes;
         [cell setCorrespondingNode:nodes[nodeIndex]];
         
@@ -205,23 +204,25 @@ didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (IBAction)onRightArrowClicked:(id)sender {
-    if (self.currentPage+1 < [self.pages count]) {
-        self.currentPage++;
-        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:self.currentPage] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+    if (currentPage+1 < [self.pages count]) {
+        currentPage++;
+        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:currentPage] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
     }
 }
 
 
 - (IBAction)onLeftArrowClick:(id)sender {
-    if (self.currentPage > 0) {
-        self.currentPage--;
-        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:self.currentPage] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+    if (currentPage > 0) {
+        currentPage--;
+        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:currentPage] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
     }
     else {
         categoriesSelected = [[NSArray alloc] initWithArray:[previousCategoriesSelected lastObject]];
         [previousCategoriesSelected removeLastObject];
         [upperElements removeLastObject];
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self dismissViewControllerAnimated:YES completion:^{
+            currentPage = 0;
+        }];
     }
 }
 
