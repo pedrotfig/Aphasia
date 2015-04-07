@@ -192,10 +192,15 @@ didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
     
     [upperElements addObject:[[[cell getCorrespondingNode] getElement] getImageName]];
     
-    NSString *audioPath = [NSString stringWithFormat:@"%@/%@.m4a", [[NSBundle mainBundle] resourcePath], [[[cell correspondingNode] getElement] getAudioName]];
+    NSString *language = [[NSLocale preferredLanguages] objectAtIndex:0];
+    NSString *audioPath = [NSString stringWithFormat:@"%@/%@.lproj/%@.m4a", [[NSBundle mainBundle] resourcePath], language, [[[cell correspondingNode] getElement] getAudioName]];
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:audioPath]) audioPath = [NSString stringWithFormat:@"%@/Base.lproj/%@.m4a", [[NSBundle mainBundle] resourcePath], [[[cell correspondingNode] getElement] getAudioName]];
+    
     NSURL *url = [NSURL fileURLWithPath:audioPath];
     self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     [self.player setDelegate:self];
+    //[self.player prepareToPlay];
     [self.player play];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];

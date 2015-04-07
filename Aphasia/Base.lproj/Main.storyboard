@@ -123,11 +123,8 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Wg-Pc-UBh">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="808" height="805"/>
-                                </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5f-Md-bae" userLabel="User Image">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5f-Md-bae" userLabel="User Image">
                                 <rect key="frame" x="188" y="215" width="224" height="224"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="280" id="9bo-Td-yOV"/>
@@ -155,7 +152,7 @@
                                     <segue destination="eFp-6h-9gY" kind="presentation" id="A6Y-iz-how"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Your name" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pIM-wd-9tL" userLabel="User Name">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Your name" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pIM-wd-9tL" userLabel="User Name">
                                 <rect key="frame" x="150" y="447" width="300" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="WGh-qe-Llk"/>
