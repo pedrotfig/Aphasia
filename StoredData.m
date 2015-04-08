@@ -51,7 +51,7 @@ static NSMutableArray *categories;
     // Category 0 elements me
     [[self listOfCategories][0] addElementWithName:NSLocalizedString(@"Want", @"Message")  andImage:@"QUERO" andAudio:@"audio0"];
     
-    [[self listOfCategories][0] addElementWithName:NSLocalizedString(@"Drink", @"Message")  andImage:@"BEBER" andAudio:@"audio0"];
+    [[self listOfCategories][0] addElementWithName:NSLocalizedString(@"Drink", @"Message")  andImage:@"BEBER" andAudio:@"beber"];
     
     [[self listOfCategories][0] addElementWithName:NSLocalizedString(@"Eat", @"Message")  andImage:@"COMER" andAudio:@"audio0"];
     

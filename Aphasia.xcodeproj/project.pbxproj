@@ -94,6 +94,7 @@
 		EB8C8A5A1ACDCF70009EF1C6 /* UpperImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB8C8A591ACDCF70009EF1C6 /* UpperImageCell.xib */; };
 		EB8C8A7B1ACDD58F009EF1C6 /* meninao.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EDA2AAC1ACDD11800428373 /* meninao.png */; };
 		EBB11D1F1AC5F9E70030B387 /* BoardViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB11D1E1AC5F9E70030B387 /* BoardViewerViewController.m */; };
+		EBC5500F1AD5814800BAD435 /* beber.m4a in Resources */ = {isa = PBXBuildFile; fileRef = EBC550111AD5814800BAD435 /* beber.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -344,6 +345,9 @@
 		EBB11D1D1AC5F9E70030B387 /* BoardViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardViewerViewController.h; sourceTree = "<group>"; };
 		EBB11D1E1AC5F9E70030B387 /* BoardViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardViewerViewController.m; sourceTree = "<group>"; };
 		EBC0DC951AC47D4000B924E3 /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
+		EBC550101AD5814800BAD435 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/beber.m4a; sourceTree = "<group>"; };
+		EBC550121AD5814900BAD435 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/beber.m4a; sourceTree = "<group>"; };
+		EBC550131AD5814A00BAD435 /* pt */ = {isa = PBXFileReference; lastKnownFileType = file; name = pt; path = pt.lproj/beber.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -518,6 +522,7 @@
 		EB0713EC1AC3308F002B9645 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				EBC550111AD5814800BAD435 /* beber.m4a */,
 				EB2701F31ACDE15B0043341A /* agua.m4a */,
 				EB2701F81ACDE1670043341A /* banana.m4a */,
 				EB2701FB1ACDE16C0043341A /* doente.m4a */,
@@ -693,11 +698,11 @@
 				TargetAttributes = {
 					EB5367301AC1E4290000B7F3 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 4ZX95MT4F7;
+						DevelopmentTeam = AN2448FN23;
 					};
 					EB5367491AC1E4290000B7F3 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 4ZX95MT4F7;
+						DevelopmentTeam = AN2448FN23;
 						TestTargetID = EB5367301AC1E4290000B7F3;
 					};
 				};
@@ -779,6 +784,7 @@
 				1E5A925D1ACDB3F000C03558 /* background.png in Resources */,
 				1E7718A31ACD5E0D004121D7 /* FELIZ.png in Resources */,
 				1E7718AD1ACD5E1A004121D7 /* EMERGENCIA.png in Resources */,
+				EBC5500F1AD5814800BAD435 /* beber.m4a in Resources */,
 				1E77185D1ACD5D9D004121D7 /* BEBER.png in Resources */,
 				EB5E61231ACD825B0033B262 /* ImageCell.xib in Resources */,
 				7A5D54B21ACD035A0093405A /* Images.xcassets in Resources */,
@@ -1490,6 +1496,16 @@
 				EB45BBB31AC31F95005CE9BE /* pt */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		EBC550111AD5814800BAD435 /* beber.m4a */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBC550101AD5814800BAD435 /* Base */,
+				EBC550121AD5814900BAD435 /* en */,
+				EBC550131AD5814A00BAD435 /* pt */,
+			);
+			name = beber.m4a;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
